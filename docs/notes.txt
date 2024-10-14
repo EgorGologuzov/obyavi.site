@@ -1,0 +1,21 @@
+СОЗДАНИЕ ПРОЕКТА REACT.JS
+
+1. Установка node.js v20.18.0 (next > next > ... > install, перезагрузка)
+2. Проверка версии
+    node -v
+3. Попытка создать проект
+    npx create-react-app .
+   Ошибка:
+    npm error code ENOENT
+    npm error syscall lstat
+    npm error path C:\Users\Egor\AppData\Roaming\npm
+    npm error errno -4058
+    npm error enoent ENOENT: no such file or directory, lstat 'C:\Users\Egor\AppData\Roaming\npm'
+    npm error enoent
+    npm error A complete log of this run can be found in: C:\Users\Egor\AppData\Local\npm-cache\_logs\2024-10-11T13_52_29_106Z-debug-0.log
+   Решение:
+    npm install npm -g
+    повторная попытка создать проект успешна
+4. Запуск сервера
+    cd web
+    npm run start
