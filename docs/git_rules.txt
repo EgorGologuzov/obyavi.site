@@ -8,7 +8,7 @@
         git commit -m "Init"
         // Создать репозиторий в VCS
         git remote add origin https://github.com/[User]/[Repos].git
-        git push -u origin main
+        git push -u origin master
     2. Настройка ветки dev
         // Создать ветку dev в репозитории в VCS (GitHub: репозиторий > branches > new branch)
         git branch dev
@@ -36,11 +36,11 @@
     git push
 
 Создание запроса на слияние:
-    // мерджить всегда будем с главной веткой main
+    // мерджить всегда будем с главной веткой master
     1. Открываешь свой форк
     1.5. (Необязательно) Подтягивание изменений из основного репозитория, нажимая "Sync fork" 
     2. Contribute > Open pull request
     3. Даешь название
-    4. Проверяешь, что целевая ветка main
+    4. Проверяешь, что целевая ветка master
     5. Отправляешь
     6. Ждешь пока автор (я) посмотрит и смерджит или напишет что не так
