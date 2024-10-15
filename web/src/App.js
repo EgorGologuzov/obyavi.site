@@ -1,8 +1,15 @@
-import './App.css';
+import EgorsContainer from './components/EgorsContainer';
+import ArtemsContainer from './components/ArtemsContainer';
 
 function App() {
     return (
-        <div>Hi</div>
+        <>
+            <input type="checkbox" id="theme-switch" />
+            <div id="page">
+                <EgorsContainer></EgorsContainer>
+                <ArtemsContainer></ArtemsContainer>
+            </div>
+        </>
     );
 }
 

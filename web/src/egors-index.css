@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* Переменные и константы */
 :root {
     /* Font data */
     --semi-bold: 600;
@@ -20,13 +21,13 @@
     --accent: #00ADB5;
 
     /* Light theme icons */
-    --picture: url("../web/public/img/picture-l.png");
-    --cross: url("../web/public/img/cross-l.png");
-    --left-arrow: url("../web/public/img/left-arrow-l.png");
-    --right-arrow: url("../web/public/img/right-arrow-l.png");
-    --check-mark: url("../web/public/img/check-mark-l.png"); --check-mark-dark: url("../web/public/img/check-mark-d.png");
+    --picture: url("../public/img/picture-l.png");
+    --cross: url("../public/img/cross-l.png");
+    --left-arrow: url("../public/img/left-arrow-l.png");
+    --right-arrow: url("../public/img/right-arrow-l.png");
+    --check-mark: url("../public/img/check-mark-l.png"); --check-mark-dark: url("../public/img/check-mark-d.png");
 
-    --empty: url("../web/public/img/empty.png");
+    --empty: url("../public/img/empty.png");
 }
 
 #theme-switch:checked~#page {
@@ -43,15 +44,11 @@
     --accent: #00ADB5;
 
     /* Dark theme icons */
-    --picture: url("../web/public/img/picture-d.png");
-    --cross: url("../web/public/img/cross-d.png");
-    --left-arrow: url("../web/public/img/left-arrow-d.png");
-    --right-arrow: url("../web/public/img/right-arrow-d.png");
-    --check-mark: url("../web/public/img/check-mark-d.png");
-}
-
-.collapse-container-switch:not(:checked) ~ div.collapse-container {
-    display: none;
+    --picture: url("../public/img/picture-d.png");
+    --cross: url("../public/img/cross-d.png");
+    --left-arrow: url("../public/img/left-arrow-d.png");
+    --right-arrow: url("../public/img/right-arrow-d.png");
+    --check-mark: url("../public/img/check-mark-d.png");
 }
 
 .icon-picture {
@@ -74,6 +71,57 @@
     content: var(--right-arrow);
 }
 
+/* Временная разметка страницы */
+#page {
+    padding: 10px 0 10px 10px;
+}
+
+.grid-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: auto;
+}
+
+.tool-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.grid-inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-auto-rows: auto;
+}
+
+.list-view {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    grid-auto-rows: auto;
+}
+
+.collapse-container-switch:not(:checked) ~ div.collapse-container {
+    display: none;
+}
+
+@media (width < 750px) {
+    .grid-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .list-view {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Основные стили */
 * {
     box-sizing: border-box;
 }
@@ -92,9 +140,23 @@ body {
     position: relative;
 }
 
+#root {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex: 1;
+}
+
 #page {
     flex: 1;
     background: var(--bg);
+}
+
+.spliter {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 20px;
 }
 
 h1,
