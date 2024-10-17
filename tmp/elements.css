@@ -861,23 +861,22 @@ p.error,
 
 .popup{
     display:none;
-    margin:0px;
+    position: absolute;
     padding:0px;
     grid-template-columns:80% 20%;
-    flex-direction:row;
-    position: absolute;
-    bottom:20px;
-    left: 65%;
+    bottom:10px;
     width: 500px;
     border-radius:15px;
     background-color: var(--bg);
     border: 1px solid var(--light);
     z-index: 9999;
+    justify-items: stretch;
 }
 .popup .popup-container{
     padding:15px 0px 10px 15px;
     display:flex;
     flex-direction: column;
+    flex-grow: 1;
     margin-right:52px;
 }
 .popup .options{
@@ -897,8 +896,7 @@ p.error,
 .popup .popup-warning{
     background-color: var(--secondary);
     border-radius:15px;
-    height:150px;
-    margin:0px;
+    height: max-content;
     width:100%;
     display:flex;
     justify-content: center;
@@ -940,6 +938,24 @@ p.error,
 .star-rating input:checked ~ .star {
     content:url("../web/public/img/star-filled.png");
     filter:drop-shadow(2px 7px 4px rgb(0,0,0,0.25));
+}
+
+.scrollable-list{
+    display:flex;
+    flex-direction:column;
+    width:500px;
+    height:262px;
+    border:1px solid var(--secondary);
+}
+.scrollable-list .tool-panel{
+    width: 100%;
+    border-bottom:1px solid var(--secondary);
+    display:flex;
+    justify-content: space-around;
+}
+.scrollable-list .content{
+    overflow: auto;
+    max-height: calc(100vh);
 }
 
 @media (width < 750px) {
