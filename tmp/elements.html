@@ -162,8 +162,245 @@
         </div>
         <div>
             <span class="text-small">Блоки Артема</span>
-            <input type="checkbox" class="collapse-container-switch"><br>
-            <div class="collapse-container" style="width: 300px; height: 900px; background-color: black;">123</div>
+            <input type="checkbox" class="collapse-container-switch" checked><br>
+            <div class="collapse-container">
+                <div class="grid-inputs">
+                    <div class="input-string input-text">
+                        <label>Label</label>
+                        <input type="text" placeholder="Placeholder">
+                        <div class="color-filter"></div>
+                        <p>Comment</p>
+                    </div>
+                    <div class="input-string input-text">
+                        <label>Label</label>
+                        <input type="text" placeholder="Placeholder" disabled>
+                        <div class="color-filter"></div>
+                        <p>Comment</p>
+                    </div>
+                    <div class="input-string input-text">
+                        <label>Label</label>
+                        <input class="error" type="text" placeholder="Placeholder">
+                        <div class="color-filter"></div>
+                        <p class="error">Comment</p>
+                    </div>
+                </div>
+
+                <div class="grid-inputs">
+                    <div class="input-string">
+                        <label>Label</label>
+                        <input type="text" placeholder="+_ (___) ___ __-__" maxlength="11">
+                        <div class="color-filter"></div>
+                        <p>Comment</p>
+                    </div>
+                    <div class="input-string">
+                        <label>Label</label>
+                        <input type="text" placeholder="+_ (___) ___ __-__" disabled>
+                        <div class="color-filter"></div>
+                        <p>Comment</p>
+                    </div>
+                    <div class="input-string">
+                        <label>Label</label>
+                        <input class="error" type="text" placeholder="+_ (___) ___ __-__" maxlength="11">
+                        <div class="color-filter"></div>
+                        <p class="error">Comment</p>
+                    </div>
+                </div>
+        
+                <div class="grid-inputs">
+                    <div class="radio-btn">
+                        <input type="radio" name="options" id="option1" value="2" checked/>
+                        <label for="option1">Option 1</label>
+                        <div class="color-filter"></div>
+                        <p>Comment</p>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="options" id="option1" value="2"/>
+                        <label for="option1">Option 1</label>
+                        <div class="color-filter"></div>
+                        <p>Comment</p>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="options" id="option1" value="2" disabled/>
+                        <label for="option1">Option 1</label>
+                        <div class="color-filter"></div>
+                        <p>Comment</p>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="options" id="option1" value="2" disabled checked/>
+                        <label for="option1">Option 1</label>
+                        <div class="color-filter"></div>
+                        <p>Comment</p>
+                    </div>
+                </div>
+
+                <div class="tool-panel">
+                    <div class="switch">
+                        <input type="checkbox">
+                    </div>
+                    <div class="switch">
+                        <input type="checkbox" checked>
+                    </div>
+                </div>
+
+                <div class="grid-inputs">
+                    <div class="input-string input-password">
+                        <label>Label</label>
+                        <br>
+                        <input type="password" placeholder="Placeholder" id="myPw1">
+                        <input type="checkbox" onclick="hideShowPassword()">
+                        <p>Comment</p>
+                        <div class="color-filter"></div>
+                    </div>
+                    <div class="input-string input-password">
+                        <label>Label</label>
+                        <br>
+                        <input type="password" placeholder="Placeholder" disabled>
+                        <input type="checkbox">
+                        <p>Comment</p>
+                        <div class="color-filter"></div>
+                    </div>
+                    <div class="input-string input-password">
+                        <label>Label</label>
+                        <br>
+                        <input class="error" type="password" placeholder="Placeholder" id="myPw2">
+                        <input type="checkbox" class="error" onclick="hideShowPassword2()">
+                        <p class="error">Comment</p>
+                        <div class="color-filter"></div>
+                    </div>
+                </div>
+                
+                <div class="grid-inputs">
+                    <div class="input-string input-date">
+                        <label>Label</label>
+                        <br>
+                        <input type="text" placeholder="Placeholder">
+                        <button class="btn-tool">
+                            <img class="icon-calender">
+                        </button>
+                        <p>Comment</p>
+                        <div class="color-filter"></div>
+                    </div>
+                    <div class="input-string input-date">
+                        <label>Label</label>
+                        <br>
+                        <input type="text" placeholder="Placeholder" disabled>
+                        <button class="btn-tool">
+                            <img class="icon-calender">
+                        </button>
+                        <p>Comment</p>
+                        <div class="color-filter"></div>
+                    </div>
+                    <div class="input-string input-date">
+                        <label>Label</label>
+                        <br>
+                        <input class="error" type="text" placeholder="Placeholder">
+                        <button class="btn-tool">
+                            <img class="icon-calender">
+                        </button>
+                        <p class="error">Comment</p>
+                        <div class="color-filter"></div>
+                    </div>
+                </div>
+
+                <div class="grid-inputs">
+                    <div class="custom-select">
+                        <label>Label</label>
+                        <select>
+                          <option>Placeholder</option>
+                          <option>GitHub</option>
+                          <option>Instagram</option>
+                          <option>Facebook</option>
+                          <option>LinkedIn</option>
+                          <option>Twitter</option>
+                          <option>Reddit</option>
+                        </select>
+                        <p>Comment</p>
+                        <div class="color-filter"></div>
+                    </div>
+                    <div class="custom-select">
+                        <label>Label</label>
+                        <select disabled>
+                          <option>Placeholder</option>
+                          <option>GitHub</option>
+                          <option>Instagram</option>
+                          <option>Facebook</option>
+                          <option>LinkedIn</option>
+                          <option>Twitter</option>
+                          <option>Reddit</option>
+                        </select>
+                        <p>Comment</p>
+                        <div class="color-filter"></div>
+                    </div>
+                    <div class="custom-select">
+                        <label>Label</label>
+                        <select class="error">
+                          <option>Placeholder</option>
+                          <option>GitHub</option>
+                          <option>Instagram</option>
+                          <option>Facebook</option>
+                          <option>LinkedIn</option>
+                          <option>Twitter</option>
+                          <option>Reddit</option>
+                        </select>
+                        <p>Comment</p>
+                        <div class="color-filter"></div>
+                    </div>
+            </div>
+
+            <div class="search-string">
+                <input type="text" placeholder="Search..">
+                <button class="btn-tool">
+                    <img class="icon-mag-glass">
+                </button>
+                <ul></ul>
+            </div>
+            
+            <div class="list-view">
+                <div class="logo">
+                    <button></button>
+                </div>
+                <div class="logo-full">
+                    <button></button>
+                </div>
+            </div>
+
+            <dialog class="popup" id="MyPopup">
+                <div class="popup-container">
+                    <h3>Заголовок 1</h3>
+                    <p class="text-small">
+                        A lot of text A lot of text A lot of text A lot of text 
+                        A lot of text A lot of text A lot of text A lot of text 
+                        A lot of text A lot of text A lot of text A lot of text
+                        A lot of text A lot of text A lot of text A lot of text  
+                    </p>
+                    <div class="options">
+                        <p class="text-small action" onclick="closeNotification()">Action</p>
+                        <p class="text-small dismiss" onclick="closeNotification()">Dismiss</p>
+                    </div>
+                </div>
+                <div class="popup-warning">
+                    <p>!!!</p>
+                </div>
+            </dialog>
+            <button onclick="addNotification()">Create popup</button>
+            <br>
+            <div class="star-rating">
+                <input type="radio" name="rating" id="star1" value="5" />
+                <label for="star1" class="star"></label>
+                
+                <input type="radio" name="rating" id="star2" value="4" />
+                <label for="star2" class="star"></label>
+                
+                <input type="radio" name="rating" id="star3" value="3" />
+                <label for="star3" class="star"></label>
+                
+                <input type="radio" name="rating" id="star4" value="2" />
+                <label for="star4" class="star"></label>
+                
+                <input type="radio" name="rating" id="star5" value="1" />
+                <label for="star5" class="star"></label>
+            </div>
+
         </div>
     </div>
     <script>
@@ -206,6 +443,39 @@
         }
         document.onclick = (event) => event.target != context && hide_context();
         
+        function hideShowPassword(){
+            var input=document.getElementById('myPw1');
+            if(input.type==='password'){
+                input.type='text';
+            }
+            else
+                input.type="password";
+        }
+
+        function hideShowPassword2(){
+            var input=document.getElementById('myPw2');
+            if(input.type==='password'){
+                input.type='text';
+            }
+            else
+                input.type="password";
+        }
+
+        function addNotification(){
+            const element=document.getElementById('MyPopup');
+
+            element.style.display="grid";
+            element.style.position="absolute";
+
+            document.addEventListener("scroll",(event)=>{
+                let btmPos=-window.scrollY+10;
+                element.style.bottom=btmPos+"px";
+            })
+        }
+        function closeNotification(){
+            const element=document.getElementById('MyPopup');
+            element.style.display="none";
+        }
     </script>
 </body>
 
