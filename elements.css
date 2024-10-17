@@ -861,22 +861,23 @@ p.error,
 
 .popup{
     display:none;
-    position: absolute;
+    margin:0px;
     padding:0px;
     grid-template-columns:80% 20%;
-    bottom:10px;
+    flex-direction:row;
+    position: absolute;
+    bottom:20px;
+    left: 65%;
     width: 500px;
     border-radius:15px;
     background-color: var(--bg);
     border: 1px solid var(--light);
     z-index: 9999;
-    justify-items: stretch;
 }
 .popup .popup-container{
     padding:15px 0px 10px 15px;
     display:flex;
     flex-direction: column;
-    flex-grow: 1;
     margin-right:52px;
 }
 .popup .options{
@@ -896,7 +897,8 @@ p.error,
 .popup .popup-warning{
     background-color: var(--secondary);
     border-radius:15px;
-    height: max-content;
+    height:150px;
+    margin:0px;
     width:100%;
     display:flex;
     justify-content: center;
@@ -955,7 +957,7 @@ p.error,
 }
 .scrollable-list .content{
     overflow: auto;
-    max-height: calc(100vh);
+    max-height: calc(100vh - 144px);
 }
 
 @media (width < 750px) {
