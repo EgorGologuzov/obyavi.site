@@ -1,13 +1,13 @@
-export default function TextNormal({ children, color, fontSize = "normal" }) {
+export default function Paragraf({ children, color, fontSize = "normal" }) {
     let className;
     let style = {color: color ? `var(--${color})` : undefined }
 
     if (fontSize === "normal") {
-        className = "text-normal";
+        className = "text text_normal";
     } else if (fontSize === "small") {
-        className = "text-small";
+        className = "text text_small";
     } else {
-        className = "text-normal";
+        className = "text";
         style.fontSize = fontSize;
     }
 

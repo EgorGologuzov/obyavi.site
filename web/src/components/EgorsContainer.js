@@ -1,10 +1,13 @@
 import Button from './Button';
 import CollapseContainer from './CollapseContainer';
+import Grid from './Grid';
 import Header from './Header';
+import PagedList from './PagedList';
 import Spliter from './Spliter';
 import Subcaption from './Subcaption';
-import TextNormal from './TextNormal';
+import Paragraf from './Paragraf';
 import ToolButton from './ToolButton';
+import ToolPanel from './ToolPanel';
 
 export default function EgorsContainer({ children, header }) {
     return (
@@ -25,40 +28,51 @@ export default function EgorsContainer({ children, header }) {
 
             <Spliter height="50px" />
 
-            <TextNormal>Нормальный текст Нормальный текст Нормальный текст Нормальный текст Нормальный текст
+            <Paragraf>Нормальный текст Нормальный текст Нормальный текст Нормальный текст Нормальный текст
                 Нормальный текст Нормальный текст Нормальный текст Нормальный текст Нормальный текст Нормальный текст
-                Нормальный текст</TextNormal>
+                Нормальный текст</Paragraf>
             <Spliter />
-            <TextNormal fontSize="small">Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький
+            <Paragraf fontSize="small">Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький
                 текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст
-                Маленький текст Маленький текст Маленький текст</TextNormal>
+                Маленький текст Маленький текст Маленький текст</Paragraf>
             <Spliter />
-            <TextNormal fontSize="10px" color="accent">Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький
+            <Paragraf fontSize="10px" color="accent">Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький
                 текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст
-                Маленький текст Маленький текст Маленький текст</TextNormal>
+                Маленький текст Маленький текст Маленький текст</Paragraf>
 
             <Spliter />
 
-            <div class="grid-buttons">
-                <Button onclick={() => alert("Hello")}>Текст</Button>
+            <Grid desktopColumns="3" mobileColumns="1">
+                <Button onClick={() => alert("Hello")}>Текст</Button>
                 <Button color="secondary">Текст</Button>
                 <Button color="warning">Текст</Button>
                 <Button disabled>Текст</Button>
                 <Button color="secondary" disabled>Текст</Button>
                 <Button color="warning" disabled>Текст</Button>
-            </div>
+            </Grid>
 
             <Spliter />
-
-            <div class="tool-panel">
-                <ToolButton text="Текст" icon="icon-picture" onclick={() => alert("Hello")}/>
+            <ToolPanel>
+                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")}/>
+                <ToolButton text="Текст" icon="icon-cross"/>
+                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")}/>
+                <ToolButton text="Текст" icon="icon-cross" />
+                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")}/>
+                <ToolButton text="Текст" icon="icon-cross" />
+                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")}/>
                 <ToolButton text="Текст" icon="icon-cross" />
                 <ToolButton text="Текст" icon="img/left-arrow-l.png" />
                 <ToolButton text="Текст" icon="none" />
                 <ToolButton text="Текст" />
                 <ToolButton />
                 <ToolButton />
-            </div>
+            </ToolPanel>
+
+            <Spliter />
+
+            <PagedList>
+                test
+            </PagedList>
 
             <Spliter />
 

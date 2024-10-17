@@ -1,9 +1,9 @@
 export default function CollapseContainer({ children, header }) {
     return (
-        <div>
-            <span class="text-small">{header}</span>
-            <input type="checkbox" class="collapse-container-switch" /><br />
-            <div className="collapse-container">
+        <div className="collapse-container">
+            <span>{header}</span>
+            <input type="checkbox" className="collapse-container__switch" /><br />
+            <div className="collapse-container__content">
             {children}
             </div>
         </div>
