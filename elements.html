@@ -162,7 +162,7 @@
         </div>
         <div>
             <span class="text-small">Блоки Артема</span>
-            <input type="checkbox" class="collapse-container-switch" checked><br>
+            <input type="checkbox" class="collapse-container-switch"><br>
             <div class="collapse-container">
                 <div class="grid-inputs">
                     <div class="input-string input-text">
@@ -486,10 +486,9 @@
             element.style.display="grid";
             element.style.position="absolute";
 
-            element.style.bottom=(-window.scrollY+10)+"px";
-
             document.addEventListener("scroll",(event)=>{
-                element.style.bottom=(-window.scrollY+10)+"px";
+                let btmPos=-window.scrollY+10;
+                element.style.bottom=btmPos+"px";
             })
         }
         function closeNotification(){
