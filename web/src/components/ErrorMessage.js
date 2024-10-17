@@ -1,7 +1,7 @@
-import TextNormal from './TextNormal';
+import Paragraf from './Paragraf';
 
 export default function ErrorMessage({ children }) {
     return (
-    <TextNormal color="warning">Error: {children}</TextNormal>
+    <Paragraf color="warning">Error: {children}</Paragraf>
     );
 }

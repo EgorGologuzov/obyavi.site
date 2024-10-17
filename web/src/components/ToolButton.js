@@ -1,20 +1,20 @@
-export default function ToolButton({ text, icon = "icon-picture", onclick }) {
+export default function ToolButton({ text, icon = "icon-picture", disabled = false, onClick }) {
     let img;
     let label;
 
     if (typeof icon === "string" && icon.startsWith("icon")) {
-        img = <img className={icon} />
+        img = <img className={`tool-btn__icon ${icon}`} />
     } else {
-        img = <img src={icon}/>
+        img = <img className="tool-btn__icon" src={icon}/>
     }
 
     if (text) {
-        label = <label>{text}</label>
+        label = <label className="tool-btn__label">{text}</label>
     }
 
     return (
-        <button class="btn-tool" onClick={onclick}>
-            <div class="color-filter"></div>
+        <button className="tool-btn" onClick={onClick} disabled={disabled}>
+            <div className="tool-btn__curtain"></div>
             {img}
             {label}
         </button>
