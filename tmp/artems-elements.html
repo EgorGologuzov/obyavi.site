@@ -5,164 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elements</title>
-    <link rel="stylesheet" href="elements.css">
-    <link rel="stylesheet" href="display.css">
+    <link rel="stylesheet" href="egors-elements.css">
+    <link rel="stylesheet" href="artems-elements.css">
 </head>
 
 <body>
     <span class="text-small" style="align-self: center;">Тема</span>
     <input type="checkbox" id="theme-switch">
     <div id="page">
-        <div>
-            <span class="text-small">Блоки Егора</span>
-            <input type="checkbox" class="collapse-container-switch"><br>
-            <div class="collapse-container">
-                <h1>Заголовок 1</h1>
-                <h2>Заголовок 2</h2>
-                <h3>Заголовок 3</h3>
-                <h4>Заголовок 4</h4>
-                <h5>Заголовок 5</h5>
-
-                <div class="spliter"></div>
-
-                <h6 class="subcaption-1">Подзаголовок 1</h6>
-                <h6 class="subcaption-2">Подзаголовок 2</h6>
-
-                <div class="spliter"></div>
-
-                <p class="text-normal">Нормальный текст Нормальный текст Нормальный текст Нормальный текст Нормальный текст
-                    Нормальный текст Нормальный текст Нормальный текст Нормальный текст Нормальный текст Нормальный текст
-                    Нормальный текст</p>
-                <p class="text-small">Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький
-                    текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст Маленький текст
-                    Маленький текст Маленький текст Маленький текст</p>
-
-                <div class="spliter"></div>
-
-                <div class="grid-buttons">
-                    <button class="btn-primary">Text</button>
-                    <button class="btn-secondary">Text</button>
-                    <button class="btn-warning">Text</button>
-                    <button class="btn-primary" disabled>Text</button>
-                    <button class="btn-secondary" disabled>Text</button>
-                    <button class="btn-warning" disabled>Text</button>
-                </div>
-
-                <div class="spliter"></div>
-
-                <div class="tool-panel">
-                    <button class="btn-tool">
-                        <div class="color-filter"></div>
-                        <img class="icon-picture">
-                        <label>Text</label>
-                    </button>
-                    <button class="btn-tool" disabled>
-                        <div class="color-filter"></div>
-                        <img class="icon-picture">
-                        <label>Text</label>
-                    </button>
-                    <button class="btn-tool">
-                        <div class="color-filter"></div>
-                        <img class="icon-picture">
-                    </button>
-                    <button class="btn-tool" disabled>
-                        <div class="color-filter"></div>
-                        <img class="icon-picture">
-                    </button>
-                </div>
-
-                <div class="spliter"></div>
-
-                <div class="grid-inputs">
-                    <div class="input-string">
-                        <label>Label</label>
-                        <input type="text" placeholder="Placeholder">
-                        <div class="color-filter"></div>
-                        <p>Comment</p>
-                    </div>
-                    <div class="input-string">
-                        <label>Label</label>
-                        <input type="text" placeholder="Placeholder" disabled>
-                        <div class="color-filter"></div>
-                        <p>Comment</p>
-                    </div>
-                    <div class="input-string">
-                        <label>Label</label>
-                        <input class="error" type="text" placeholder="Placeholder">
-                        <div class="color-filter"></div>
-                        <p class="error">Comment</p>
-                    </div>
-                </div>
-
-                <div class="spliter"></div>
-
-                <button class="btn-secondary" onclick = "show_dialog()">Open dialog</button>
-                <div id="myModal" class="modal">
-                    <div class="modal-form">
-                        <div class="modal-header">
-                            <h4 class="modal-caption">Modal caption</h4>
-                            <img class="modal-cross icon-cross" onclick = "hide_dialog()">
-                        </div>
-                        <div class="modal-content">
-                            <div style="width: 1000px; height: 1000px; background-color: red;"></div>
-                        </div>
-                        <button class="btn-warning">Close</button>
-                    </div>
-                </div>
-
-                <div class="spliter"></div>
-
-                <div class="container">
-                    <div class="tool-panel">
-                        <div class="page-selector">
-                            <button class="btn-tool" disabled>
-                                <div class="color-filter"></div>
-                                <img class="icon-left-arrow">
-                            </button>
-                            <input type="text" value="1" class="input-string">
-                            <label class="text-small">/99</label>
-                            <button class="btn-tool">
-                                <div class="color-filter"></div>
-                                <img class="icon-right-arrow">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="container-content">
-                        <div class="list-view select-mode">
-                            <div class="card">
-                                <img class="check-mark">
-                                <div style="width: 100%; height: 100%; background-color: transparent; border-radius: 10px;"></div>
-                            </div>
-                            <div class="card">
-                                <img class="check-mark">
-                                <div style="width: 100%; height: 100%; background-color: transparent; border-radius: 10px;"></div>
-                            </div>
-                            <div class="card card-checked">
-                                <img class="check-mark">
-                                <div style="width: 100%; height: 100%; background-color: transparent; border-radius: 10px;"></div>
-                            </div>
-                            <div class="card card-checked">
-                                <img class="check-mark">
-                                <div style="width: 100%; height: 100%; background-color: transparent; border-radius: 10px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="spliter"></div>
-
-                <button id="contextBtn" class="btn-secondary">Show context menu</button>
-                <div id="myContext" class="context-menu">
-                    <button class="btn-context-menu">Text 1</button>
-                    <button class="btn-context-menu">Text 2</button>
-                    <button class="btn-context-menu">Text 3</button>
-                    <button class="btn-context-menu">Text 4</button>
-                </div>
-            </div>
-        </div>
-        <div>
-            <span class="text-small">Блоки Артема</span>
-            <input type="checkbox" class="collapse-container-switch"><br>
             <div class="collapse-container">
                 <div class="grid-inputs">
                     <div class="input-string input-text">
@@ -420,7 +270,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
     <script>
         let modal = document.getElementById('myModal');
