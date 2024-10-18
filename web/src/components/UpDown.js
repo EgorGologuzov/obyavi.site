@@ -1,5 +1,5 @@
 import ToolButton from "./ToolButton";
-import { useState, useReducer } from "react";
+import { useState } from "react";
 
 export default function UpDown({ min = 1, max = 10, value = 1, onChange }) {
     min = +min;

@@ -8,8 +8,13 @@ import Subcaption from './Subcaption';
 import Paragraf from './Paragraf';
 import ToolButton from './ToolButton';
 import ToolPanel from './ToolPanel';
+import Card from './Card';
+import ContextMenu from './ContextMenu';
+import ContextMenuButton from './ContextMenuButton';
 
 export default function EgorsContainer({ children, header }) {
+    const style = {width: "100%", height: "200px", backgroundColor: "transparent", borderRadius: "10px"};
+
     return (
         <CollapseContainer header="Блоки Егора">
             <Header level="1">Заголовок 1</Header>
@@ -71,7 +76,30 @@ export default function EgorsContainer({ children, header }) {
             <Spliter />
 
             <PagedList>
-                test
+                <Card id={0}>
+                    <div style={style}>
+                        <a href='/img/left-arrow-l.png'>Ссылка на /img/left-arrow-l.png</a>
+                    </div>
+                    <ContextMenu>
+                        <ContextMenuButton onClick={() => console.log(1)}>Text 1</ContextMenuButton>
+                        <ContextMenuButton onClick={() => console.log(2)}>Text 2</ContextMenuButton>
+                        <ContextMenuButton onClick={() => console.log(3)}>Text 3</ContextMenuButton>
+                    </ContextMenu>
+                </Card>
+                <Card id={1}>
+                  <div style={style}>Ссылка на /img/left-arrow-l.png</div>
+                    <ContextMenu>
+                        <ContextMenuButton onClick={() => console.log(1)}>Text 1</ContextMenuButton>
+                        <ContextMenuButton onClick={() => console.log(2)}>Text 2</ContextMenuButton>
+                    </ContextMenu>
+                </Card>
+                <Card id={2}>
+                    <div style={style}>Ссылка на /img/left-arrow-l.png</div>
+                    <ContextMenu>
+                        <ContextMenuButton onClick={() => console.log(1)}>Text 1</ContextMenuButton>
+                        <ContextMenuButton onClick={() => console.log(2)}>Text 2</ContextMenuButton>
+                    </ContextMenu>
+                </Card>
             </PagedList>
 
             <Spliter />

@@ -26,6 +26,7 @@
     --icon-left-arrow: url("../public/img/left-arrow-l.png");
     --icon-right-arrow: url("../public/img/right-arrow-l.png");
     --icon-check-mark: url("../public/img/check-mark-l.png");
+    --icon-three-dots: url("../public/img/three-dots-l.png");
 
     /* Theme independed icons */
     --icon-empty: url("../public/img/empty.png");
@@ -51,6 +52,7 @@
     --icon-left-arrow: url("../public/img/left-arrow-d.png");
     --icon-right-arrow: url("../public/img/right-arrow-d.png");
     --icon-check-mark: url("../public/img/check-mark-d.png");
+    --icon-three-dots: url("../public/img/three-dots-d.png");
 }
 
 .icon-picture {
@@ -71,6 +73,10 @@
 
 .icon-check-mark {
     content: var(--icon-right-arrow);
+}
+
+.icon-three-dots {
+    content: var(--icon-three-dots);
 }
 
 * {
@@ -335,6 +341,7 @@ h5 {
     flex-direction: row;
     overflow-x: auto;
     padding: 5px 0;
+    align-items: center;
 }
 
 .tool-btn {
@@ -501,7 +508,7 @@ p.error,
     border-bottom: 1px solid var(--secondary);
 }
 
-.paged-list-content {
+.paged-list__content {
     padding: 5px;
     overflow-y: auto;
 }
@@ -535,25 +542,29 @@ p.error,
 
 .card {
     width: 100%;
-    height: 250px;
     border: 1px solid var(--secondary);
     background-color: var(--fg);
     border-radius: 10px;
     position: relative;
 }
 
-.card>.check-mark {
+.card__check-mark {
     display: none;
     position: absolute;
     width: 30px;
     height: 30px;
     margin: 0;
     border: 3px solid var(--primary);
-    border-radius: 3px 0 10px 0;
+    border-radius: 6.15px 0 10px 0;
     border: none;
 }
 
-.list-view>.card:hover {
+.card__content {
+    width: 100%;
+    padding: 5px;
+}
+
+.list-view .card:hover {
     border-style: solid;
     border-width: 1px;
     border-color: var(--accent);
@@ -562,36 +573,53 @@ p.error,
     outline: none;
 }
 
-.list-view.select-mode>.card {
+.list-view_select-mode .card {
     border: 3px solid var(--primary);
 }
 
-.list-view.select-mode>.card-checked>.check-mark {
+.list-view_select-mode .card .context-menu {
+    display: none;
+}
+
+.list-view_select-mode .card_checked .card__check-mark {
     display: block;
     background-color: var(--primary);
     content: var(--icon-check-mark-dark);
 }
 
-.list-view.select-mode>.card:not(.card-checked)>.check-mark {
+.list-view_select-mode .card:not(.card_checked) .card__check-mark {
     display: block;
     border: 3px solid var(--primary);
     border-top: 0;
     border-left: 0;
     content: var(--icon-empty);
+    background-color: var(--bg);
 }
 
 .context-menu {
-    display: none;
     position: absolute;
     z-index: 2000;
-    top: 0;
-    left: 0;
+    top: 5px;
+    right: 5px;
     flex-direction: column;
+}
+
+.context-menu__toggle-btn {
+    content: var(--icon-three-dots);
+    width: 35px;
+    height: 35px;
+}
+
+.context-menu__content {
+    display: block;
+    top: 0;
+    right: 0;
     width: 250px;
+    position: absolute;
     border-bottom: 1px solid var(--secondary);
 }
 
-.btn-context-menu {
+.context-menu__btn {
     width: 100%;
     font-family: var(--inter);
     font-size: 16px;
@@ -605,8 +633,8 @@ p.error,
     height: 45px;
 }
 
-.btn-context-menu:not(:disabled):hover,
-.btn-context-menu:focus {
+.context-menu__btn:not(:disabled):hover,
+.context-menu__btn:focus {
     border: 1px solid var(--accent);
     cursor: pointer;
     outline: none;
