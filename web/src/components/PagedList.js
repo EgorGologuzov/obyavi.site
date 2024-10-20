@@ -1,24 +1,42 @@
 import UpDown from "./UpDown";
 import ToolPanel from "./ToolPanel";
 import ListView from "./ListView";
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import ToolButton from "./ToolButton";
 
-export default function PagedList({ children }) {
-    const [inSelectMode, setInSelectMode] = useState(false);
+export default function PagedList({
+        children,
+        pageMin = 1,
+        pageMax = 1,
+        pageValue = 1,
+        inSelectMode,
+        onPageValueChange,
+        onSelectModeChange 
+    }) {
+    const [listViewInSelectMode, setListViewInSelectMode] = useState(inSelectMode);
 
-    const handleModeChanged = () => {
-        setInSelectMode(!inSelectMode);
+    const handleCancelButtonClick = (event) => {
+        const newValue = false;
+        setListViewInSelectMode(newValue);
+        if (onSelectModeChange) {
+            onSelectModeChange && onSelectModeChange({value: newValue});
+        }
     }
+
+    useEffect(() => {
+        setListViewInSelectMode(inSelectMode);
+    }, [inSelectMode]);
 
     return (
         <div className="paged-list">
             <ToolPanel>
-                <input type="checkbox" onChange={handleModeChanged} value={inSelectMode}/>
-                <span>Режим выбора</span>
-                <UpDown min="1" max="10" value="2" onChange={(newValue) => console.log(newValue)} />
+                {listViewInSelectMode && (
+                    <ToolButton text="Отмена" icon="icon-cross" onClick={handleCancelButtonClick} />
+                )}
+                <UpDown min={pageMin} max={pageMax} value={pageValue} onChange={onPageValueChange} />
             </ToolPanel>
             <div className="paged-list__content">
-                <ListView desktopColumns="2" mobileColumns="1" inSelectMode={inSelectMode}>
+                <ListView desktopColumns="2" mobileColumns="1" inSelectMode={listViewInSelectMode}>
                     {children}
                 </ListView>
             </div>

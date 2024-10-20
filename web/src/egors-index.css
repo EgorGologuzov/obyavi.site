@@ -10,9 +10,11 @@
 
     /* Light theme color set */
     --primary: #3F72AF;
+    --primary-rgb: 63, 114, 175;
     --secondary: #7A7A7A;
     --light: #B1B1B1;
     --warning: #FF2E63;
+    --warning-rgb: 255, 56, 99;
     --bg: #EEEEEE;
     --bg-rgb: 238, 238, 238;
     --fg: #FFFFFF;
@@ -36,14 +38,16 @@
 #themeSwitch:checked~#root {
     /* Dark theme color set */
     --primary: #3F72AF;
+    --primary-rgb: 63, 114, 175;
     --secondary: #CACACA;
     --light: #B1B1B1;
     --warning: #FF2E63;
+    --warning-rgb: 255, 56, 99;
     --bg: #393E46;
     --bg-rgb: 57, 62, 70;
     --fg: #40464F;
     --text: #FFFFFF;
-    --text-rgb: 256, 256, 256;
+    --text-rgb: 255, 255, 255;
     --accent: #00ADB5;
 
     /* Dark theme icons */
@@ -285,26 +289,26 @@ h5 {
     border-radius: 50px;
     border: none;
     box-shadow: 5px 5px 5px 0px rgb(0, 0, 0, 30%);
-    transition-property: font-size;
-    transition-duration: 0.3s;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .btn_primary {
     background: var(--primary);
     color: white;
+    border: 1px solid var(--primary);
 }
 
 .btn_secondary {
     background: transparent;
     color: var(--text);
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--secondary);
+    border: 1px solid var(--secondary);
 }
 
 .btn_warning {
     background: var(--warning);
     color: white;
+    border: 1px solid var(--warning);
 }
 
 .btn_primary:disabled,
@@ -330,10 +334,16 @@ h5 {
     outline: none;
 }
 
-.btn_primary:not(:disabled):active,
-.btn_secondary:not(:disabled):active,
+.btn_primary:not(:disabled):active {
+    background-color: rgba(var(--primary-rgb), 0.7);
+}
+
+.btn_secondary:not(:disabled):active {
+    color: rgba(var(--text-rgb), 0.7);;
+}
+
 .btn_warning:not(:disabled):active {
-    font-size: 14px;
+    background-color: rgba(var(--warning-rgb), 0.7);
 }
 
 .tool-panel {
@@ -454,10 +464,9 @@ p.error,
 }
 
 .modal {
-    display: none;
-    flex-direction: column;
+    display: flex;
     position: fixed;
-    z-index: 1000;
+    z-index: 2000;
     padding: 10px;
     left: 0;
     top: 0;
@@ -469,35 +478,48 @@ p.error,
     justify-content: center;
 }
 
-.modal-form {
+.modal__form {
     background-color: var(--bg);
     margin: auto;
     padding: 15px;
     border-radius: 20px;
     max-width: 100%;
-    max-height: 100%;
 }
 
-.modal-header {
+.modal__header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.modal-caption {
-    margin-right: 10px;
-}
-
-.modal-cross {
+.modal__cross {
     height: 24px;
-    margin-left: auto;
+    margin-left: 10px;
     cursor: pointer;
 }
 
-.modal-content {
+.modal__content {
     margin: 10px 0;
     overflow: auto;
-    max-height: calc(100vh - 144px);
+}
+
+.modal__footer {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.modal__footer .btn {
+    width: auto;
+    margin-left: 10px;
+}
+
+@media (width < 750px) {
+    .modal__footer .btn {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
 }
 
 .paged-list {
@@ -565,9 +587,7 @@ p.error,
 }
 
 .list-view .card:hover {
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--accent);
+    border: 1px solid var(--accent);
     box-shadow: 0 0 5px 3px var(--accent);
     cursor: pointer;
     outline: none;
@@ -575,6 +595,10 @@ p.error,
 
 .list-view_select-mode .card {
     border: 3px solid var(--primary);
+}
+
+.list-view_select-mode .card:hover {
+    border: 3px solid var(--accent);
 }
 
 .list-view_select-mode .card .context-menu {
@@ -611,7 +635,7 @@ p.error,
 }
 
 .context-menu__content {
-    display: block;
+    display: none;
     top: 0;
     right: 0;
     width: 250px;
