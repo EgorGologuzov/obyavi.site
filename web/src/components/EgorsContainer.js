@@ -11,9 +11,26 @@ import ToolPanel from './ToolPanel';
 import Card from './Card';
 import ContextMenu from './ContextMenu';
 import ContextMenuButton from './ContextMenuButton';
+import React, { useState } from 'react';
+import Modal from './Modal';
+import { useNotification } from '../contexts/NotificationContext';
 
 export default function EgorsContainer({ children, header }) {
-    const style = {width: "100%", height: "200px", backgroundColor: "transparent", borderRadius: "10px"};
+    const fakeCardContentStyle = { width: "100%", height: "200px", backgroundColor: "transparent", borderRadius: "10px" };
+
+    const [pagedListInSelectMode, setPagedListInSelectMode] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [showOverflowModal, setShowOverflowModal] = useState(false);
+
+    const handleChooseButtonClick = (event) => {
+        setPagedListInSelectMode(true);
+    }
+
+    const handlePagedListSelectModeChange = (event) => {
+        !event.value && setPagedListInSelectMode(false);
+    };
+
+    const showNotification = useNotification();
 
     return (
         <CollapseContainer header="Блоки Егора">
@@ -58,13 +75,13 @@ export default function EgorsContainer({ children, header }) {
 
             <Spliter />
             <ToolPanel>
-                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")}/>
-                <ToolButton text="Текст" icon="icon-cross"/>
-                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")}/>
+                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")} />
                 <ToolButton text="Текст" icon="icon-cross" />
-                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")}/>
+                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")} />
                 <ToolButton text="Текст" icon="icon-cross" />
-                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")}/>
+                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")} />
+                <ToolButton text="Текст" icon="icon-cross" />
+                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")} />
                 <ToolButton text="Текст" icon="icon-cross" />
                 <ToolButton text="Текст" icon="img/left-arrow-l.png" />
                 <ToolButton text="Текст" icon="none" />
@@ -75,32 +92,90 @@ export default function EgorsContainer({ children, header }) {
 
             <Spliter />
 
-            <PagedList>
+            <PagedList
+                inSelectMode={pagedListInSelectMode}
+                onSelectModeChange={handlePagedListSelectModeChange}
+                pageMax="10"
+                onPageValueChange={(event) => console.log(event)}>
                 <Card id={0}>
-                    <div style={style}>
+                    <div style={fakeCardContentStyle}>
                         <a href='/img/left-arrow-l.png'>Ссылка на /img/left-arrow-l.png</a>
                     </div>
                     <ContextMenu>
-                        <ContextMenuButton onClick={() => console.log(1)}>Text 1</ContextMenuButton>
+                        <ContextMenuButton onClick={handleChooseButtonClick}>Выбрать</ContextMenuButton>
                         <ContextMenuButton onClick={() => console.log(2)}>Text 2</ContextMenuButton>
                         <ContextMenuButton onClick={() => console.log(3)}>Text 3</ContextMenuButton>
                     </ContextMenu>
                 </Card>
                 <Card id={1}>
-                  <div style={style}>Ссылка на /img/left-arrow-l.png</div>
+                    <div style={fakeCardContentStyle}>
+                        <a href='/img/left-arrow-l.png'>Ссылка на /img/left-arrow-l.png</a>
+                    </div>
                     <ContextMenu>
-                        <ContextMenuButton onClick={() => console.log(1)}>Text 1</ContextMenuButton>
+                        <ContextMenuButton onClick={handleChooseButtonClick}>Выбрать</ContextMenuButton>
                         <ContextMenuButton onClick={() => console.log(2)}>Text 2</ContextMenuButton>
                     </ContextMenu>
                 </Card>
                 <Card id={2}>
-                    <div style={style}>Ссылка на /img/left-arrow-l.png</div>
+                    <div style={fakeCardContentStyle}>
+                        <a href='/img/left-arrow-l.png'>Ссылка на /img/left-arrow-l.png</a>
+                    </div>
                     <ContextMenu>
-                        <ContextMenuButton onClick={() => console.log(1)}>Text 1</ContextMenuButton>
+                        <ContextMenuButton onClick={handleChooseButtonClick}>Выбрать</ContextMenuButton>
                         <ContextMenuButton onClick={() => console.log(2)}>Text 2</ContextMenuButton>
                     </ContextMenu>
                 </Card>
             </PagedList>
+
+            <Spliter />
+
+            <Modal
+                show={showModal}
+                onClose={() => setShowModal(false)}
+                buttons={[
+                    { color: "primary", text: "console.log(1)", onClick: () => console.log(1) }
+                ]}>
+                <div style={{ width: "100%", height: "500px", backgroundColor: "transparent" }}></div>
+            </Modal>
+
+            <Modal
+                show={showOverflowModal}
+                onClose={() => setShowOverflowModal(false)}
+                buttons={[
+                    { color: "primary", text: "console.log(1)", onClick: () => console.log(1) },
+                    { color: "secondary", text: "console.log(2)", onClick: () => console.log(2) },
+                    { color: "warning", text: "console.log(3)", onClick: () => console.log(3) }
+                ]}>
+                <div style={{ width: "1000px", height: "1000px", backgroundColor: "transparent" }}></div>
+            </Modal>
+
+            <Grid desktopColumns="2" mobileColumns="1">
+                <Button color="secondary" onClick={() => setShowModal(true)}>Модальное окно</Button>
+                <Button color="secondary" onClick={() => setShowOverflowModal(true)}>Перегруженное модальное окно</Button>
+            </Grid>
+
+            <Spliter />
+
+            <Grid desktopColumns="3" mobileColumns="1">
+                <Button color="secondary" onClick={() => 
+                    showNotification('Заголовок уведомления', 'Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления', 'common', [
+                        {text: "console.log(1)", onClick: () => console.log(1)}
+                    ])}>
+                    Показать уведомление common
+                </Button>
+                <Button color="primary" onClick={() => 
+                    showNotification('Заголовок уведомления', 'Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления', 'important', [
+                        {text: "console.log(2)", onClick: () => console.log(2)}
+                    ])}>
+                    Показать уведомление important
+                </Button>
+                <Button color="warning" onClick={() => 
+                    showNotification('Заголовок уведомления', 'Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления', 'critical', [
+                        {text: "console.log(3)", onClick: () => console.log(3)}
+                    ])}>
+                    Показать уведомление warning
+                </Button>
+            </Grid>
 
             <Spliter />
 
