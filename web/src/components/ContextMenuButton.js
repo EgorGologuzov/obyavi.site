@@ -1,6 +1,6 @@
 export default function ContextMenuButton({ children, onClick }) {
     const handleClick = (event) => {
-        onClick(event);
+        onClick && onClick(event);
         event.preventDefault();
     }
 

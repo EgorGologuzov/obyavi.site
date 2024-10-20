@@ -19,7 +19,7 @@ export default function PagedList({
         const newValue = false;
         setListViewInSelectMode(newValue);
         if (onSelectModeChange) {
-            onSelectModeChange && onSelectModeChange({value: newValue});
+            onSelectModeChange({value: newValue});
         }
     }
 

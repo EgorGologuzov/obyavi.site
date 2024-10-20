@@ -32,7 +32,7 @@ export default function UpDown({ min = 1, max = 10, value = 1, onChange }) {
         const oldValue = pastNumValue;
 
         setPastNumValue(newValue);
-        onChange({newValue: newValue, oldValue: oldValue});
+        onChange && onChange({newValue: newValue, oldValue: oldValue});
     }
 
     const handleChange = (event) => {

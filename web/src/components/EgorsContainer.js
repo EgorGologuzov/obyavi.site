@@ -13,6 +13,7 @@ import ContextMenu from './ContextMenu';
 import ContextMenuButton from './ContextMenuButton';
 import React, { useState } from 'react';
 import Modal from './Modal';
+import { useNotification } from '../contexts/NotificationContext';
 
 export default function EgorsContainer({ children, header }) {
     const fakeCardContentStyle = { width: "100%", height: "200px", backgroundColor: "transparent", borderRadius: "10px" };
@@ -28,6 +29,8 @@ export default function EgorsContainer({ children, header }) {
     const handlePagedListSelectModeChange = (event) => {
         !event.value && setPagedListInSelectMode(false);
     };
+
+    const showNotification = useNotification();
 
     return (
         <CollapseContainer header="Блоки Егора">
@@ -126,7 +129,6 @@ export default function EgorsContainer({ children, header }) {
 
             <Spliter />
 
-            <Button color="secondary" onClick={() => setShowModal(true)}>Модальное окно</Button>
             <Modal
                 show={showModal}
                 onClose={() => setShowModal(false)}
@@ -136,9 +138,6 @@ export default function EgorsContainer({ children, header }) {
                 <div style={{ width: "100%", height: "500px", backgroundColor: "transparent" }}></div>
             </Modal>
 
-            <Spliter />
-
-            <Button color="secondary" onClick={() => setShowOverflowModal(true)}>Перегруженное модальное окно</Button>
             <Modal
                 show={showOverflowModal}
                 onClose={() => setShowOverflowModal(false)}
@@ -149,6 +148,34 @@ export default function EgorsContainer({ children, header }) {
                 ]}>
                 <div style={{ width: "1000px", height: "1000px", backgroundColor: "transparent" }}></div>
             </Modal>
+
+            <Grid desktopColumns="2" mobileColumns="1">
+                <Button color="secondary" onClick={() => setShowModal(true)}>Модальное окно</Button>
+                <Button color="secondary" onClick={() => setShowOverflowModal(true)}>Перегруженное модальное окно</Button>
+            </Grid>
+
+            <Spliter />
+
+            <Grid desktopColumns="3" mobileColumns="1">
+                <Button color="secondary" onClick={() => 
+                    showNotification('Заголовок уведомления', 'Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления', 'common', [
+                        {text: "console.log(1)", onClick: () => console.log(1)}
+                    ])}>
+                    Показать уведомление common
+                </Button>
+                <Button color="primary" onClick={() => 
+                    showNotification('Заголовок уведомления', 'Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления', 'important', [
+                        {text: "console.log(2)", onClick: () => console.log(2)}
+                    ])}>
+                    Показать уведомление important
+                </Button>
+                <Button color="warning" onClick={() => 
+                    showNotification('Заголовок уведомления', 'Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления', 'critical', [
+                        {text: "console.log(3)", onClick: () => console.log(3)}
+                    ])}>
+                    Показать уведомление warning
+                </Button>
+            </Grid>
 
             <Spliter />
 

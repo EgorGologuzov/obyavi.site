@@ -5,25 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Try</title>
     <style>
-      
+        h3, span, p {
+            margin: 0;
+        }
+
+
+        .popup {
+            display: grid;
+            grid-template-columns: auto 100px;
+            grid-auto-rows: auto;
+            background-color: white;
+            border: 1px solid lightgrey;
+            border-radius: 15px;
+            width: 500px;
+        }
+
+        .popup__content {
+            padding: 10px;
+        }
+
+        .popup__icon {
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+
+        }
+
     </style>
 </head>
 <body>
 
-<div class="star-rating">
-    <div class="list-view">
-        <div class="something">
-            <div class="panel">
-                <input class="switchSelectMode" type="checkbox">
-            </div>
+    <div class="popup popup_common">
+        <div class="popup__content">
+            <h3>Header</h3>
+            <p class="text text_small">
+                {notification.text} {notification.text} {notification.text} {notification.text} {notification.text}
+            </p>
+            <span class="text text_small action">Action</span>
+            <span class="text text_small dismiss">Dismiss</span>
         </div>
-        <div class="something">
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
+        <div class="popup__icon">
+            <span>!!!</span>
         </div>
     </div>
-</div>
 
 </body>
 </html>
