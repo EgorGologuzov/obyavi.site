@@ -7,7 +7,9 @@ export default function ContextMenu({ children }) {
     const [isContentVisible, setIsContentVisible] = useState(false); 
 
     const handleWindowClick = (event) => {
-        setIsContentVisible(!isContentVisible && isPointInRect(event.clientX, event.clientY, menuRef.current.getBoundingClientRect()));
+        if (!isContentVisible && !isPointInRect(event.clientX, event.clientY, menuRef.current.getBoundingClientRect())) {
+            setIsContentVisible(false);
+        }
     }
 
     useEffect(() => {
@@ -20,7 +22,7 @@ export default function ContextMenu({ children }) {
 
     return (
         <div ref={menuRef} className="context-menu">
-            <ToolButton icon="icon-three-dots"/>
+            <ToolButton icon="icon-three-dots" onClick={() => setIsContentVisible(true)}/>
             <div className="context-menu__content" style={{display: isContentVisible ? "block" : "none"}}>
                 {children}
             </div>

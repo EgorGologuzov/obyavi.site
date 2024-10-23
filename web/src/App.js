@@ -1,11 +1,15 @@
 import EgorsContainer from './components/EgorsContainer';
 import ArtemsContainer from './components/ArtemsContainer';
+import NotificationList from './components/NotificationList';
+import Modal from './components/Modal';
 
 function App() {
     return (
         <>
-            <EgorsContainer></EgorsContainer>
-            <ArtemsContainer></ArtemsContainer>
+            <EgorsContainer />
+            <ArtemsContainer />
+            <NotificationList />
+            <Modal />
         </>
     );
 }

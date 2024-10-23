@@ -1,33 +1,33 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import Grid from "./Grid";
+import { useListContext } from '../contexts/ListContext';
 
-export default function ListView({ children, desktopColumns = "2", mobileColumns = "1", inSelectMode }) {
-    const [selectedCards, setSelectedCards] = useState(new Set());
-    const listView = useRef(null);
+export default function ListView({ children, desktopColumns = "2", mobileColumns = "1" }) {
+    const listContext = useListContext();
 
-    const handleCardClick = (id, event) => {
-        if (listView.current.classList.contains('list-view_select-mode')) {
-            event.preventDefault();
+    const handleCardClick = (cardId, event) => {
+        if (!listContext.selectMode) {
+            return;
+        }
 
-            const newSelectedCards = new Set(selectedCards);
-            if (newSelectedCards.has(id)) {
-                newSelectedCards.delete(id);
-            } else {
-                newSelectedCards.add(id);
-            }
-            setSelectedCards(newSelectedCards);
+        event.preventDefault();
+
+        if (listContext.selectedCards.has(cardId)) {
+            listContext.deleteSelectedCards(cardId);
+        } else {
+            listContext.addSelectedCards(cardId);
         }
     };
 
     return (
-        <div ref={listView} className={inSelectMode ? "list-view list-view_select-mode" : "list-view"}>
+        <div className={listContext.selectMode ? "list-view list-view_select-mode" : "list-view"}>
             <Grid desktopColumns={desktopColumns} mobileColumns={mobileColumns}>
                 {React.Children.map(children, (child) => {
                     if (React.isValidElement(child)) {
                         const cardId = child.props.id;
                         return React.cloneElement(child, {
                             onClick: (event) => handleCardClick(cardId, event),
-                            isChecked: selectedCards.has(cardId)
+                            isChecked: listContext.selectedCards.has(cardId)
                         });
                     }
                     return child;
