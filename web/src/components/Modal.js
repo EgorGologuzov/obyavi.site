@@ -2,9 +2,11 @@ import Button from "./Button";
 import Header from "./Header";
 import React, { useRef, useEffect } from 'react';
 import { isPointInRect } from "../utils/utils";
+import { useAppContext } from '../contexts/AppContext';
 
-export default function Modal({ children, show, buttons, onClose }) {
+export default function Modal() {
     const modalFormRef = useRef(null);
+    const appContext = useAppContext();
 
     const handleWindowClick = (event) => {
         if (!modalFormRef.current) {
@@ -12,36 +14,19 @@ export default function Modal({ children, show, buttons, onClose }) {
         }
 
         if (!isPointInRect(event.clientX, event.clientY, modalFormRef.current.getBoundingClientRect())) {
-            onClose && onClose();
+            appContext.hideModal();
         }
     }
 
-    useEffect(() => {
-        window.addEventListener("click", handleWindowClick);
-        return () => {
-            window.removeEventListener("click", handleWindowClick);
-        }
-    }, [])
-
-    return show && (
-        <div className="modal">
+    return appContext.modalShow && (
+        <div className="modal" onClick={handleWindowClick}>
             <div ref={modalFormRef} className="modal__form">
                 <div className="modal__header">
-                    <Header level="4">Заголовок модального окна</Header>
-                    <img className="modal__cross icon-cross" onClick={onClose} />
+                    <Header level="4">{appContext.modalCaption}</Header>
+                    <img className="modal__cross icon-cross" onClick={() => appContext.hideModal()} />
                 </div>
                 <div className="modal__content">
-                    {children}
-                </div>
-                <div className="modal__footer">
-                    {buttons && buttons.map((button, index) => (
-                        <Button
-                            key={index}
-                            color={button.color}
-                            onClick={button.onClick}>
-                            {button.text}
-                        </Button>
-                    ))}
+                    {appContext.modalChildren}
                 </div>
             </div>
         </div>

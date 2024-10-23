@@ -17,7 +17,7 @@ export default function ToolPanel({ children }) {
     };
 
     useEffect(() => {
-        const intervalId = setInterval(checkOverflow, 1000);
+        const intervalId = setInterval(checkOverflow, 500);
         return () => {
             clearInterval(intervalId);
         };
