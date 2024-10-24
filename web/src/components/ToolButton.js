@@ -3,9 +3,9 @@ export default function ToolButton({ text, icon = "icon-picture", disabled = fal
     let label;
 
     if (typeof icon === "string" && icon.startsWith("icon")) {
-        img = <img className={`tool-btn__icon ${icon}`} />
+        img = <img className={`tool-btn__icon ${icon}`} alt=""/>
     } else {
-        img = <img className="tool-btn__icon" src={icon}/>
+        img = <img className="tool-btn__icon" src={icon} alt=""/>
     }
 
     if (text) {

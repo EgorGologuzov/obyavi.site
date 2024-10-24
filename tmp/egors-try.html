@@ -3,56 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Rating System</title>
+    <title>Try</title>
     <style>
-        .star-rating {
-            display: inline-block; /* Use flexbox for layout */
-            direction:rtl;
-            background:gray;
-            justify-content: stretch;
-            border-radius: 60px;
-            padding:10px 15px 10px 10px;
+        h3, span, p {
+            margin: 0;
         }
 
-        .star-rating input {
-            display: none; /* Hide radio buttons */
+
+        .popup {
+            display: grid;
+            grid-template-columns: auto 100px;
+            grid-auto-rows: auto;
+            background-color: white;
+            border: 1px solid lightgrey;
+            border-radius: 15px;
+            width: 500px;
         }
 
-        .star {
-            font-size: 30px; /* Size of stars */
-            color: #ccc; /* Default star color */
-            cursor: pointer; /* Pointer cursor on hover */
-            content: url("../web/public/img/star.png");
+        .popup__content {
+            padding: 10px;
         }
 
-        .star:hover,
-        .star:hover ~ .star {
-            content:url("../web/public/img/star-filled.png");
+        .popup__icon {
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+
         }
 
-        .star-rating input:checked ~ .star {
-            content:url("../web/public/img/star-filled.png");
-        }
     </style>
 </head>
 <body>
 
-<div class="star-rating">
-    <input type="radio" name="rating" id="star1" value="5" />
-    <label for="star1" class="star">&#9733;</label>
-    
-    <input type="radio" name="rating" id="star2" value="4" />
-    <label for="star2" class="star">&#9733;</label>
-    
-    <input type="radio" name="rating" id="star3" value="3" />
-    <label for="star3" class="star">&#9733;</label>
-    
-    <input type="radio" name="rating" id="star4" value="2" />
-    <label for="star4" class="star">&#9733;</label>
-    
-    <input type="radio" name="rating" id="star5" value="1" />
-    <label for="star5" class="star">&#9733;</label>
-</div>
+    <div class="popup popup_common">
+        <div class="popup__content">
+            <h3>Header</h3>
+            <p class="text text_small">
+                {notification.text} {notification.text} {notification.text} {notification.text} {notification.text}
+            </p>
+            <span class="text text_small action">Action</span>
+            <span class="text text_small dismiss">Dismiss</span>
+        </div>
+        <div class="popup__icon">
+            <span>!!!</span>
+        </div>
+    </div>
 
 </body>
 </html>

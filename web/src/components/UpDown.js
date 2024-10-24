@@ -1,5 +1,5 @@
 import ToolButton from "./ToolButton";
-import { useState, useReducer } from "react";
+import { useState } from "react";
 
 export default function UpDown({ min = 1, max = 10, value = 1, onChange }) {
     min = +min;
@@ -19,7 +19,7 @@ export default function UpDown({ min = 1, max = 10, value = 1, onChange }) {
     const checkCorrectAndSetNumValue = (value) => {
         value = Number(value);
 
-        let newValue = value < min ? min
+        const newValue = value < min ? min
             : value > max ? max
             : value;
 
@@ -29,8 +29,10 @@ export default function UpDown({ min = 1, max = 10, value = 1, onChange }) {
             return;
         }
 
+        const oldValue = pastNumValue;
+
         setPastNumValue(newValue);
-        onChange(newValue);
+        onChange && onChange({newValue: newValue, oldValue: oldValue});
     }
 
     const handleChange = (event) => {
