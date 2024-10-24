@@ -401,20 +401,6 @@ h5 {
     outline: none;
 }
 
-.input-string {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.input-string>label {
-    font-weight: var(--medium);
-    font-size: 12px;
-    color: var(--text);
-    padding-bottom: 3px;
-}
-
-.input-string>input,
 .up-down__input {
     font-family: var(--inter);
     height: 30px;
@@ -427,40 +413,16 @@ h5 {
     border-bottom: 1px solid var(--text);
 }
 
-.input-string>input:focus,
 .up-down__input:focus {
     outline: none;
     border-bottom: 2px solid var(--accent);
 }
 
-.input-string>p {
-    font-weight: var(--medium);
-    font-size: 11px;
-    color: var(--secondary);
-    margin: 0;
-}
-
-.input-string>input:focus~p {
-    color: var(--accent);
-}
-
-.input-string>input:disabled~div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(var(--bg-rgb), 0.7);
-}
-
-input.error,
-.input-string>input.error:focus {
+input.error {
     border-bottom: 2px solid var(--warning);
 }
 
-p.error,
-.input-string>input.error:focus~p {
+p.error {
     color: var(--warning);
 }
 
