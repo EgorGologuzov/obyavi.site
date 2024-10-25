@@ -401,20 +401,6 @@ h5 {
     outline: none;
 }
 
-.input-string {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.input-string>label {
-    font-weight: var(--medium);
-    font-size: 12px;
-    color: var(--text);
-    padding-bottom: 3px;
-}
-
-.input-string>input,
 .up-down__input {
     font-family: var(--inter);
     height: 30px;
@@ -427,40 +413,16 @@ h5 {
     border-bottom: 1px solid var(--text);
 }
 
-.input-string>input:focus,
 .up-down__input:focus {
     outline: none;
     border-bottom: 2px solid var(--accent);
 }
 
-.input-string>p {
-    font-weight: var(--medium);
-    font-size: 11px;
-    color: var(--secondary);
-    margin: 0;
-}
-
-.input-string>input:focus~p {
-    color: var(--accent);
-}
-
-.input-string>input:disabled~div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(var(--bg-rgb), 0.7);
-}
-
-input.error,
-.input-string>input.error:focus {
+input.error {
     border-bottom: 2px solid var(--warning);
 }
 
-p.error,
-.input-string>input.error:focus~p {
+p.error {
     color: var(--warning);
 }
 
@@ -502,10 +464,12 @@ p.error,
 .modal__content {
     margin: 10px 0 0 0;
     overflow: auto;
+    position: relative;
+    overflow: visible;
 }
 
 .modal__footer {
-    padding: 15px 0 5px 0;
+    padding: 10px 0 0 0;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
@@ -515,16 +479,16 @@ p.error,
 
 .modal__footer .btn {
     width: auto;
-    margin: 0 5px 0 5px;
+    margin: 0 0 0 10px;
 }
 
 @media (width < 750px) {
     .modal__footer {
-        padding: 0 0 5px 0;
+        padding: 0;
     }
     .modal__footer .btn {
         width: 100%;
-        margin: 10px 5px 0 5px;
+        margin: 10px 0 0 0;
     }
 }
 

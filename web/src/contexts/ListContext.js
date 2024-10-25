@@ -6,7 +6,7 @@ export function useListContext() {
     return useContext(ListContext);
 };
 
-export function ListContextProvider({ children, onContextChanged }) {
+export function useNewListContext() {
     const [selectMode, setSelectMode] = useState(false);
     const [selectedCards, setSelectedCards] = useState(new Set());
 
@@ -31,7 +31,9 @@ export function ListContextProvider({ children, onContextChanged }) {
         setSelectedCards
     }
 
-    onContextChanged({newValue: contextValue});
+    return contextValue;
+}
 
-    return (<ListContext.Provider value={contextValue}>{children}</ListContext.Provider>);
+export function ListContextProvider({ children, value }) {
+    return (<ListContext.Provider value={value}>{children}</ListContext.Provider>);
 };

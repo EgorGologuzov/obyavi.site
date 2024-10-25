@@ -14,7 +14,7 @@ import ContextMenuButton from './ContextMenuButton';
 import React, { useState } from 'react';
 import ModalFooter from './ModalFooter';
 import { useAppContext } from '../contexts/AppContext';
-import { ListContextProvider } from '../contexts/ListContext';
+import { useNewListContext, ListContextProvider } from '../contexts/ListContext';
 
 const ContentInsideModalExample = () => {
     const [inputs, setInputs] = useState({});
@@ -31,18 +31,20 @@ const ContentInsideModalExample = () => {
     }
 
     return (
-        <form>
-            <label>Enter your name:
-                <input type="text" name="username" value={inputs.username || ""} onChange={handleChange} />
-            </label>
-            <label>Enter your age:
-                <input type="number" name="age" value={inputs.age || ""} onChange={handleChange} />
-            </label>
+        <>
+            <form>
+                <label>Enter your name:
+                    <input type="text" name="username" value={inputs.username || ""} onChange={handleChange} />
+                </label>
+                <label>Enter your age:
+                    <input type="number" name="age" value={inputs.age || ""} onChange={handleChange} />
+                </label>
+            </form>
             <ModalFooter>
                 <Button onClick={handleClick}>console.log</Button>
                 <Button onClick={handleClick}>console.log</Button>
             </ModalFooter>
-        </form>
+        </>
     )
 }
 
@@ -54,18 +56,14 @@ const CardFakeContent = () => {
     )
 }
 
-export default function EgorsContainer({ children, header }) {
+export default function EgorsContainer() {
     const appContext = useAppContext();
 
-    const listContext = {}; // не использовать useState для хранения контекста, получаемого из события onContextChange
+    const listContext = useNewListContext();
 
     const handleChooseButtonClick = (event, cardId) => {
-        listContext.value.setSelectMode(true);
-        listContext.value.setSelectedCards(new Set([cardId]));
-    }
-
-    const handleListContextChanged = (event) => {
-        listContext.value = event.newValue; // обязательно фиксируем изменение контекста
+        listContext.setSelectMode(true);
+        listContext.setSelectedCards(new Set([cardId]));
     }
 
     return (
@@ -128,7 +126,7 @@ export default function EgorsContainer({ children, header }) {
 
             <Spliter />
 
-            <ListContextProvider onContextChanged={handleListContextChanged}>
+            <ListContextProvider value={listContext}>
                 <PagedList
                     pageMax="10"
                     onPageValueChange={(event) => console.log(event)}
@@ -142,7 +140,7 @@ export default function EgorsContainer({ children, header }) {
                         <CardFakeContent />
                         <ContextMenu>
                             <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 0)} />
-                            <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext.value.selectedCards)} />
+                            <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext.selectedCards)} />
                             <ContextMenuButton text="console.log(2)" onClick={() => console.log(2)} />
                         </ContextMenu>
                     </Card>
