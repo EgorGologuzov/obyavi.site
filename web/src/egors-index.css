@@ -464,10 +464,12 @@ p.error {
 .modal__content {
     margin: 10px 0 0 0;
     overflow: auto;
+    position: relative;
+    overflow: visible;
 }
 
 .modal__footer {
-    padding: 15px 0 5px 0;
+    padding: 10px 0 0 0;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
@@ -477,16 +479,16 @@ p.error {
 
 .modal__footer .btn {
     width: auto;
-    margin: 0 5px 0 5px;
+    margin: 0 0 0 10px;
 }
 
 @media (width < 750px) {
     .modal__footer {
-        padding: 0 0 5px 0;
+        padding: 0;
     }
     .modal__footer .btn {
         width: 100%;
-        margin: 10px 5px 0 5px;
+        margin: 10px 0 0 0;
     }
 }
 

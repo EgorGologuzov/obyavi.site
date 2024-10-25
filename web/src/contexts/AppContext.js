@@ -30,7 +30,7 @@ export function AppContextProvider({ children }) {
         });
 
         setTimeout(() => {
-            setNotifications((prev) => prev.filter((notification) => notification.key !== key)); // Удаляем это уведомление через 10 секунд
+            removeNotification(key); // Удаляем это уведомление через 10 секунд
         }, 10000);
     };
 
