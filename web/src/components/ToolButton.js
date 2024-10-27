@@ -3,7 +3,7 @@ export default function ToolButton({ text, icon = "icon-picture", disabled = fal
     let label;
 
     if (typeof icon === "string" && icon.startsWith("icon")) {
-        img = <img className={`tool-btn__icon ${icon}`} alt=""/>
+        img = <img className={`tool-btn__icon`} style={{content: `var(--${icon})`}} alt=""/>
     } else {
         img = <img className="tool-btn__icon" src={icon} alt=""/>
     }

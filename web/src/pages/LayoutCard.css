@@ -1,0 +1,7 @@
+.layout-card {
+    height: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    max-width: 1200px;
+}
