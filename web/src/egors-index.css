@@ -22,15 +22,30 @@
     --text-rgb: 0, 0, 0;
     --accent: #00ADB5;
 
-    /* Light theme icons */
+    /* Light theme images */
+    --logo-with-subcaption: url("../public/img/logo-with-supcaption-l.png");
+
     --icon-picture: url("../public/img/picture-l.png");
     --icon-cross: url("../public/img/cross-l.png");
     --icon-left-arrow: url("../public/img/left-arrow-l.png");
     --icon-right-arrow: url("../public/img/right-arrow-l.png");
     --icon-check-mark: url("../public/img/check-mark-l.png");
     --icon-three-dots: url("../public/img/three-dots-l.png");
+    --icon-menu: url("../public/img/menu-l.png");
+    --icon-ad: url("../public/img/ad-l.png");
+    --icon-complaint: url("../public/img/complaint-l.png");
+    --icon-exit: url("../public/img/exit-l.png");
+    --icon-heart: url("../public/img/heart-l.png");
+    --icon-heart-filled: url("../public/img/heart-filled-l.png");
+    --icon-human: url("../public/img/human-l.png");
+    --icon-message: url("../public/img/message-l.png");
+    --icon-search: url("../public/img/search-l.png");
+    --icon-settings: url("../public/img/settings-l.png");
+    --icon-sun: url("../public/img/sun-l.png");
+    --icon-violation: url("../public/img/violation-l.png");
+    --icon-avatar-placeholder: url("../public/img/avatar-placeholder-l.png");
 
-    /* Theme independed icons */
+    /* Theme independed images */
     --icon-empty: url("../public/img/empty.png");
     --icon-check-mark-dark: url("../public/img/check-mark-d.png");
 }
@@ -50,37 +65,32 @@
     --text-rgb: 255, 255, 255;
     --accent: #00ADB5;
 
-    /* Dark theme icons */
+    /* Dark theme images */
+    --logo-with-subcaption: url("../public/img/logo-with-supcaption-d.png");
+
     --icon-picture: url("../public/img/picture-d.png");
     --icon-cross: url("../public/img/cross-d.png");
     --icon-left-arrow: url("../public/img/left-arrow-d.png");
     --icon-right-arrow: url("../public/img/right-arrow-d.png");
     --icon-check-mark: url("../public/img/check-mark-d.png");
     --icon-three-dots: url("../public/img/three-dots-d.png");
+    --icon-menu: url("../public/img/menu-d.png");
+    --icon-ad: url("../public/img/ad-d.png");
+    --icon-complaint: url("../public/img/complaint-d.png");
+    --icon-exit: url("../public/img/exit-d.png");
+    --icon-heart: url("../public/img/heart-d.png");
+    --icon-heart-filled: url("../public/img/heart-filled-d.png");
+    --icon-human: url("../public/img/human-d.png");
+    --icon-message: url("../public/img/message-d.png");
+    --icon-search: url("../public/img/search-d.png");
+    --icon-settings: url("../public/img/settings-d.png");
+    --icon-sun: url("../public/img/sun-d.png");
+    --icon-violation: url("../public/img/violation-d.png");
+    --icon-avatar-placeholder: url("../public/img/avatar-placeholder-d.png");
 }
 
-.icon-picture {
-    content: var(--icon-picture);
-}
-
-.icon-cross {
-    content: var(--icon-cross);
-}
-
-.icon-left-arrow {
-    content: var(--icon-left-arrow);
-}
-
-.icon-right-arrow {
-    content: var(--icon-right-arrow);
-}
-
-.icon-check-mark {
-    content: var(--icon-right-arrow);
-}
-
-.icon-three-dots {
-    content: var(--icon-three-dots);
+#themeSwitch {
+    display: none;
 }
 
 * {
@@ -108,7 +118,6 @@ body {
     flex: 1;
     background-color: var(--bg);
     overflow-y: auto;
-    padding: 10px;
 }
 
 .grid-container {

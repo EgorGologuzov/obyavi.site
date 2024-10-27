@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useUserService } from '../data/UserService';
 
 let notificationId = 1;
 
@@ -8,11 +9,28 @@ export function useAppContext() {
     return useContext(AppContext);
 };
 
+const readUserFromLocalStorage = () => {
+    const user = localStorage.getItem("loginedUser");
+    return user ? JSON.parse(user) : null;
+}
+
+const writeUserToLocalStorage = (user) => {
+    localStorage.setItem("loginedUser", JSON.stringify(user));
+}
+
+const setThemeSwitch = (value) => {
+    document.getElementById("themeSwitch").checked = value;
+}
+
 export function AppContextProvider({ children }) {
     const [notifications, setNotifications] = useState([]);
     const [modalCaption, setModalCaption] = useState("");
     const [modalChildren, setModalChildren] = useState(<div></div>);
     const [modalShow, setModalShow] = useState(false);
+    const [loginedUser, setLoginedUser] = useState(() => readUserFromLocalStorage());
+    const [theme, setTheme] = useState(() => readUserFromLocalStorage()?.theme ?? "light");
+
+    const userService = useUserService();
 
     const showNotification = (caption, text, level, buttons) => {
         const key = "notification-" + notificationId;
@@ -48,6 +66,32 @@ export function AppContextProvider({ children }) {
         setModalShow(false);
     }
 
+    const signIn = (login, password) => {
+        return userService.signIn(login, password)
+            .then((user) => {
+                setLoginedUser(user);
+                writeUserToLocalStorage(user);
+                user.theme && setTheme(user.theme);
+            });
+    }
+
+    const signOut = () => {
+        setLoginedUser(undefined);
+        localStorage.removeItem("loginedUser");
+    }
+
+    const changeTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+        setThemeSwitch(newTheme === "dark");
+        loginedUser.theme = newTheme;
+        writeUserToLocalStorage(loginedUser);
+    }
+
+    useEffect(() => {
+        setThemeSwitch(theme === "dark");
+    }, [theme]);
+
     const contextValue = {
         notifications,
         showNotification,
@@ -56,7 +100,12 @@ export function AppContextProvider({ children }) {
         modalChildren,
         modalShow,
         showModal,
-        hideModal
+        hideModal,
+        loginedUser,
+        signIn,
+        signOut,
+        theme,
+        changeTheme
     }
 
     return (
