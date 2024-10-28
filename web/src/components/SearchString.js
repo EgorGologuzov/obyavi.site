@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
 
-export default function SearchString({data}) {
-    const [query, setQuery] = useState('');
+export default function SearchString({
+    hints,
+    inputValue='13',
+    id,
+    name,
+    onSearch,
+    placeholder='Placeholder',
+    onChange}) {
     const [results, setResults] = useState([]);
     let input;
     let button;
 
-    const handleChange = (e) => {
-        const value = e.target.value;
-        setQuery(value);
-        if (value) {
-            const filteredResults = data.filter(item =>
-                item.toLowerCase().includes(value.toLowerCase())
+    const handleChange = (oldValue,newValue) => {
+        if(onChange){
+            onChange(oldValue,newValue);
+        }
+        if (newValue) {
+            const filteredResults = hints.filter(item =>
+                item.toLowerCase().includes(newValue.toLowerCase())
             );
             setResults(filteredResults);
         } else {
@@ -19,18 +26,22 @@ export default function SearchString({data}) {
         }
     };
 
+    const handleSearch=(value)=>{
+        onSearch(value);
+    }
+
     const handleSelect = (result) => {
-        setQuery(result);
+        onChange(inputValue,result);
         setResults([]);
     };
 
     if (results.length>0){
-        input=<input className="search-string_search-bar_input" type="text" placeholder="Search.." value={query} onChange={handleChange} style={{borderBottomRightRadius:"0px",borderBottomLeftRadius:"0px",borderBottom:"1px solid var(--secondary)"}}/>
-        button=<button className="search-string_search-bar_button" style={{borderBottomRightRadius:'0px'}}/>
+        input=<input className="search-string_search-bar_input" type="text" placeholder={placeholder} value={inputValue} onChange={(e)=>handleChange(inputValue,e.target.value)} id={id} name={name} style={{borderBottomRightRadius:"0px",borderBottomLeftRadius:"0px",borderBottom:"1px solid var(--secondary)"}}/>
+        button=<button className="search-string_search-bar_button" style={{borderBottomRightRadius:'0px'}} onClick={(e)=>handleSearch(e.target.value)}/>
     }
     else{
-        input=<input className="search-string_search-bar_input" type="text" placeholder="Search.." value={query} onChange={handleChange}/>
-        button=<button className="search-string_search-bar_button"/>
+        input=<input className="search-string_search-bar_input" type="text" placeholder={placeholder} value={inputValue} onChange={(e)=>handleChange(inputValue,e.target.value)} id={id} name={name}/>
+        button=<button className="search-string_search-bar_button" onClick={(e)=>handleSearch(e.target.value)}/>
     }
 
     return (
@@ -49,7 +60,7 @@ export default function SearchString({data}) {
                         </li>
                     ))}
                 </ul>
-            )}
+        )}
     </div>
     );
 }
