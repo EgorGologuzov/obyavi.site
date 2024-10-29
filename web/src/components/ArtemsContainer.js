@@ -19,7 +19,7 @@ import Card from './Card';
 import ContextMenu from './ContextMenu';
 import ContextMenuButton from './ContextMenuButton';
 import { useAppContext } from '../contexts/AppContext';
-import { ListContextProvider,useListContext } from '../contexts/ListContext';
+import { ListContextProvider,useNewListContext } from '../contexts/ListContext';
 
 const CardFakeContent = () => {
     return (
@@ -35,12 +35,8 @@ export default function ArtemsContainer({ children, header }) {
     const listContext = useNewListContext(); // не использовать useState для хранения контекста, получаемого из события onContextChange
 
     const handleChooseButtonClick = (event, cardId) => {
-        listContext.value.setSelectMode(true);
-        listContext.value.setSelectedCards(new Set([cardId]));
-    }
-
-    const handleListContextChanged = (event) => {
-        listContext.value = event.newValue; // обязательно фиксируем изменение контекста
+        listContext.setSelectMode(true);
+        listContext.setSelectedCards(new Set([cardId]));
     }
 
     const searchSamples = ['best coffee shops near me', 'how to learn Python programming', 'top tourist attractions in Paris', 'healthy dinner recipes', 'latest smartphone reviews', 'how to start a blog', 'tips for improving public speaking', 'best books of 2024', 'how to meditate for beginners', 'DIY home improvement projects', 'fun activities for kids at home', 'best workout routines for weight loss', 'how to save money on groceries', 'upcoming movies in theaters', 'top 10 travel destinations in Asia', 'how to improve your credit score', 'best online courses for career development', 'easy gardening tips for beginners', 'how to create a budget plan', 'best practices for remote work', 'ways to boost your immune system', 'how to make homemade pizza', 'tips for effective time management']
@@ -114,10 +110,6 @@ export default function ArtemsContainer({ children, header }) {
             <Spliter/>
             <StarsBar input_mode value={starRating} onChange={handleStarChange}/>
             <Spliter/>
-            <ScrollingList>
-                <p>Text Text Text</p>
-                <p>Text Text Text</p>
-            </ScrollingList>
             <Spliter/>
             <InputString required={true} label='Label' comment='Comment' value={inputString} onChange={(e)=>handleInputChange(e,inputString,setInputString)}/>
             <Spliter/>
@@ -136,7 +128,7 @@ export default function ArtemsContainer({ children, header }) {
             </div>
             <Spliter/>
 
-            <ListContextProvider onContextChanged={handleListContextChanged} value={listContext}>
+            <ListContextProvider value={listContext}>
                 <ScrollingList
                     tools={
                         <ToolButton icon="icon-picture" text="console.log(2)" onClick={() => console.log(2)} />
