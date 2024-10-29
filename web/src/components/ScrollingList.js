@@ -25,7 +25,7 @@ export default function ScrollingList({
                 )}
                 
             </ToolPanel>
-            <div className="scrolling-list__content">
+            <div className="scrolling-list__content" style={{maxHeight:'450px'}}>
                 <ListView desktopColumns="2" mobileColumns="1" >
                     {children}
                 </ListView>

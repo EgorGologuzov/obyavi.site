@@ -19,7 +19,8 @@ import Card from './Card';
 import ContextMenu from './ContextMenu';
 import ContextMenuButton from './ContextMenuButton';
 import { useAppContext } from '../contexts/AppContext';
-import { ListContextProvider,useListContext } from '../contexts/ListContext';
+import { ListContextProvider,useNewListContext } from '../contexts/ListContext';
+import Carousel from './Carousel';
 
 const CardFakeContent = () => {
     return (
@@ -166,8 +167,56 @@ export default function ArtemsContainer({ children, header }) {
                             <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
                         </ContextMenu>
                     </Card>
+                    <Card id={3}>
+                        <CardFakeContent />
+                        <ContextMenu>
+                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
+                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
+                        </ContextMenu>
+                    </Card>
+                    <Card id={4}>
+                        <CardFakeContent />
+                        <ContextMenu>
+                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
+                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
+                        </ContextMenu>
+                    </Card>
+                    <Card id={5}>
+                        <CardFakeContent />
+                        <ContextMenu>
+                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
+                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
+                        </ContextMenu>
+                    </Card>
+                    <Card id={6}>
+                        <CardFakeContent />
+                        <ContextMenu>
+                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
+                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
+                        </ContextMenu>
+                    </Card>
                 </ScrollingList>
             </ListContextProvider>
+            <Spliter/>
+            <Carousel
+            tools={
+                <>
+                    <ToolButton icon="icon-picture" text="console.log(2)" onClick={() => console.log(2)} />
+                    <ToolButton icon="icon-picture" text="console.log(2)" onClick={() => console.log(50)} />
+                </>
+            }
+            pageMax={10}
+            pageMin={1}
+            onPageValueChange={()=>console.log('Carousel')}> 
+            <Card id={99}>
+                        <CardFakeContent />
+                        <ContextMenu>
+                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 0)} />
+                            <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext.value.selectedCards)} />
+                            <ContextMenuButton text="console.log(2)" onClick={() => console.log(2)} />
+                        </ContextMenu>
+                    </Card>
+            </Carousel>
         </CollapseContainer>
     );
 }
