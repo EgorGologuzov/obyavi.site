@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
 import Star from './Star';
 
-const StarsBar = ({input_mode=true,id='stars-bar_1',name='stars-bar_name',value=0}) => {
-    const [rating, setRating] = useState(value);
-
-    const handleClick = (index) => {
-        setRating(index);
-    };
-
+const StarsBar = ({input_mode=false,onChange,value=0}) => {
+    const handleChange=(oldValue,newValue)=>{
+        onChange(oldValue,newValue);
+    }
     return (
-        <div className={`stars-bar ${input_mode?'':'input-off'}`} id={id}>
+        <div className={`stars-bar ${input_mode?'':'input-off'}`}>
             {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} onClick={()=>handleClick(star)} className={`stars-bar_star${star<=rating?'-filled':''}`}/>
+                <Star key={star} onClick={()=>handleChange(value,star)} className={`stars-bar_star${star<=value?'-filled':''}`}/>
             ))}
         </div>
     );
