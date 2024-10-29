@@ -1,20 +1,35 @@
-import ToolPanel from './ToolPanel';
-import ToolButton from './ToolButton';
+import ToolPanel from "./ToolPanel";
+import ListView from "./ListView";
+import ToolButton from "./ToolButton";
+import { useListContext } from "../contexts/ListContext";
 
-const ScrollingList = ({children}) => {
+export default function ScrollingList({
+    children,
+    tools,
+    toolsForSelectedMode}){
+    const listContext = useListContext();
+
     return ( 
         <div class="scrolling-list">
             <ToolPanel>
-                <ToolButton text="Текст" icon="icon-picture" onClick={() => alert("Hello")}/>
-                <ToolButton text="Текст" icon="icon-cross"/>
+                {listContext.selectMode && (
+                    <>
+                    {toolsForSelectedMode}
+                    <ToolButton text="Отмена" icon="icon-cross" onClick={() => {listContext.setSelectMode(false)}}/>
+                    </>
+                )}
+                {!listContext.selectMode && (
+                    <>
+                    {tools}
+                    </>
+                )}
+                
             </ToolPanel>
-            <div class="content">
-                <div>
+            <div className="scrolling-list__content">
+                <ListView desktopColumns="2" mobileColumns="1" >
                     {children}
-                </div>
+                </ListView>
             </div>
         </div>
     );
 }
- 
-export default ScrollingList;
