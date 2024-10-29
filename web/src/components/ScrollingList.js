@@ -10,7 +10,7 @@ export default function ScrollingList({
     const listContext = useListContext();
 
     return ( 
-        <div class="scrolling-list">
+        <div className="scrolling-list">
             <ToolPanel>
                 {listContext.selectMode && (
                     <>
@@ -25,7 +25,7 @@ export default function ScrollingList({
                 )}
                 
             </ToolPanel>
-            <div className="scrolling-list__content" style={{maxHeight:'450px'}}>
+            <div className="scrolling-list__content" style={{maxHeight:'445px'}}>
                 <ListView desktopColumns="2" mobileColumns="1" >
                     {children}
                 </ListView>

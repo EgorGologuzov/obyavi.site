@@ -5,7 +5,7 @@ const DropdownList = ({
     name='dropdown_1',
     label='label',
     placeholder='placeholder',
-    value='value',
+    value,
     comment='Comment',
     options,
     disabled=false,
@@ -31,7 +31,7 @@ const DropdownList = ({
         <div className="dropdown" id={id} name={`${name}_${optionName?optionName:'none'}`} onMouseLeave={handleMouseLeave}>
             <p className="dropdown_caption">{label}</p>
             <div className="dropdown_header" onClick={toggleDropdown}>
-                <input type="text" className='dropdown_header_option' value={value} placeholder={placeholder}/>
+                <input type="text" className='dropdown_header_option' value={value} placeholder={placeholder} readOnly/>
                 <img className={`dropdown_header_arrow ${isOpen?'up':''}`}/>
             </div>
             <p className="dropdown_comment">{comment}</p>

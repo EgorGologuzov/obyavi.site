@@ -21,6 +21,7 @@ import ContextMenuButton from './ContextMenuButton';
 import { useAppContext } from '../contexts/AppContext';
 import { ListContextProvider,useNewListContext } from '../contexts/ListContext';
 import Carousel from './Carousel';
+import Button from './Button';
 
 const CardFakeContent = () => {
     return (
@@ -30,9 +31,65 @@ const CardFakeContent = () => {
     )
 }
 
-export default function ArtemsContainer({ children, header }) {
-    const appContext = useAppContext();
+const FormExample=()=>{
+    const [inputs,setInputs]=useState({'radio':'small'});
+    //setInputs(values=>({...values,['radio']:'small'}));
+    const dropdownSamples={'option_1':'White','option_2':'Red','option_3':'Green','option_4':'Blue','option_5':'Black'};
 
+    const handleSubmit=(event)=>{
+        event.preventDefault();
+        console.log(inputs);
+    }
+
+    const handleInputChange = (oldValue,newValue)=>{
+        setInputs(values=>({...values,['username']:newValue}));
+    }
+
+    const handleInputDateChange=(oldValue,newValue)=>{
+        setInputs(values=>({...values,['dateOfBirth']:newValue}));
+    }
+
+    const handleStarChange=(oldValue,newValue)=>{
+        setInputs(values=>({...values,['rating']:newValue}));
+    }
+
+    const handleDropdownChange=(oldValue,newValue)=>{
+        setInputs(values=>({...values,['dropdown']:newValue}));
+    }
+
+    const handleRadioBtnChange = (newValue) => {
+        setInputs(values=>({...values,['radio']:newValue}));
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <InputString placeholder='Имя' label='Username' required comment='Введите ваше пользовательское имя' value={inputs.username||''} onChange={handleInputChange}/>
+            <Spliter/>
+            <InputPhone label='Номер телефона' required comment='Comment' value={inputs.phoneNumber} onChange={(e)=>setInputs(values=>({...values,['phoneNumber']:e.target.value}))}/>
+            <Spliter/>
+            <InputPassword label='Password' required={true} comment='Comment' value={inputs.password} onChange={(e)=>setInputs(values=>({...values,['password']:e.target.value}))}/>
+            <Spliter/>
+            <InputDate onChange={handleInputDateChange} value={inputs.dateOfBirth} required/>
+            <Spliter/>
+            <InputText required={true} value={inputs.description} onChange={(e)=>setInputs(values=>({...values,['description']:e.target.value}))}/>
+            <Spliter/>
+            <StarsBar input_mode value={inputs.rating} onChange={handleStarChange}/>
+            <Spliter/>
+            <Switch checked={inputs.switch} onChange={(e)=>setInputs(values=>({...values,['switch']:e.target.checked}))}/>
+            <Spliter/>
+            <DropdownList options={dropdownSamples} label='Цвет темы' placeholder='Выберите цвет' comment='Выберите цвет темы' value={inputs.dropdown} onChange={handleDropdownChange}/>
+            <Spliter/>
+            <div className="radio-btn__group">
+                <RadioButton name='radio-btn_name' group={"radio-btn__group_1"} id='small' value='small' comment='Размер S' checked={inputs.radio==='small'} label='маленький' onChange={handleRadioBtnChange}/>
+                <RadioButton name='radio-btn_name' group={"radio-btn__group_1"}  id='medium' value='medium' comment='Размер M' checked={inputs.radio==='medium'} label='средний' onChange={handleRadioBtnChange}/>
+                <RadioButton name='radio-btn_name' group={"radio-btn__group_1"}  id='large' value='large' comment='Размер L' checked={inputs.radio==='large'} label='большой' onChange={handleRadioBtnChange}/>
+            </div>
+            <input type='submit'/>
+        </form>
+    )
+}
+
+export default function ArtemsContainer({ children, header }) {
     const listContext = useNewListContext(); // не использовать useState для хранения контекста, получаемого из события onContextChange
 
     const handleChooseButtonClick = (event, cardId) => {
@@ -45,40 +102,7 @@ export default function ArtemsContainer({ children, header }) {
     }
 
     const searchSamples = ['best coffee shops near me', 'how to learn Python programming', 'top tourist attractions in Paris', 'healthy dinner recipes', 'latest smartphone reviews', 'how to start a blog', 'tips for improving public speaking', 'best books of 2024', 'how to meditate for beginners', 'DIY home improvement projects', 'fun activities for kids at home', 'best workout routines for weight loss', 'how to save money on groceries', 'upcoming movies in theaters', 'top 10 travel destinations in Asia', 'how to improve your credit score', 'best online courses for career development', 'easy gardening tips for beginners', 'how to create a budget plan', 'best practices for remote work', 'ways to boost your immune system', 'how to make homemade pizza', 'tips for effective time management']
-    const dropdownSamples={'option_1':'White','option_2':'Red','option_3':'Green','option_4':'Blue','option_5':'Black'};
-
-    const [selectedRadioBtn,setSelectedRadioBtn]=useState('small');
-    const [starRating,setStarRating]=useState(0);
-    const [inputString,setInputString]=useState('');
-    const [inputPassword,setInputPassword]=useState('');
-    const [inputText,setInputText]=useState('');
-    const [inputPhone,setInputPhone]=useState('');
-    const [switchValue,setSwitchValue]=useState(false);
     const [searchString,setSearchString]=useState('');
-    const [dropdownValue,setDropdownValue]=useState('');
-    const [inputDateValue,setInputDateValue]=useState(new Date());
-
-    const handleRadioBtnChange = (val) => {
-      setSelectedRadioBtn(val);
-      console.log(val);
-    };
-
-    const handleSwitchChange=(e,oldValue,setInput)=>{
-        let newValue=e.target.checked;
-        console.log(`new Value:${newValue}, oldValue:${oldValue}`);
-        setInput(newValue);
-    }
-
-    const handleInputChange = (e,oldValue,setInput)=>{
-        let newValue=e.target.value;
-        console.log(`new Value:${newValue}, oldValue:${oldValue}`);
-        setInput(newValue);
-    }
-
-    const handleStarChange=(oldValue,newValue)=>{
-        setStarRating(newValue);
-        console.log(`new Value:${newValue}, oldValue:${oldValue}`);
-    }
 
     const handleSearchChange=(oldValue,newValue)=>{
         setSearchString(newValue);
@@ -89,54 +113,17 @@ export default function ArtemsContainer({ children, header }) {
         console.log(`do something with:${value}`);
     }
 
-    const handleDropdownChange=(oldValue,newValue)=>{
-        setDropdownValue(newValue);
-        console.log(`new Value:${newValue}, oldValue:${oldValue}`);
-    }
-
-    const handleInputDateChange=(oldValue,newValue)=>{
-        setInputDateValue(newValue);
-        console.log(`new Value:${newValue}, oldValue:${oldValue}`);
-    }
-
     return (
         <CollapseContainer header="Блоки Артема">
-            <SearchString hints={searchSamples} inputValue={searchString} onChange={handleSearchChange} onSearch={()=>handleOnSearch(searchString)}/>
             <Spliter/>
-            <DropdownList options={dropdownSamples} value={dropdownValue} onChange={handleDropdownChange}/>
+            <FormExample/>
+            <Spliter/>
+            <SearchString hints={searchSamples} inputValue={searchString} onChange={handleSearchChange} onSearch={()=>handleOnSearch(searchString)}/>
             <Spliter/>
             <Logo onClick={() => alert("Hello")}/>
             <Spliter/>
             <Logo full={true} onClick={() => alert("Hello")}/>
             <Spliter/>
-            <Switch checked={switchValue} onChange={(e)=>handleSwitchChange(e,switchValue,setSwitchValue)}/>
-            <Spliter/>
-            <StarsBar value={5}/>
-            <Spliter/>
-            <StarsBar input_mode value={starRating} onChange={handleStarChange}/>
-            <Spliter/>
-            <ScrollingList>
-                <p>Text Text Text</p>
-                <p>Text Text Text</p>
-            </ScrollingList>
-            <Spliter/>
-            <InputString required={true} label='Label' comment='Comment' value={inputString} onChange={(e)=>handleInputChange(e,inputString,setInputString)}/>
-            <Spliter/>
-            <InputPassword label='Password' required={true} comment='Comment' value={inputPassword} onChange={(e)=>handleInputChange(e,inputPassword,setInputPassword)}/>
-            <Spliter/>
-            <InputPhone label='Phone number' required={true} comment='Comment' value={inputPhone} onChange={(e)=>handleInputChange(e,inputPhone,setInputPhone)}/>
-            <Spliter/>
-            <InputText required={true} value={inputText} onChange={(e)=>handleInputChange(e,inputText,setInputText)}/>
-            <Spliter/>
-            <InputDate onChange={handleInputDateChange} value={inputDateValue}/>
-            <Spliter/>
-            <div className="radio-btn__group">
-                <RadioButton name='radio-btn_name' group={"radio-btn__group_1"} id='small' value='small' checked={selectedRadioBtn==='small'} label='маленький' onChange={handleRadioBtnChange}/>
-                <RadioButton name='radio-btn_name' group={"radio-btn__group_1"}  id='medium' value='medium' checked={selectedRadioBtn==='medium'} label='средний' onChange={handleRadioBtnChange}/>
-                <RadioButton name='radio-btn_name' group={"radio-btn__group_1"}  id='large' value='large' checked={selectedRadioBtn==='large'} label='большой' onChange={handleRadioBtnChange}/>
-            </div>
-            <Spliter/>
-
             <ListContextProvider onContextChanged={handleListContextChanged} value={listContext}>
                 <ScrollingList
                     tools={
