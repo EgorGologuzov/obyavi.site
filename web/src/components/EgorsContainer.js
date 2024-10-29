@@ -60,10 +60,16 @@ export default function EgorsContainer() {
     const appContext = useAppContext();
 
     const listContext = useNewListContext();
+    const listContext2 = useNewListContext();
 
     const handleChooseButtonClick = (event, cardId) => {
         listContext.setSelectMode(true);
         listContext.setSelectedCards(new Set([cardId]));
+    }
+
+    const handleChooseButtonClick2 = (event, cardId) => {
+        listContext2.setSelectMode(true);
+        listContext2.setSelectedCards(new Set([cardId]));
     }
 
     return (
@@ -155,6 +161,41 @@ export default function EgorsContainer() {
                         <CardFakeContent />
                         <ContextMenu>
                             <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
+                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
+                        </ContextMenu>
+                    </Card>
+                </PagedList>
+            </ListContextProvider>
+
+            <ListContextProvider value={listContext2}>
+                <PagedList
+                    pageMax="10"
+                    onPageValueChange={(event) => console.log(event)}
+                    tools={
+                        <ToolButton icon="icon-picture" text="console.log(2)" onClick={() => console.log(2)} />
+                    }
+                    toolsForSelectedMode={
+                        <ToolButton icon="icon-picture" text="console.log(1)" onClick={() => console.log(1)} />
+                    }>
+                    <Card id={0}>
+                        <CardFakeContent />
+                        <ContextMenu>
+                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick2(event, 0)} />
+                            <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext2.selectedCards)} />
+                            <ContextMenuButton text="console.log(2)" onClick={() => console.log(2)} />
+                        </ContextMenu>
+                    </Card>
+                    <Card id={1}>
+                        <CardFakeContent />
+                        <ContextMenu>
+                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick2(event, 1)} />
+                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
+                        </ContextMenu>
+                    </Card>
+                    <Card id={2}>
+                        <CardFakeContent />
+                        <ContextMenu>
+                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick2(event, 2)} />
                             <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
                         </ContextMenu>
                     </Card>
