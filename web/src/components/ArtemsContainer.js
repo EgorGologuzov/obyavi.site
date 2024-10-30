@@ -87,12 +87,14 @@ const FormExample=()=>{
     )
 }
 
+const cardsInScrollingList = [{id: 1},{id: 2},{id: 3},{id: 4},{id: 5},{id: 6}];
+
 export default function ArtemsContainer({ children, header }) {
-    const listContext = useNewListContext(); // не использовать useState для хранения контекста, получаемого из события onContextChange
+    const listContext = useNewListContext();
 
     const handleChooseButtonClick = (event, cardId) => {
-        listContext.setSelectMode(true);
-        listContext.setSelectedCards(new Set([cardId]));
+        listContext.value.setSelectMode(true);
+        listContext.value.setSelectedCards(new Set([cardId]));
     }
 
     const handleListContextChanged = (event) => {
@@ -118,69 +120,28 @@ export default function ArtemsContainer({ children, header }) {
             <Spliter/>
             <SearchString hints={searchSamples} inputValue={searchString} onChange={handleSearchChange} onSearch={()=>handleOnSearch(searchString)}/>
             <Spliter/>
+            <Logo sizeFull={false} onClick={() => alert("Hello")}/>
+            <Spliter/>
             <Logo onClick={() => alert("Hello")}/>
             <Spliter/>
-            <Logo full={true} onClick={() => alert("Hello")}/>
-            <Spliter/>
-            <ListContextProvider onContextChanged={handleListContextChanged} value={listContext}>
+            <ListContextProvider value={listContext}>
                 <ScrollingList
                     tools={
                         <ToolButton icon="icon-picture" text="console.log(2)" onClick={() => console.log(2)} />
                     }
                     toolsForSelectedMode={
                         <ToolButton icon="icon-picture" text="console.log(1)" onClick={() => console.log(1)} />
-                    }
-                    onBottomReached={()=>alert('Bottom Reached!')}>
-                    <Card id={0}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 0)} />
-                            <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext.selectedCards)} />
-                            <ContextMenuButton text="console.log(2)" onClick={() => console.log(2)} />
-                        </ContextMenu>
-                    </Card>
-                    <Card id={1}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 1)} />
-                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
-                        </ContextMenu>
-                    </Card>
-                    <Card id={2}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
-                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
-                        </ContextMenu>
-                    </Card>
-                    <Card id={3}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
-                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
-                        </ContextMenu>
-                    </Card>
-                    <Card id={4}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
-                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
-                        </ContextMenu>
-                    </Card>
-                    <Card id={5}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
-                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
-                        </ContextMenu>
-                    </Card>
-                    <Card id={6}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
-                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
-                        </ContextMenu>
-                    </Card>
+                    }>
+                    {cardsInScrollingList.map((card, index) => 
+                        <Card id={card.id} key={card.id}>
+                            <CardFakeContent />
+                            <ContextMenu>
+                                <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, card.id)} />
+                                <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext.selectedCards)} />
+                                <ContextMenuButton text="console.log(2)" onClick={() => console.log(2)} />
+                            </ContextMenu>
+                        </Card>
+                    )}
                 </ScrollingList>
             </ListContextProvider>
             <Spliter/>
@@ -195,13 +156,8 @@ export default function ArtemsContainer({ children, header }) {
             pageMin={1}
             onPageValueChange={()=>console.log('Carousel')}> 
             <Card id={99}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 0)} />
-                            <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext.value.selectedCards)} />
-                            <ContextMenuButton text="console.log(2)" onClick={() => console.log(2)} />
-                        </ContextMenu>
-                    </Card>
+                <CardFakeContent />
+            </Card>
             </Carousel>
         </CollapseContainer>
     );
