@@ -56,7 +56,6 @@ function App() {
                     <Route path="auth" element={<Auth />} />
                     <Route path="reg" element={<Reg />} />
                     <Route path="recovery" element={<Recovery />} />
-                    <Route path="error/:code" element={<Error />}/>
                 </Route>
 
                 <Route path="/m" element={<Access role="moder"><LayoutModer /></Access>}>
@@ -94,7 +93,7 @@ function App() {
                     <Route path="settings" element={<SettingsPageClient />} />
                 </Route>
 
-                <Route path="*" element={<Navigate to="/error/404" />}/>
+                <Route path="*" element={<Error code={404}/>}/>
                 
             </Routes>
         </BrowserRouter>

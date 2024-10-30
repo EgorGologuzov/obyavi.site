@@ -25,7 +25,8 @@ const fakeAccounts = [
         phone: "+70000000003",
         theme: "dark",
         lastname: "Иванов",
-        firstname: "Иван"
+        firstname: "Иван",
+        avatar: "https://i.ytimg.com/vi/BOp5lW5ncM4/maxresdefault.jpg"
     },
     {
         id: 4,
@@ -33,7 +34,8 @@ const fakeAccounts = [
         phone: "+70000000004",
         theme: "light",
         lastname: "Сидорова",
-        firstname: "Марина"
+        firstname: "Мария",
+        avatar: "https://msses.ru/upload/resize_cache/iblock/a6d/450_500_2821712164bebe8964a3cb4f91f48bb72/20230830_154446.jpg"
     }
 ]
 

@@ -6,13 +6,17 @@ import Header from "../components/Header";
 import { useRef, useState } from "react";
 import { useAppContext } from "../contexts/AppContext";
 import SearchString from "../components/SearchString";
+import Avatar from "../components/Avatar";
+import { useYesNoModal } from "../components/YesNoModal";
 
-export default function LayoutModer() {
+export default function LayoutClient() {
     const [menuOpened, setMenuOpened] = useState(false);
     const menuRef = useRef(null);
     const curtainRef = useRef(null);
     const navigate = useNavigate();
     const appContext = useAppContext();
+    const [searchRequest, setSearchRequest] = useState();
+    const showYesNo = useYesNoModal();
 
     const changeMenuOpened = () => {
         menuRef.current.style = menuOpened ? "left: -350px" : "left: 0px";
@@ -26,8 +30,10 @@ export default function LayoutModer() {
     }
 
     const signOut = () => {
-        appContext.signOut();
-        navigate("/auth", {replace: true});
+        showYesNo("Вы уверенны, что хотите выйти?", () => {
+            appContext.signOut();
+            navigate("/auth", {replace: true});
+        })
     }
 
     return (
@@ -36,13 +42,18 @@ export default function LayoutModer() {
             <ToolButton icon="icon-menu" onClick={changeMenuOpened}/>
             <img className="layout-client__logo" />
             <div className="layout-client__right">
-                <SearchString data={[]}/>
-                <img className="layout-client__avatar-in-header" onClick={() => navigateAndCloseMenu("/c/profile")}/>
+                <SearchString
+                    hints={[]}
+                    inputValue={searchRequest ?? ""}
+                    placeholder="Поиск по сайту"
+                    onChange={(_, newValue) => setSearchRequest(newValue)}
+                    onSearch={() => 1}/>
+                <Avatar src={appContext.loginedUser.avatar} onClick={() => navigateAndCloseMenu("/c/profile")} />
             </div>
         </header>
         <div className="layout-client__menu" ref={menuRef}>
             <div className="layout-client__account-data">
-                <img className="layout-client__avatar" />
+                <Avatar src={appContext.loginedUser.avatar} onClick={() => navigateAndCloseMenu("/c/profile")} />
                 <div className="layout-client__name-id">
                     <Header level={4}>{`${appContext.loginedUser.lastname} ${appContext.loginedUser.firstname}`}</Header>
                     <Subcaption level={2}>Аккаунт: #{appContext.loginedUser.id}</Subcaption>
