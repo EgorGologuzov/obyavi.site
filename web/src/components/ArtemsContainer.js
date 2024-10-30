@@ -131,7 +131,8 @@ export default function ArtemsContainer({ children, header }) {
                     }
                     toolsForSelectedMode={
                         <ToolButton icon="icon-picture" text="console.log(1)" onClick={() => console.log(1)} />
-                    }>
+                    }
+                    onBottomReached={()=>alert('Bottom Reached')}>
                     {cardsInScrollingList.map((card, index) => 
                         <Card id={card.id} key={card.id}>
                             <CardFakeContent />
