@@ -18,10 +18,8 @@ import ToolButton from './ToolButton';
 import Card from './Card';
 import ContextMenu from './ContextMenu';
 import ContextMenuButton from './ContextMenuButton';
-import { useAppContext } from '../contexts/AppContext';
 import { ListContextProvider,useNewListContext } from '../contexts/ListContext';
 import Carousel from './Carousel';
-import Button from './Button';
 
 const CardFakeContent = () => {
     return (
@@ -93,8 +91,8 @@ export default function ArtemsContainer({ children, header }) {
     const listContext = useNewListContext(); // не использовать useState для хранения контекста, получаемого из события onContextChange
 
     const handleChooseButtonClick = (event, cardId) => {
-        listContext.value.setSelectMode(true);
-        listContext.value.setSelectedCards(new Set([cardId]));
+        listContext.setSelectMode(true);
+        listContext.setSelectedCards(new Set([cardId]));
     }
 
     const handleListContextChanged = (event) => {
@@ -131,12 +129,13 @@ export default function ArtemsContainer({ children, header }) {
                     }
                     toolsForSelectedMode={
                         <ToolButton icon="icon-picture" text="console.log(1)" onClick={() => console.log(1)} />
-                    }>
+                    }
+                    onBottomReached={()=>alert('Bottom Reached!')}>
                     <Card id={0}>
                         <CardFakeContent />
                         <ContextMenu>
                             <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 0)} />
-                            <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext.value.selectedCards)} />
+                            <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext.selectedCards)} />
                             <ContextMenuButton text="console.log(2)" onClick={() => console.log(2)} />
                         </ContextMenu>
                     </Card>

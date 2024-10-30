@@ -32,7 +32,7 @@ const DropdownList = ({
             <p className="dropdown_caption">{label}</p>
             <div className="dropdown_header" onClick={toggleDropdown}>
                 <input type="text" className='dropdown_header_option' value={value} placeholder={placeholder} readOnly/>
-                <img className={`dropdown_header_arrow ${isOpen?'up':''}`}/>
+                <img className={`dropdown_header_arrow ${isOpen?'up':''}`} alt='🔻'/>
             </div>
             <p className="dropdown_comment">{comment}</p>
             {isOpen && (
