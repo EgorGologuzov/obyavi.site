@@ -71,7 +71,9 @@ export function AppContextProvider({ children }) {
             .then((user) => {
                 setLoginedUser(user);
                 writeUserToLocalStorage(user);
-                user.theme && setTheme(user.theme);
+                if(user.theme && user.theme !== theme) {
+                    changeTheme();
+                }
             });
     }
 
@@ -84,8 +86,10 @@ export function AppContextProvider({ children }) {
         const newTheme = theme === "light" ? "dark" : "light";
         setTheme(newTheme);
         setThemeSwitch(newTheme === "dark");
-        loginedUser.theme = newTheme;
-        writeUserToLocalStorage(loginedUser);
+        if (loginedUser) {
+            loginedUser.theme = newTheme;
+            writeUserToLocalStorage(loginedUser);
+        }
     }
 
     useEffect(() => {
