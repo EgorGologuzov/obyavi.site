@@ -179,8 +179,11 @@
     color: var(--text);
     font-weight: var(--regular);
     padding-bottom: 3px;
+    transition:border-bottom-color 0.3s ease-out;
 }
-
+.dropdown_header.focus{
+    border-bottom:2px solid var(--accent);
+}
 .dropdown_header_option {
     margin: 0px;
     font-family: var(--inter);
@@ -207,38 +210,52 @@
     font-size: 11px;
     color: var(--secondary);
     margin: 0;
+    transition:all 0.3s ease-out;
+}
+.dropdown_comment.focus{
+    color:var(--accent);
 }
 
 .dropdown_header_arrow {
     content: var(--icon-down-arrow);
     width: 30px;
     height: 30px;
+    transition:all 0.3s ease-out;
 }
 
 .dropdown_header_arrow.up {
     transform: rotate(180deg);
 }
-
 .dropdown_list {
     position: absolute;
+    opacity:0;
     top: 100%;
+    height: 0%;
     left: 0;
     right: 0;
     background-color: var(--dropdown-background);
     border-radius: var(--dropdown-border-radius);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     list-style-type: none;
     margin: 0;
     padding: 0;
     z-index: 10;
+    transition:all 0.3s ease-out;
+}
+.dropdown_list.open{
+    opacity: 1;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
 }
 
+.dropdown_list.open li{
+    pointer-events: auto;
+}
 .dropdown_list li {
     padding: 10px;
     border: 1px solid var(--light);
     background-color: var(--bg);
     cursor: pointer;
     color: var(--text);
+    pointer-events: none;
 }
 
 .dropdown_list li:hover {
@@ -327,6 +344,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 60px 60px;
+    background-color:transparent;
     border: none;
     width: 60px;
     height: 60px;
@@ -414,14 +432,31 @@
 
 .stars-bar_star {
     stroke: var(--bg);
+    stroke-opacity: 0.5;
     fill: var(--secondary);
+    transition:fill 0.1s ease-out, stroke-opacity 0.1s ease-out, stroke-dashoffset 10s ease-out, filter 0.1s ease-out;
+}
+.stars-bar_star:hover{
+    stroke-dashoffset: 50px;
+    scale: 98%;
+    stroke-opacity: 1;
+    animation-duration: 0.9s;
+    animation-name: movingStroke;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+.stars-bar_star.filled:hover{
+    filter:none;
+    scale: 102%;
+    stroke-opacity:1;
 }
 
-.stars-bar_star-filled {
-    stroke: none;
+.stars-bar_star.filled {
+    stroke-opacity: 0;
+    stroke-dasharray: 0px;
+    stroke-dashoffset: 10px;
     fill: var(--primary);
     filter: drop-shadow(0px 3px 2px rgba(0, 0, 0, .7));
-    ;
 }
 
 .scrolling-list {
@@ -524,6 +559,7 @@
     margin: 0px;
     grid-auto-columns: 0px;
     border-bottom:1px solid var(--text);
+    transition:border-bottom-color 0.3s ease-out;
 }
 .input-password_input-box.error{
     border-bottom:2px solid var(--warning);
@@ -555,12 +591,12 @@
     height: 100%;
     background-color: rgba(var(--bg-rgb), 0.7);
 }
-
 .input-password_comment{
     font-weight: var(--medium);
     font-size: 11px;
     color: var(--secondary);
     margin: 0;
+    transition:color 0.3s ease-out;
 }
 .input-password_comment.focus{
     color:var(--accent);
@@ -591,17 +627,21 @@
     position:relative;
 }
 .input-phone_input{
+    border: none;
+    background-color: transparent;
+    color: var(--text);
+    border-bottom: 1px solid var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
     font-family: var(--inter);
     height: 30px;
     font-size: 20px;
     color: var(--text);
     font-weight: var(--regular);
     padding-bottom: 3px;
-    border: none;
-    background-color: transparent;
-    border-bottom:1px solid var(--text);
-    outline:0;
-    transition:border-bottom-color 0.3s ease-out;
+    outline: 0;
+    transition: border-bottom-color 0.3s ease-out;
 }
 .input-phone_input.error{
     border-bottom-color:var(--warning);
@@ -686,7 +726,7 @@
     resize: none;
 }
 .input-text_input.focus{
-    border:1px solid var(--accent);
+    border-color:var(--accent);
 }
 .input-text_input.error{
     border-color:var(--warning);
@@ -731,6 +771,9 @@
 .input-date_input.error{
     border-bottom: 2px solid var(--warning);
 }
+.input-date_input.focus{
+    border-bottom:2px solid var(--accent);
+}
 .input-date_header{
     display:inline-flex;
     padding-bottom:3px;
@@ -756,6 +799,9 @@
 }
 .input-date_comment.error{
     color:var(--warning);
+}
+.input-date_comment.focus{
+    color:var(--accent);
 }
 
 
@@ -808,4 +854,13 @@
 .carousel__content{
     overflow: hidden;
     padding:5px;
+}
+
+@keyframes movingStroke{
+    from{
+        stroke-dashoffset: 4px;
+    }
+    to{
+        stroke-dashoffset: 14px;
+    }
 }

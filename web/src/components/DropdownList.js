@@ -30,18 +30,18 @@ const DropdownList = ({
     return (
         <div className="dropdown" id={id} name={`${name}_${optionName?optionName:'none'}`} onMouseLeave={handleMouseLeave}>
             <p className="dropdown_caption">{label}</p>
-            <div className="dropdown_header" onClick={toggleDropdown}>
+            <div className={`dropdown_header${isOpen?' focus':''}`} onClick={toggleDropdown}>
                 <input type="text" className='dropdown_header_option' value={value} placeholder={placeholder} readOnly/>
                 <img className={`dropdown_header_arrow ${isOpen?'up':''}`} alt='🔻'/>
             </div>
-            <p className="dropdown_comment">{comment}</p>
-            {isOpen && (
-                <ul className="dropdown_list">
+            <p className={`dropdown_comment${isOpen?' focus':''}`}>{comment}</p>
+            
+                <ul className={`dropdown_list${isOpen?' open':''}`}>
                     {Object.keys(options).map((key)=>{
                         return  <li key={key} onClick={() => handleOptionClick(key)}>{options[key]}</li>
                     })}
                 </ul>
-            )}
+            
             {disabled&&(<div className="input-string_filter"/>)}
         </div>
     );

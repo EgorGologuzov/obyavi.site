@@ -7,7 +7,7 @@ const StarsBar = ({input_mode=false,onChange,value=0}) => {
     return (
         <div className={`stars-bar ${input_mode?'':'input-off'}`}>
             {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} onClick={()=>handleChange(value,star)} className={`stars-bar_star${star<=value?'-filled':''}`}/>
+                <Star key={star} onClick={()=>handleChange(value,star)} className={`stars-bar_star${star<=value?' filled':''}`}/>
             ))}
         </div>
     );

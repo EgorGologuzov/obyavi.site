@@ -27,7 +27,7 @@ const RadioButton=({
           checked={checked}
           onChange={(e)=>handleChange(e.currentTarget.value)}
         />
-        <label className='radio-btn_label' htmlFor={id}>
+        <label className='radio-btn_label' htmlFor={id} onClick={()=>onChange(value)}>
           {label}
         </label>
         <p className="radio-btn_comment">{comment}</p>
