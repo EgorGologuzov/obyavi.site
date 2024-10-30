@@ -1,33 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 
-const DropdownList = ({label,id,name,value='value',comment='Comment', options ,disabled=false}) => {
+const DropdownList = ({
+    id,
+    name='dropdown_1',
+    label='label',
+    placeholder='placeholder',
+    value,
+    comment='Comment',
+    options,
+    disabled=false,
+    onChange}) => {
+
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState('');
+    const [optionName,setOptionName]=useState('');
 
     const toggleDropdown = () => setIsOpen(!isOpen);
 
-    const handleOptionClick = (option) => {
-        setSelectedOption(option);
+    const handleOptionClick = (key) => {
+        onChange(value,options[key]);
+        setOptionName(key);
         setIsOpen(false);
     };
 
+    const handleMouseLeave=()=>{
+        if (isOpen)
+            setIsOpen(false);
+    }
+
     return (
-        <div className="dropdown">
-            <p className="dropdown_caption">Label</p>
+        <div className="dropdown" id={id} name={`${name}_${optionName?optionName:'none'}`} onMouseLeave={handleMouseLeave}>
+            <p className="dropdown_caption">{label}</p>
             <div className="dropdown_header" onClick={toggleDropdown}>
-                <input type="text" className='dropdown_header_option' value={selectedOption} placeholder='Placeholder'></input>
+                <input type="text" className='dropdown_header_option' value={value} placeholder={placeholder} readOnly/>
                 <img className={`dropdown_header_arrow ${isOpen?'up':''}`}/>
             </div>
-            <p className="dropdown_comment">Comment</p>
+            <p className="dropdown_comment">{comment}</p>
             {isOpen && (
                 <ul className="dropdown_list">
-                    {options.map((option, index) => (
-                        <li key={index} onClick={() => handleOptionClick(option)}>
-                            {option}
-                        </li>
-                    ))}
+                    {Object.keys(options).map((key)=>{
+                        return  <li key={key} onClick={() => handleOptionClick(key)}>{options[key]}</li>
+                    })}
                 </ul>
             )}
+            {disabled&&(<div className="input-string_filter"/>)}
         </div>
     );
 };
