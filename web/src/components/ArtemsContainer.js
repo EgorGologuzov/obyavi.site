@@ -31,7 +31,6 @@ const CardFakeContent = () => {
 
 const FormExample=()=>{
     const [inputs,setInputs]=useState({'radio':'small'});
-    //setInputs(values=>({...values,['radio']:'small'}));
     const dropdownSamples={'option_1':'White','option_2':'Red','option_3':'Green','option_4':'Blue','option_5':'Black'};
 
     const handleSubmit=(event)=>{
@@ -87,18 +86,14 @@ const FormExample=()=>{
     )
 }
 
-const cardsInScrollingList = [{id: 1},{id: 2},{id: 3},{id: 4},{id: 5},{id: 6}];
+const cardsInScrollingList = [{id: 1},{id: 2},{id: 3},{id: 4},{id: 5},{id: 6},{id: 7},{id: 8},{id: 9}];
 
 export default function ArtemsContainer({ children, header }) {
     const listContext = useNewListContext();
 
     const handleChooseButtonClick = (event, cardId) => {
-        listContext.value.setSelectMode(true);
-        listContext.value.setSelectedCards(new Set([cardId]));
-    }
-
-    const handleListContextChanged = (event) => {
-        listContext.value = event.newValue; // обязательно фиксируем изменение контекста
+        listContext.setSelectMode(true);
+        listContext.setSelectedCards(new Set([cardId]));
     }
 
     const searchSamples = ['best coffee shops near me', 'how to learn Python programming', 'top tourist attractions in Paris', 'healthy dinner recipes', 'latest smartphone reviews', 'how to start a blog', 'tips for improving public speaking', 'best books of 2024', 'how to meditate for beginners', 'DIY home improvement projects', 'fun activities for kids at home', 'best workout routines for weight loss', 'how to save money on groceries', 'upcoming movies in theaters', 'top 10 travel destinations in Asia', 'how to improve your credit score', 'best online courses for career development', 'easy gardening tips for beginners', 'how to create a budget plan', 'best practices for remote work', 'ways to boost your immune system', 'how to make homemade pizza', 'tips for effective time management']
