@@ -26,7 +26,6 @@
     --icon-left-arrow: url("../public/img/left-arrow-l.png");
     --icon-right-arrow: url("../public/img/right-arrow-l.png");
     --icon-check-mark: url("../public/img/check-mark-l.png");
-    --mag-glass: url("../public/img/mag-glass-l.png");
     --logo-full: url("../public/img/logo-full-l.png");
     --star: url("../public/img/star.png");
     --star-filled: url("../public/img/star-filled.png");
@@ -39,6 +38,7 @@
     --icon-empty: url("../public/img/empty.png");
     --icon-check-mark-dark: url("../public/img/check-mark-d.png");
     --logo: url("../public/img/logo-l.png");
+    --mag-glass: url("../public/img/mag-glass-d.png");
 }
 
 #themeSwitch:checked~#root {
@@ -60,7 +60,6 @@
     --icon-left-arrow: url("../public/img/left-arrow-d.png");
     --icon-right-arrow: url("../public/img/right-arrow-d.png");
     --icon-check-mark: url("../public/img/check-mark-d.png");
-    --mag-glass: url("../public/img/mag-glass-d.png");
     --logo-full: url("../public/img/logo-full-d.png");
     --icon-down-arrow: url("../public/img/down-arrow-d.png");
     --opened-eye:url("../public/img/opened-eye-d.png");
@@ -476,7 +475,7 @@
 .scrolling-list__content {
     overflow: auto;
     padding:5px;
-    padding-bottom:0;
+    padding-bottom:5px;
 }
 
 .radio-btn{

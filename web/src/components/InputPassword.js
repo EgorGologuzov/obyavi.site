@@ -31,7 +31,7 @@ const InputPassword = ({onChange,
             </div>
             <div className={`input-password_input-box ${!valid?'error':hasFocus?'focus':''}`}>
                 <input type={visibility?'text':'password'} 
-                placeholder="Password..." 
+                placeholder={placeholder} 
                 className='input-password_input-box_input'
                 onChange={onChange} 
                 onFocus={handleFocus}
