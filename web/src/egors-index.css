@@ -449,8 +449,7 @@ p.error {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: var(--text-rgb);
-    background-color: rgba(var(--text-rgb), 0.4);
+    background-color: rgba(var(--text-rgb), 0.2);
     justify-content: center;
 }
 
@@ -472,6 +471,7 @@ p.error {
     height: 24px;
     margin-left: 10px;
     cursor: pointer;
+    content: var(--icon-cross);
 }
 
 .modal__content {
@@ -738,4 +738,8 @@ p.error {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.yes-no-modal .text {
+    margin: 20px 0 20px 0;
 }

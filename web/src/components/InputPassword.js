@@ -40,7 +40,7 @@ const InputPassword = ({onChange,
                 <VisibilityIcon value={visibility} onClick={()=>setVisibility(!visibility)}/>
             </div>
             {comment&&(
-                <p className={`input-password_comment${!valid?'error':hasFocus?' focus':''}`}>{comment}</p>
+                <p className={`input-password_comment ${!valid?'error':hasFocus?' focus':''}`}>{comment}</p>
             )}
             {disabled&&(
                 <div className='input-password_filter'/>

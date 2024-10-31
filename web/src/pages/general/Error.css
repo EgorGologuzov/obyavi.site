@@ -1,4 +1,4 @@
-.layout-card {
+.error-page {
     height: 100%;
     display: flex;
     margin: auto;
@@ -6,6 +6,11 @@
     max-width: 1200px;
 }
 
-.layout-card .card {
+.error-page .card {
     margin: 10px;
+    padding: 30px;
+}
+
+.error-page .text {
+    margin: 30px 0 30px 0;
 }
