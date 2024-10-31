@@ -18,12 +18,12 @@ export function YesNoModal({ text, onYes, onNo }) {
     }, []);
 
     return (
-        <>
-            <Paragraf fontSize="small">{text}</Paragraf>
+        <div className="yes-no-modal">
+            <Paragraf fontSize="16px">{text}</Paragraf>
             <ModalFooter>
                 <Button color="primary" onClick={onNo}>Нет</Button>
                 <Button color="secondary" onClick={onYes}>Да</Button>
             </ModalFooter>
-        </>
+        </div>
     )
 }

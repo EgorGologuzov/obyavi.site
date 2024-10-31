@@ -23,7 +23,7 @@ export default function Modal() {
             <div ref={modalFormRef} className="modal__form">
                 <div className="modal__header">
                     <Header level="4">{appContext.modalCaption}</Header>
-                    <img className="modal__cross icon-cross" onClick={() => appContext.hideModal()} />
+                    <img className="modal__cross" onClick={() => appContext.hideModal()} />
                 </div>
                 <div className="modal__content">
                     {appContext.modalChildren}

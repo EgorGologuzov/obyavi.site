@@ -1,3 +1,5 @@
+import { cleanPhone } from "../utils/utils";
+
 export function useUserService() {
     return fakeService;
 }
@@ -24,26 +26,30 @@ const fakeAccounts = [
         role: "client",
         phone: "+70000000003",
         theme: "dark",
-        lastname: "Иванов",
-        firstname: "Иван",
-        avatar: "https://i.ytimg.com/vi/BOp5lW5ncM4/maxresdefault.jpg"
+        lastname: "Трамп",
+        firstname: "Дональд",
+        avatar: "https://alpinabook.ru/upload/resize_cache/iblock/8d9/550_800_1/8d9cd63476f15e85f0d8796555ab1e6b.jpg"
     },
     {
         id: 4,
         role: "client",
         phone: "+70000000004",
         theme: "light",
-        lastname: "Сидорова",
-        firstname: "Мария",
-        avatar: "https://msses.ru/upload/resize_cache/iblock/a6d/450_500_2821712164bebe8964a3cb4f91f48bb72/20230830_154446.jpg"
+        lastname: "Харрис",
+        firstname: "Камала",
+        avatar: "https://iv.kommersant.ru/Issues.photo/DAILY/2024/158/KMO_162543_54330_1_t222_180737.jpg"
     }
 ]
 
 const fakeService = {
     signIn(login, password) {
+        login = cleanPhone(login);
+        
         return new Promise((resolve, reject) => {
             const user = fakeAccounts.find((element) => element.phone === login);
-            user ? resolve(user) : reject(new Error("Авторизация не удалась"));
+            setTimeout(() => {
+                user ? resolve(user) : reject(new Error("Неверный логин или пароль"));
+            }, 500);
         }) 
     },
     signOut() {

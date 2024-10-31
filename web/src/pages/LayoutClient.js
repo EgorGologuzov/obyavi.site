@@ -8,6 +8,9 @@ import { useAppContext } from "../contexts/AppContext";
 import SearchString from "../components/SearchString";
 import Avatar from "../components/Avatar";
 import { useYesNoModal } from "../components/YesNoModal";
+import { useSearchService } from "../data/SearchService";
+
+let pastSearchRequestChangeTime;
 
 export default function LayoutClient() {
     const [menuOpened, setMenuOpened] = useState(false);
@@ -16,7 +19,9 @@ export default function LayoutClient() {
     const navigate = useNavigate();
     const appContext = useAppContext();
     const [searchRequest, setSearchRequest] = useState();
+    const [searchHints, setSearchHints] = useState([]);
     const showYesNo = useYesNoModal();
+    const searchService = useSearchService();
 
     const changeMenuOpened = () => {
         menuRef.current.style = menuOpened ? "left: -350px" : "left: 0px";
@@ -36,6 +41,17 @@ export default function LayoutClient() {
         })
     }
 
+    const handleSearchRequestChanged = (oldValue, newValue) => {
+        setSearchRequest(newValue);
+        
+        if (pastSearchRequestChangeTime && (new Date() - pastSearchRequestChangeTime) > 500) {
+            searchService.getHints(newValue)
+                .then((hints) => setSearchHints(hints));
+        }
+
+        pastSearchRequestChangeTime = new Date();
+    }
+
     return (
     <div className="layout-client">
         <header className="layout-client__header">
@@ -43,10 +59,10 @@ export default function LayoutClient() {
             <img className="layout-client__logo" />
             <div className="layout-client__right">
                 <SearchString
-                    hints={[]}
+                    hints={searchHints}
                     inputValue={searchRequest ?? ""}
                     placeholder="Поиск по сайту"
-                    onChange={(_, newValue) => setSearchRequest(newValue)}
+                    onChange={handleSearchRequestChanged}
                     onSearch={() => 1}/>
                 <Avatar src={appContext.loginedUser.avatar} onClick={() => navigateAndCloseMenu("/c/profile")} />
             </div>
@@ -55,7 +71,7 @@ export default function LayoutClient() {
             <div className="layout-client__account-data">
                 <Avatar src={appContext.loginedUser.avatar} onClick={() => navigateAndCloseMenu("/c/profile")} />
                 <div className="layout-client__name-id">
-                    <Header level={4}>{`${appContext.loginedUser.lastname} ${appContext.loginedUser.firstname}`}</Header>
+                    <Header level={4}>{`${appContext.loginedUser.firstname} ${appContext.loginedUser.lastname}`}</Header>
                     <Subcaption level={2}>Аккаунт: #{appContext.loginedUser.id}</Subcaption>
                 </div>
             </div>
