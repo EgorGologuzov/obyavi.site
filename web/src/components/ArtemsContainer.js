@@ -30,7 +30,7 @@ const CardFakeContent = () => {
 }
 
 const FormExample=()=>{
-    const [inputs,setInputs]=useState({'radio':'small'});
+    const [inputs,setInputs]=useState({'radio':'small','username':'','dateOfBirth':new Date(),'rating':0,'dropdown':'','switch':false});
     const dropdownSamples={'option_1':'White','option_2':'Red','option_3':'Green','option_4':'Blue','option_5':'Black'};
 
     const handleSubmit=(event)=>{
