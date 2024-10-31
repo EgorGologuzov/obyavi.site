@@ -6,8 +6,15 @@ import { useListContext } from "../contexts/ListContext";
 export default function ScrollingList({
     children,
     tools,
-    toolsForSelectedMode}){
+    toolsForSelectedMode,
+    onBottomReached}){
     const listContext = useListContext();
+
+    const handleScroll=(e)=>{
+        const bottom=e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+        if (bottom)
+            onBottomReached();
+    }
 
     return ( 
         <div className="scrolling-list">
@@ -25,7 +32,7 @@ export default function ScrollingList({
                 )}
                 
             </ToolPanel>
-            <div className="scrolling-list__content" style={{maxHeight:'445px'}}>
+            <div className="scrolling-list__content" style={{maxHeight:'445px'}} onScroll={handleScroll}>
                 <ListView desktopColumns="2" mobileColumns="1" >
                     {children}
                 </ListView>

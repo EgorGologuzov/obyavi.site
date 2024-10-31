@@ -3,6 +3,7 @@ import { registerLocale } from 'react-datepicker';
 import {ru} from 'date-fns/locale/ru';
 import { InputMask } from '@react-input/mask';
 import '../../src/react-datepicker.css'
+import { useState } from 'react';
 
 registerLocale('ru',ru);
 
@@ -21,6 +22,7 @@ const InputDate = ({label='Date',
         onChange(oldValue,newValue);
         console.log(`min:${min},max:${max}`)
     }
+    const [isFocused,setIsFocused]=useState(false);
 
     return ( 
         <div className="input-date" id={id} name={name}>
@@ -30,6 +32,8 @@ const InputDate = ({label='Date',
             </div>
             <DatePicker selected={value}
             onChange={(date)=>handleChange(value,date)}
+            onCalendarOpen={()=>setIsFocused(true)}
+            onCalendarClose={()=>setIsFocused(false)}
             locale='ru'
             adjustDateOnChange='false'
             dateFormat="dd/MM/yyyy"
@@ -37,10 +41,10 @@ const InputDate = ({label='Date',
             showIcon
             icon="icon-calender"
             customInput={
-                <InputMask mask='__/__/____' replacement={{_:/\d/}} className={`input-date_input${!valid?' error':''}`} style={{padding:'0px',paddingBottom:'3px'}}/>
+                <InputMask mask='__/__/____' replacement={{_:/\d/}} className={`input-date_input${!valid?' error':isFocused?' focus':''}`} style={{padding:'0px',paddingBottom:'3px'}}/>
             }/>
             {comment&&(
-                <p className={`input-text_comment${!valid?' error':''}`}>{comment}</p>
+                <p className={`input-date_comment${!valid?' error':isFocused?' focus':''}`}>{comment}</p>
             )}
             {disabled&&(
                 <div className="input-string_filter"/>
