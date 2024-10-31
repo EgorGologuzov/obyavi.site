@@ -13,7 +13,6 @@ export default function ScrollingList({
     const [counter,setCounter]=useState(1);
     const handleScroll=(e)=>{
         const bottom=e.target.scrollHeight - e.target.scrollTop <= e.target.clientHeight+1;
-        console.log(`${e.target.clientHeight+1},${(e.target.scrollHeight - e.target.scrollTop)}`);
         if (bottom&&counter===0){
             onBottomReached();
             setCounter(1);
