@@ -5,6 +5,7 @@ import Subcaption from "../components/Subcaption";
 import Header from "../components/Header";
 import { useRef, useState } from "react";
 import { useAppContext } from "../contexts/AppContext";
+import { useYesNoModal } from "../components/YesNoModal";
 
 export default function LayoutModer() {
     const [menuOpened, setMenuOpened] = useState(false);
@@ -12,6 +13,7 @@ export default function LayoutModer() {
     const curtainRef = useRef(null);
     const navigate = useNavigate();
     const appContext = useAppContext();
+    const showYesNo = useYesNoModal();
 
     const changeMenuOpened = () => {
         menuRef.current.style = menuOpened ? "left: -350px" : "left: 0px";
@@ -25,8 +27,10 @@ export default function LayoutModer() {
     }
 
     const signOut = () => {
-        appContext.signOut();
-        navigate("/auth", {replace: true});
+        showYesNo("Вы уверенны, что хотите выйти?", () => {
+            appContext.signOut();
+            navigate("/auth", {replace: true});
+        })
     }
 
     return (

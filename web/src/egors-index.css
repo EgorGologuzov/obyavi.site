@@ -89,6 +89,10 @@
     --icon-avatar-placeholder: url("../public/img/avatar-placeholder-d.png");
 }
 
+#themeSwitch:checked~#root {
+    color-scheme: dark;
+}
+
 #themeSwitch {
     display: none;
 }
@@ -489,6 +493,7 @@ p.error {
 .modal__footer .btn {
     width: auto;
     margin: 0 0 0 10px;
+    min-width: 100px;
 }
 
 @media (width < 750px) {
@@ -715,4 +720,22 @@ p.error {
     text-decoration: underline;
     cursor: pointer;
     color: var(--primary);
+}
+
+.avatar {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: var(--bg);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg);
+}
+
+.avatar__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

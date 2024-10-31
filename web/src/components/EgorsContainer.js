@@ -15,6 +15,7 @@ import React, { useState } from 'react';
 import ModalFooter from './ModalFooter';
 import { useAppContext } from '../contexts/AppContext';
 import { useNewListContext, ListContextProvider } from '../contexts/ListContext';
+import Avatar from './Avatar';
 
 const ContentInsideModalExample = () => {
     const [inputs, setInputs] = useState({});
@@ -56,14 +57,22 @@ const CardFakeContent = () => {
     )
 }
 
+const cards = [{id: 1},{id: 2},{id: 3},{id: 4},{id: 5}]
+
 export default function EgorsContainer() {
     const appContext = useAppContext();
 
     const listContext = useNewListContext();
+    const listContext2 = useNewListContext();
 
     const handleChooseButtonClick = (event, cardId) => {
         listContext.setSelectMode(true);
         listContext.setSelectedCards(new Set([cardId]));
+    }
+
+    const handleChooseButtonClick2 = (event, cardId) => {
+        listContext2.setSelectMode(true);
+        listContext2.setSelectedCards(new Set([cardId]));
     }
 
     return (
@@ -136,28 +145,39 @@ export default function EgorsContainer() {
                     toolsForSelectedMode={
                         <ToolButton icon="icon-picture" text="console.log(1)" onClick={() => console.log(1)} />
                     }>
-                    <Card id={0}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 0)} />
-                            <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext.selectedCards)} />
-                            <ContextMenuButton text="console.log(2)" onClick={() => console.log(2)} />
-                        </ContextMenu>
-                    </Card>
-                    <Card id={1}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 1)} />
-                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
-                        </ContextMenu>
-                    </Card>
-                    <Card id={2}>
-                        <CardFakeContent />
-                        <ContextMenu>
-                            <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, 2)} />
-                            <ContextMenuButton text="console.log(1)" onClick={() => console.log(1)} />
-                        </ContextMenu>
-                    </Card>
+                    {cards.map((card, index) => 
+                        <Card id={card.id} key={card.id}>
+                            <CardFakeContent />
+                            <ContextMenu>
+                                <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick(event, card.id)} />
+                                <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext.selectedCards)} />
+                                <ContextMenuButton text="console.log(2)" onClick={() => console.log(2)} />
+                            </ContextMenu>
+                        </Card>
+                    )}
+                </PagedList>
+            </ListContextProvider>
+
+            <ListContextProvider value={listContext2}>
+                <PagedList
+                    pageMax="10"
+                    onPageValueChange={(event) => console.log(event)}
+                    tools={
+                        <ToolButton icon="icon-picture" text="console.log(2)" onClick={() => console.log(2)} />
+                    }
+                    toolsForSelectedMode={
+                        <ToolButton icon="icon-picture" text="console.log(1)" onClick={() => console.log(1)} />
+                    }>
+                    {cards.map((card, index) => 
+                        <Card id={card.id} key={card.id}>
+                            <CardFakeContent />
+                            <ContextMenu>
+                                <ContextMenuButton text="Выбрать" onClick={(event) => handleChooseButtonClick2(event, card.id)} />
+                                <ContextMenuButton text="Показать отмеченные" onClick={() => console.log(listContext2.selectedCards)} />
+                                <ContextMenuButton text="console.log(2)" onClick={() => console.log(2)} />
+                            </ContextMenu>
+                        </Card>
+                    )}
                 </PagedList>
             </ListContextProvider>
             
@@ -207,6 +227,14 @@ export default function EgorsContainer() {
                     Показать уведомление warning
                 </Button>
             </Grid>
+
+            <Spliter />
+
+            <div style={{height: "100px", display: "flex", flexDirection: "row", justifyContent: "center"}}>
+                <Avatar src="https://i.ytimg.com/vi/BOp5lW5ncM4/maxresdefault.jpg" />
+                <Avatar src="" />
+                <Avatar />
+            </div>
 
             <Spliter />
 
