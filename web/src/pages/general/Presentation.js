@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import useTitle from '../../hook/useTitle'
 
 export default function Presentation() {
-    useEffect(() => {
-        document.title = "объяви.site - Главная";
-    });
+
+    useTitle("объяви.site - Главная");
 
     return (
         <div>PresentationPage</div>

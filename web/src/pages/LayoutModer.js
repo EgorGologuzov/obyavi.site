@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import { useRef, useState } from "react";
 import { useAppContext } from "../contexts/AppContext";
 import { useYesNoModal } from "../components/YesNoModal";
+import { useUserService } from "../data/UserService";
 
 export default function LayoutModer() {
     const [menuOpened, setMenuOpened] = useState(false);
@@ -14,6 +15,7 @@ export default function LayoutModer() {
     const navigate = useNavigate();
     const appContext = useAppContext();
     const showYesNo = useYesNoModal();
+    const userService = useUserService();
 
     const changeMenuOpened = () => {
         menuRef.current.style = menuOpened ? "left: -350px" : "left: 0px";
@@ -28,7 +30,8 @@ export default function LayoutModer() {
 
     const signOut = () => {
         showYesNo("Вы уверенны, что хотите выйти?", () => {
-            appContext.signOut();
+            userService.signOut();
+            appContext.unsetUser();
             navigate("/auth", {replace: true});
         })
     }
