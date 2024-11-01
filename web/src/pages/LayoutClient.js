@@ -9,6 +9,7 @@ import SearchString from "../components/SearchString";
 import Avatar from "../components/Avatar";
 import { useYesNoModal } from "../components/YesNoModal";
 import { useSearchService } from "../data/SearchService";
+import { useUserService } from "../data/UserService";
 
 let pastSearchRequestChangeTime;
 
@@ -22,6 +23,7 @@ export default function LayoutClient() {
     const [searchHints, setSearchHints] = useState([]);
     const showYesNo = useYesNoModal();
     const searchService = useSearchService();
+    const userService = useUserService();
 
     const changeMenuOpened = () => {
         menuRef.current.style = menuOpened ? "left: -350px" : "left: 0px";
@@ -36,7 +38,8 @@ export default function LayoutClient() {
 
     const signOut = () => {
         showYesNo("Вы уверенны, что хотите выйти?", () => {
-            appContext.signOut();
+            userService.signOut();
+            appContext.unsetUser();
             navigate("/auth", {replace: true});
         })
     }

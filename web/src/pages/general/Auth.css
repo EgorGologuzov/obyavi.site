@@ -1,7 +1,3 @@
-.auth-page {
-    margin: 30px;
-}
-
 .auth-page__header {
     display: flex;
     flex-direction: row;
@@ -11,9 +7,17 @@
     align-items: center;
 }
 
-.auth-page__form {
-    min-width: 250px;
+.auth-page .auto-form {
     margin-bottom: 30px;
+    max-width: 300px;
+}
+
+.auth-page .grid-container {
+    width: 100%;
+}
+
+.auth-page .grid-container>div {
+    width: 100%;
 }
 
 .auth-page__links {
@@ -43,17 +47,14 @@
 
 .auth-page .text {
     text-align: center;
+    margin-top: 30px;
 }
 
-.auth-page__form input {
+.auth-page .auto-form input {
     min-width: 200px;
 }
 
 @media (width < 750px) {
-    .auth-page {
-        margin: 15px;
-    }
-
     .auth-page__header {
         height: 30px;
         margin-bottom: 20px;
@@ -70,5 +71,9 @@
 
     .auth-page__form {
         margin-bottom: 20px;
+    }
+
+    .auth-page .text {
+        margin-top: 20px;
     }
 }

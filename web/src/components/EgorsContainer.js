@@ -215,15 +215,21 @@ export default function EgorsContainer() {
                     Показать уведомление common
                 </Button>
                 <Button color="primary" onClick={() =>
-                    appContext.showNotification('Заголовок уведомления', 'Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления', 'important', [
-                        { text: "console.log(2)", onClick: () => console.log(2) }
-                    ])}>
+                    appContext.showNotification(
+                        'Заголовок уведомления',
+                        'Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления',
+                        'important',
+                        [{ text: "console.log(2)", onClick: () => console.log(2) }]
+                    )}>
                     Показать уведомление important
                 </Button>
                 <Button color="warning" onClick={() =>
-                    appContext.showNotification('Заголовок уведомления', 'Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления', 'critical', [
-                        { text: "console.log(3)", onClick: () => console.log(3) }
-                    ])}>
+                    appContext.showNotification(
+                        'Заголовок уведомления',
+                        'Текст уведомления Текст уведомления Текст уведомления Текст уведомления Текст уведомления',
+                        'critical',
+                        [{ text: "console.log(3)", onClick: () => console.log(3) }]
+                    )}>
                     Показать уведомление warning
                 </Button>
             </Grid>

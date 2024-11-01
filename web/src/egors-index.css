@@ -652,11 +652,12 @@ p.error {
     position: fixed;
     right: 10px;
     z-index: 3000;
+    padding-top: 10px;
 }
 
 .popup {
     display: grid;
-    grid-template-columns: auto 80px;
+    grid-template-columns: auto 60px;
     grid-auto-rows: auto;
     background-color: var(--bg);
     border-radius: 15px;
@@ -698,7 +699,7 @@ p.error {
     justify-content: center;
     border-radius: 0 15px 15px 0;
     color: white;
-    font-size: 45px;
+    font-size: 30px;
     font-weight: var(--medium);
 }
 
@@ -719,7 +720,7 @@ p.error {
     margin-right: 10px;
     text-decoration: underline;
     cursor: pointer;
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .avatar {
