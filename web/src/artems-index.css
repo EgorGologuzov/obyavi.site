@@ -36,6 +36,7 @@
 
     /* Theme independed icons */
     --icon-empty: url("../public/img/empty.png");
+    --red-cross:url("../public/img/red-cross.png");
     --icon-check-mark-dark: url("../public/img/check-mark-d.png");
     --logo: url("../public/img/logo-l.png");
     --mag-glass: url("../public/img/mag-glass-d.png");

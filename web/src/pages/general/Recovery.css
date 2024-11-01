@@ -1,0 +1,55 @@
+.recovery{
+    width:550px;
+    display:flex;
+    padding:30px;
+    flex-direction: column;
+}
+.recovery__email{
+    margin-top:35px;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.recovery h6{
+    width:80%;
+}
+.recovery__email__check{
+    background-image:var(--red-cross);
+    background-repeat: no-repeat;
+    border: 2px solid var(--light);
+    background-size:30px 30px;
+    background-position: center;
+    border-radius: 10px;
+    height:50px;
+    width:50px;
+}
+.recovery__email-confirmation-btn{
+    margin-top:20px;
+    width:80%;
+    align-self: center;
+}
+.recovery__new-password{
+    margin-top:35px;
+}
+.recovery__new-password h6{
+    margin-bottom:20px;
+}
+.recovery__new-password__inputs{
+    display: grid;
+    gap:10px;
+}
+.recovery__confirmation{
+    display:flex;
+    flex-direction: column;
+    margin-top:40px;
+}
+.recovery__home-link{
+    color:var(--accent);
+    font-size:16px;
+    text-decoration: underline;
+    margin-top:20px;
+    align-self: center;
+}
+.recovery__home-link:hover{
+    cursor:pointer;
+}
