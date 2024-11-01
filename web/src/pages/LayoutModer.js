@@ -42,7 +42,7 @@ export default function LayoutModer() {
         <div className="layout-moder__menu" ref={menuRef}>
             <div className="layout-moder__account-data">
                 <Subcaption level={1}>Модератор: #{appContext.loginedUser.id}</Subcaption>
-                <Header level={4}>{`${appContext.loginedUser.lastname} ${appContext.loginedUser.firstname}`}</Header>
+                <Header level={4}>{`${appContext.loginedUser.firstname} ${appContext.loginedUser.lastname}`}</Header>
             </div>
             <Subcaption level={2}>Опции:</Subcaption>
             <div className="layout-moder__options">
