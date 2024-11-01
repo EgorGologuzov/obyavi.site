@@ -1,5 +1,5 @@
-const Logo = ({sizeFull='full',onClick}) => {
-    let className=sizeFull=='full'?'logo-full':'logo';
+const Logo = ({sizeFull=false,onClick}) => {
+    let className=sizeFull?'logo-full':'logo';
     return (
         <div className={className}>
             <button className={className+'_button'} onClick={onClick}/>

@@ -1,0 +1,28 @@
+.reg{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    padding:30px;
+    width:550px;
+}
+.reg__header{
+    display:inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+}
+.reg__header div button{
+    background-size:198px 42px;
+    width:198px;
+    height:42px;
+}
+.reg__header div{
+    width:198px;
+    height:42px;
+}
+.reg__form{
+    margin-top:35px;
+    display: grid;
+    gap:25px;
+    margin-bottom:50px;
+}
