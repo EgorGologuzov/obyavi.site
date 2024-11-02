@@ -1,55 +1,50 @@
-.recovery{
-    width:550px;
-    display:flex;
-    padding:30px;
-    flex-direction: column;
+.recovery-page {
+    max-width: 300px;
 }
-.recovery__email{
-    margin-top:35px;
-    display:flex;
-    flex-direction:row;
+
+.recovery-page__header {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    height: 30px;
+    margin-bottom: 35px;
+    align-items: center;
 }
-.recovery h6{
-    width:80%;
+
+.recovery-page .auto-form {
+    margin-bottom: 20px;
+    max-width: 300px;
 }
-.recovery__email__check{
-    background-image:var(--red-cross);
-    background-repeat: no-repeat;
-    border: 2px solid var(--light);
-    background-size:30px 30px;
-    background-position: center;
-    border-radius: 10px;
-    height:50px;
-    width:50px;
+
+.recovery-page .grid-container>div {
+    width: 100%;
 }
-.recovery__email-confirmation-btn{
-    margin-top:20px;
-    width:80%;
-    align-self: center;
+
+.recovery-page__logo {
+    height: 100%;
+    content: var(--logo);
 }
-.recovery__new-password{
-    margin-top:35px;
+
+.recovery-page .auto-form input {
+    min-width: 200px;
 }
-.recovery__new-password h6{
-    margin-bottom:20px;
+
+.recovery-page .error {
+    text-wrap: wrap;
 }
-.recovery__new-password__inputs{
-    display: grid;
-    gap:10px;
+
+.recovery-page .subcaption {
+    font-size: 14px;
+    margin-bottom: 20px;
 }
-.recovery__confirmation{
-    display:flex;
-    flex-direction: column;
-    margin-top:40px;
+
+.recovery-page .spliter {
+    height: 20px;
 }
-.recovery__home-link{
-    color:var(--accent);
-    font-size:16px;
-    text-decoration: underline;
-    margin-top:20px;
-    align-self: center;
-}
-.recovery__home-link:hover{
-    cursor:pointer;
+
+@media (width < 750px) {
+    .recovery-page__header {
+        height: 30px;
+        margin-bottom: 20px;
+    }
 }

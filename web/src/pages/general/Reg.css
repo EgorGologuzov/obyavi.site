@@ -1,28 +1,40 @@
-.reg{
+.reg-page__header {
     display: flex;
-    flex-direction: column;
-    position:relative;
-    padding:30px;
-    width:550px;
-}
-.reg__header{
-    display:inline-flex;
+    flex-direction: row;
     justify-content: space-between;
+    height: 30px;
+    margin-bottom: 35px;
     align-items: center;
-    width:100%;
 }
-.reg__header div button{
-    background-size:198px 42px;
-    width:198px;
-    height:42px;
+
+.reg-page .auto-form {
+    margin-bottom: 30px;
+    max-width: 300px;
 }
-.reg__header div{
-    width:198px;
-    height:42px;
+
+.reg-page .grid-container {
+    width: 100%;
 }
-.reg__form{
-    margin-top:35px;
-    display: grid;
-    gap:25px;
-    margin-bottom:50px;
+
+.reg-page .grid-container>div {
+    width: 100%;
+}
+
+.reg-page__logo {
+    height: 100%;
+}
+
+.reg-page .auto-form input {
+    min-width: 200px;
+}
+
+.reg-page .error {
+    text-wrap: wrap;
+}
+
+@media (width < 750px) {
+    .reg-page__header {
+        height: 30px;
+        margin-bottom: 20px;
+    }
 }

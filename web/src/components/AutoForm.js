@@ -1,46 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Grid from "./Grid";
 
-function mapInputs(inputs, handleInputChange) {
-    const result = [];
-    console.log(inputs);
+// хук для создания нового сотояния формы
+export function useNewFormState() {
+    // устанавливаю все необходимые сотояни
+    // values - объект {имяИнпута: значениеИнпута}, имя задается в пропсах инпута как name=""
+    // invalidFields - Set, содержит имена неправильно заполненных полей
+    const [values, setValues] = useState({});
+    const [invalidFields, setInvalidFields] = useState(new Set());
 
-    for (var inputName in inputs) {
-        const jsx = inputs[inputName].jsx;
-
-        const newJsx = React.cloneElement(jsx, {
-            value: inputs[inputName]?.value,
-            valid: inputs[inputName]?.valid ?? true,
-            comment: inputs[inputName]?.comment,
-            onChange: (event) => handleInputChange(event, inputName)
-        })
-
-        result.push(newJsx);
+    // собираю все в один объект
+    const formState = {
+        values: values,
+        invalidFields: invalidFields
     }
 
-    return result;
+    // возврат
+    return formState;
 }
 
-export default function AutoForm({ inputs, setInputs }) {
+/* автоформа следит за изменениями значений внутренних валидируемых инпутов и их валидацией,
+результат отслеживания сохраняет в объект formState */
+export default function AutoForm({ children, formState }) {
 
-    const handleInputChange = (event, fieldName) => {
-        event.preventDefault();
-
-        const { valid, comment } = inputs[fieldName]?.validate && inputs[fieldName].validate(event.target.value) || { valid: true, comment: undefined };
-
-        setInputs(olds => ({
-            ...olds, [fieldName]: {
-                jsx: inputs[fieldName]?.jsx,
-                value: event.target.value,
-                valid: valid,
-                comment: comment,
-                validate: inputs[fieldName]?.validate
-            }
-        }));
+    const handleInputChange = ({ fieldName, newValue, isValid }) => {
+        // устанавливаю значение поля в объект значений formState.values
+        formState.values[fieldName] = newValue;
+        // если значение не прошло валидацию внутри компонента, то добавляю его в набор неверных значений
+        // иначе, удаляю его оттуда
+        isValid ? formState.invalidFields.delete(fieldName) : formState.invalidFields.add(fieldName);
     }
 
     return (
         <form className="auto-form">
-            {inputs && mapInputs(inputs, handleInputChange)}
+            <Grid desktopColumns={1} mobileColumns={1}>
+                {/* прохожусь по всем внутр. элементам и клонирую их задавая новые обработчики*/}
+                {React.Children.map(children, (child) => {
+                    if (React.isValidElement(child)) {
+                        if (!child.props.name) {
+                            return child;
+                        }
+
+                        return React.cloneElement(child, {
+                            // задаю обработчики на событие изменения значеня и событе первоначальной проверки значения
+                            // передаю их в функцию, которая синхронизирует перенесет эти значения в formState
+                            onChange: (event) => handleInputChange({
+                                fieldName: child.props.name,
+                                newValue: event.newValue,
+                                isValid: event.isValid
+                            }),
+                            onMontage: (event) => handleInputChange({
+                                fieldName: child.props.name,
+                                newValue: event.value,
+                                isValid: event.isValid
+                            })
+                        });
+                    }
+                    return child;
+                })}
+            </Grid>
         </form>
     )
 }
