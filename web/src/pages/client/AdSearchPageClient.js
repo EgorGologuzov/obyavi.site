@@ -62,7 +62,7 @@ export default function AdSearchPageClient() {
             <Subcaption level={2}>Найдено {adsInScrollingList.length} товаров из {adCount}</Subcaption>
             <ListContextProvider value={listContext}>
                 <ScrollingList onBottomReached={()=>console.log('wow')}>
-                    {adsInScrollingList.map((ad, index) => 
+                    {adsInScrollingList.map((ad, index) =>
                         <Card id={ad.id} key={ad.id}>
                             <Ad user={userService.getUserById(ad.userId)}
                             img='https://alpinabook.ru/upload/resize_cache/iblock/8d9/550_800_1/8d9cd63476f15e85f0d8796555ab1e6b.jpg'
