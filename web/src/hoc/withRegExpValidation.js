@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import InputPhone from "../components/InputPhone";
 import InputPassword from "../components/InputPassword";
 import InputString from "../components/InputString";
+import InputText from "../components/InputText";
 
 // Рекомендую посмореть на ютубе или почитать что такое hoc в react
 // Расширение (hoc) поверх любого инпута, для добавления логики валидации по рег. выражениям
@@ -101,3 +102,5 @@ export const InputEmail_withRegExp =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g,
         "",
         "Неверный формат почты");
+
+export const InputText_withRegExp = withRegExpValidation(InputText);

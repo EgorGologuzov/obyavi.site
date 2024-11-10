@@ -1,0 +1,95 @@
+.ad-search-page{
+    margin-top:90px;
+}
+.ad-search-page__search-zone{
+    display:grid;
+    grid-template-columns: 80% 10% 10%;
+    gap:5px;
+}
+.ad-search-page__search-zone button{
+    height:40px;
+}
+.ad-search-page .scrolling-list .tool-panel{
+    display: none;
+}
+
+.ad{
+    display: grid;
+    grid-template-columns:250px 350px 35px;
+    grid-template-rows:auto auto;
+    margin-bottom:15px;
+    padding:10px;
+}
+.ad__text-info{
+    margin-left:15px;
+}
+.ad__text-info .subcaption.subcaption_level_2{
+    margin-top:5px;
+    font-size:14px;
+}
+.ad__text-info .subcaption.subcaption_level_1{
+    margin-top:10px;
+    font-size:16px;
+}
+.ad__user-info{
+    display:inline-flex;
+    grid-column: span 2;
+    align-items: flex-end;
+    margin-left:10px;
+}
+.ad__user-info__c2{
+    display:flex;
+    flex-direction: column;
+    margin-left:15px;
+}
+.ad__user-info__c2 h5{
+    align-self:start;
+    margin:0;
+    margin-bottom:5px;
+}
+.ad__user-info__c2__r2{
+    display: flex;
+    flex-direction:row;
+}
+.ad__user-info__c2__r2 h6{
+    align-self: center;
+    margin-left:10px;
+}
+.ad__user-info .avatar{
+    height:50px;
+    width:50px;
+    grid-row:span 2;
+}
+.ad__user-info .stars-bar{
+    height: 35px;
+    padding: 0;
+    padding-top: 7px;
+    padding-left: 10px;
+    gap: 0px;
+    width: 200px;
+    place-self: end start;
+}
+.ad__user-info .stars-bar svg{
+    width:20px;
+    height:20px;
+}
+.ad .switch{
+    place-self: start;
+    pointer-events: auto;
+}
+.ad .switch input{
+    height:35px;
+    width:35px;
+    content: var(--icon-heart);
+    background-color: transparent;
+    transition:all 0.1s ease-out;
+    border:none;
+    outline: none;
+}
+.ad .switch input:checked{
+    content: var(--icon-heart-filled);
+    scale: 110%;
+}
+.ad .switch input::before{
+    display: none;
+}

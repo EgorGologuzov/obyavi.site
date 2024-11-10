@@ -33,13 +33,15 @@
     --opened-eye:url("../public/img/opened-eye-l.png");
     --closed-eye: url("../public/img/closed-eye-l.png");
     --calender:url("../public/img/calender-l.png");
+    --icon-sort-asc: url('../public/img/sort-asc-l.png');
+    --icon-sort-desc: url('../public/img/sort-desc-l.png');
 
     /* Theme independed icons */
     --icon-empty: url("../public/img/empty.png");
     --red-cross:url("../public/img/red-cross.png");
     --icon-check-mark-dark: url("../public/img/check-mark-d.png");
     --logo: url("../public/img/logo-l.png");
-    --mag-glass: url("../public/img/mag-glass-d.png");
+    --mag-glass: url("../public/img/mag-glass-d.png"); 
 }
 
 #themeSwitch:checked~#root {
@@ -66,6 +68,8 @@
     --opened-eye:url("../public/img/opened-eye-d.png");
     --closed-eye: url("../public/img/closed-eye-d.png");
     --calender:url("../public/img/calender-d.png");
+    --icon-sort-asc: url('../public/img/sort-asc-d.png');
+    --icon-sort-desc: url('../public/img/sort-desc-d.png');
 }
 
 .icon-mag-glass {
@@ -419,9 +423,12 @@
 }
 
 .stars-bar {
-    display: flex;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
     cursor: pointer;
+    gap:10px;
     width: 350px;
+    height:30px;
     justify-content: space-around;
     padding: 10px 15px 10px 15px;
     border-radius: 60px;
@@ -430,7 +437,6 @@
 .stars-bar.input-off{
     pointer-events: none;
 }
-
 .stars-bar_star {
     stroke: var(--bg);
     stroke-opacity: 0.5;
