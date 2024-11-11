@@ -8,7 +8,8 @@ export default function ScrollingList({
     children,
     tools,
     toolsForSelectedMode,
-    onBottomReached}){
+    onBottomReached,
+    maxHeight=1000}){
     const listContext = useListContext();
     const [counter,setCounter]=useState(1);
     const handleScroll=(e)=>{
@@ -42,7 +43,7 @@ export default function ScrollingList({
                     </>
                 )}
             </ToolPanel>
-            <div className="scrolling-list__content" style={{maxHeight:`${450}px`}} onScroll={handleScroll}>
+            <div className="scrolling-list__content" style={{maxHeight:`${maxHeight}px`}} onScroll={handleScroll}>
                 <ListView desktopColumns="2" mobileColumns="1" >
                     {children}
                 </ListView>

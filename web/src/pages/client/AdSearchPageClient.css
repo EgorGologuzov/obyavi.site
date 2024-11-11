@@ -1,0 +1,14 @@
+.ad-search-page{
+    margin-top:90px;
+}
+.ad-search-page__search-zone{
+    display:grid;
+    grid-template-columns: 80% 10% 10%;
+    gap:5px;
+}
+.ad-search-page__search-zone button{
+    height:40px;
+}
+.ad-search-page .scrolling-list .tool-panel{
+    display: none;
+}

@@ -1,0 +1,4 @@
+.filter-dialog ul{
+    list-style-type: none;
+    transition:all 0.3s ease-out;
+}

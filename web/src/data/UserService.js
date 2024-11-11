@@ -31,7 +31,13 @@ const fakeAccounts = [
         lastname: "Трамп",
         firstname: "Дональд",
         email: "trump@mail.ru",
-        avatar: "https://alpinabook.ru/upload/resize_cache/iblock/8d9/550_800_1/8d9cd63476f15e85f0d8796555ab1e6b.jpg"
+        avatar: "https://alpinabook.ru/upload/resize_cache/iblock/8d9/550_800_1/8d9cd63476f15e85f0d8796555ab1e6b.jpg",
+        location: 'г. Омск, Самарская обл.',
+        regDate: '01.11.2024',
+        birthDate: '02.02.1952',
+        description:'Американский государственный и политический деятель, предприниматель, миллиардер, 45-й президент США с 20 января 2017 по 20 января 2021 года от Республиканской партии.',
+        rating: 4,
+        favoriteAds:[1,2],
     },
     {
         id: 4,
@@ -41,7 +47,13 @@ const fakeAccounts = [
         lastname: "Харрис",
         firstname: "Камала",
         email: "harris@mail.ru",
-        avatar: "https://iv.kommersant.ru/Issues.photo/DAILY/2024/158/KMO_162543_54330_1_t222_180737.jpg"
+        avatar: "https://iv.kommersant.ru/Issues.photo/DAILY/2024/158/KMO_162543_54330_1_t222_180737.jpg",
+        location: 'г. Омск, Самарская обл.',
+        regDate: '01.11.2024',
+        birthDate: '02.02.1952',
+        description:'Американский государственный и политический деятель, предприниматель, миллиардер, 45-й президент США с 20 января 2017 по 20 января 2021 года от Республиканской партии.',
+        rating: 4,
+        favoriteAds:[],
     }
 ]
 
@@ -151,5 +163,13 @@ const fakeService = {
 
             }, 500);
         })
+    },
+
+    getUsers(){
+        return fakeAccounts;
+    },
+
+    getUserById(id){
+        return fakeAccounts.find((user)=>user.id==id);
     }
 }

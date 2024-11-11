@@ -10,6 +10,7 @@ const InputPhone = ({
     disabled=false,
     label='Номер телефона',
     comment='',
+    placeholder="+_ (___) ___ __-__",
     onChange})=>{
 
     const [hasFocus,setFocus]=useState(false);
@@ -35,7 +36,7 @@ const InputPhone = ({
                 )}
             </div>
             <input type='text'
-                placeholder="+_ (___) ___ __-__"
+                placeholder={placeholder}
                 className={`input-phone_input ${!valid?'error':hasFocus?'focus':''}`}
                 onChange={onChange}
                 onFocus={handleFocus}

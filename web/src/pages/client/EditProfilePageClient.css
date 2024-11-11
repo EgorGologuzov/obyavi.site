@@ -1,0 +1,95 @@
+.edit-profile-page{
+    display:flex;
+    flex-direction:column;
+    margin-top:20px;
+}
+.edit-profile-page__header{
+    padding:20px;
+    display:flex;
+    flex-direction:row;
+    align-self:center;
+    justify-content: space-between;
+}
+.edit-profile-page__header__info{
+    display:flex;
+    flex-direction:row;
+}
+.edit-profile-page__header__info .avatar{
+    min-width:200px;
+    height:200px;
+    transition: all 0.3s ease-out;
+    background-color:transparent;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+.edit-profile-page__header__info .avatar:hover{
+    width:200px;
+    height:200px;
+    background-color:rgba(var(--text-rgb),0.3);
+    background-image: var(--icon-settings);
+}
+.edit-profile-page__header__info .avatar img{
+    z-index: -100;
+}
+.edit-profile-page__header__info__text{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap:10px;
+    grid-template-rows: 30px 30px 50px;
+    margin-left:20px;
+    align-self: center;
+    flex-direction:column;
+}
+.edit-profile-page__header__info__text .stars-bar{
+    grid-column:span 2;
+    height:45px;
+    padding:0;
+    padding-top:7px;
+    padding-left:10px;
+    gap:0px;
+    width: 200px;
+    place-self: end start;
+}
+.edit-profile-page__header__info__text .stars-bar svg{
+    width:30px;
+    height:30px;
+}
+.edit-profile-page form{
+    margin-top:30px;    
+    min-width: 750px;
+    align-self: center;
+}
+.edit-profile-page__confirm-buttons{
+    width:450px;
+    margin-top:20px;
+    margin-bottom:20px;
+    align-self: center;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.edit-profile-page__confirm-buttons button{
+    width:190px;
+}
+
+@media(width<750px){
+    .edit-profile-page form{
+        min-width:400px;
+    }
+    .edit-profile-page__confirm-buttons{
+        flex-direction: column;
+        align-items: center;
+        height:110px;
+    }
+    .edit-profile-page__confirm-buttons button{
+        width:100%;
+    }
+    .edit-profile-page__header__info{
+        flex-direction:column;
+    }
+    .edit-profile-page__header__info .avatar{
+        width: 200px;
+        align-self:center;
+        margin-bottom:20px;
+    }
+}
