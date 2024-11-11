@@ -10,7 +10,7 @@ import useTitle from '../../hook/useTitle';
 
 const errors = {
     "403": { name: "Forbidden", message: "Вам не доступна эта страница" },
-    "404": { name: "Nor found", message: "Такой страницы нет" }
+    "404": { name: "Not found", message: "Такой страницы нет" }
 }
 
 export default function Error({ code }) {

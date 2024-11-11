@@ -5,3 +5,12 @@ export function isPointInRect(x, y, rect) {
 export function cleanPhone(phone) {
     return phone?.replace(/[^0-9+]/g, '');
 }
+
+export function busyProcess(busy, setBusy, process) {
+    if (busy) {
+        return;
+    }
+
+    setBusy(true);
+    process().finally(() => setBusy(false));
+}

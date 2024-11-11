@@ -97,12 +97,6 @@ export default function LayoutClient() {
         <div className="layout-client__page">
             <div className="layout-client__content">
                 <Outlet />
-                <div style={{height: "300px", width: "100%", backgroundColor: "var(--light)"}}></div>
-                <div style={{height: "300px", width: "100%", backgroundColor: "var(--fg)"}}></div>
-                <div style={{height: "300px", width: "100%", backgroundColor: "var(--light)"}}></div>
-                <div style={{height: "300px", width: "100%", backgroundColor: "var(--fg)"}}></div>
-                <div style={{height: "300px", width: "100%", backgroundColor: "var(--light)"}}></div>
-                <div style={{height: "300px", width: "100%", backgroundColor: "var(--fg)"}}></div>
             </div>
         </div>
     </div>
