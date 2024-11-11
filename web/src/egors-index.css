@@ -134,52 +134,52 @@ body {
 }
 
 .grid-container_desktop_1 {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: minmax(0px, 1fr);
 }
 
 .grid-container_desktop_2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr);
 }
 
 .grid-container_desktop_3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
 }
 
 .grid-container_desktop_4 {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
 }
 
 .grid-container_desktop_5 {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
 }
 
 .grid-container_desktop_6 {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
 }
 
 @media (width < 750px) {
     .grid-container_mobile_1 {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: minmax(0px, 1fr);
     }
-
+    
     .grid-container_mobile_2 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr);
     }
-
+    
     .grid-container_mobile_3 {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
     }
-
+    
     .grid-container_mobile_4 {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
     }
-
+    
     .grid-container_mobile_5 {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
     }
-
+    
     .grid-container_mobile_6 {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
     }
 }
 
@@ -508,10 +508,6 @@ p.error {
         width: 100%;
         margin: 10px 0 0 0;
     }
-}
-
-.paged-list {
-    border: 1px solid var(--secondary);
 }
 
 .paged-list>.tool-panel {
