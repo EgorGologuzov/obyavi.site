@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from "./Grid";
 import { useListContext } from '../contexts/ListContext';
+import Card from './Card';
 
 export default function ListView({ children, desktopColumns = "2", mobileColumns = "1" }) {
     const listContext = useListContext();
@@ -23,10 +24,10 @@ export default function ListView({ children, desktopColumns = "2", mobileColumns
         <div className={listContext.selectMode ? "list-view list-view_select-mode" : "list-view"}>
             <Grid desktopColumns={desktopColumns} mobileColumns={mobileColumns}>
                 {React.Children.map(children, (child) => {
-                    if (React.isValidElement(child)) {
+                    if (React.isValidElement(child) && child.type === Card) {
                         const cardId = child.props.id;
                         return React.cloneElement(child, {
-                            onClick: (event) => handleCardClick(cardId, event),
+                            onClick: (event) => {handleCardClick(cardId, event);},
                             isChecked: listContext.selectedCards.has(cardId)
                         });
                     }

@@ -44,6 +44,8 @@
     --icon-sun: url("../public/img/sun-l.png");
     --icon-violation: url("../public/img/violation-l.png");
     --icon-avatar-placeholder: url("../public/img/avatar-placeholder-l.png");
+    --icon-send: url("../public/img/send-l.png");
+    --icon-bin: url("../public/img/bin-l.png");
 
     /* Theme independed images */
     --icon-empty: url("../public/img/empty.png");
@@ -87,6 +89,8 @@
     --icon-sun: url("../public/img/sun-d.png");
     --icon-violation: url("../public/img/violation-d.png");
     --icon-avatar-placeholder: url("../public/img/avatar-placeholder-d.png");
+    --icon-send: url("../public/img/send-d.png");
+    --icon-bin: url("../public/img/bin-d.png");
 }
 
 #themeSwitch:checked~#root {
@@ -573,7 +577,6 @@ p.error {
 .list-view .card:hover {
     border: 1px solid var(--accent);
     box-shadow: 0 0 5px 3px var(--accent);
-    cursor: pointer;
     outline: none;
 }
 

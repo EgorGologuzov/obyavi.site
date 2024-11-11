@@ -37,3 +37,8 @@ export function useNewListContext() {
 export function ListContextProvider({ children, value }) {
     return (<ListContext.Provider value={value}>{children}</ListContext.Provider>);
 };
+
+export const selectCards = (listContext, cardIdList) => {
+    listContext.setSelectMode(true);
+    listContext.setSelectedCards(new Set(cardIdList));
+}
