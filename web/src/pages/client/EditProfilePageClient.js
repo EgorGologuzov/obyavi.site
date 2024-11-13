@@ -40,7 +40,7 @@ export default function EditProfilePageClient() {
         <div className="edit-profile-page">
             <div className="edit-profile-page__header">
                 <div className="edit-profile-page__header__info">
-                    <Avatar src={appContext.loginedUser.avatar} onClick={()=>alert('fdlfj')}/>
+                    <Avatar src={appContext.loginedUser.avatar} onClick={()=>navigate('/c/settings')}/>
                     <div className="edit-profile-page__header__info__text">
                         <Subcaption level={2} color={'text'}>{`Дата регистрации: `}</Subcaption>
                         <Subcaption level={2}>{`${appContext.loginedUser.regDate}`}</Subcaption>
