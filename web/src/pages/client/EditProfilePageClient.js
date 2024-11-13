@@ -18,6 +18,7 @@ export default function EditProfilePageClient() {
     const formState = useNewFormState();
     const [isDefaulted,setIsDefaulted]=useState(false);
     const [name,setName]=useState('Fucker');
+    const navigate=useNavigate();
 
     const restoreToDefault=()=>{
 
@@ -28,15 +29,18 @@ export default function EditProfilePageClient() {
             appContext.showNotification("", "Заполните все обязательные поля правильными значениями", "common");
             return;
         }
-
         console.log(formState.values);
+    }
+
+    const handleOnAvatarClick=(event)=>{
+        navigate('/c/settings');
     }
 
     return (
         <div className="edit-profile-page">
             <div className="edit-profile-page__header">
                 <div className="edit-profile-page__header__info">
-                    <Avatar src={appContext.loginedUser.avatar}/>
+                    <Avatar src={appContext.loginedUser.avatar} onClick={()=>alert('fdlfj')}/>
                     <div className="edit-profile-page__header__info__text">
                         <Subcaption level={2} color={'text'}>{`Дата регистрации: `}</Subcaption>
                         <Subcaption level={2}>{`${appContext.loginedUser.regDate}`}</Subcaption>
@@ -90,7 +94,7 @@ export default function EditProfilePageClient() {
             </AutoForm>
             <div className="edit-profile-page__confirm-buttons">
                 <Button onClick={()=>submitChanges()}>Сохранить</Button>
-                <Button color='secondary' onClick={()=>restoreToDefault()}>Отменить</Button>
+                <Button color='secondary' onClick={()=>navigate('/c/settings')}>Отменить</Button>
             </div>
         </div>
     )

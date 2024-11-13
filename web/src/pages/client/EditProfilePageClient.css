@@ -2,6 +2,7 @@
     display:flex;
     flex-direction:column;
     margin-top:20px;
+    margin:0px 10px;    
 }
 .edit-profile-page__header{
     padding:20px;
@@ -15,48 +16,52 @@
     flex-direction:row;
 }
 .edit-profile-page__header__info .avatar{
-    min-width:200px;
+    position:relative;
+    max-width:200px;
     height:200px;
+}
+.edit-profile-page__header__info .avatar::before{
+    position: absolute;
+    align-content: center;
+    text-align:center;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    content:var(--icon-settings);
+    opacity: 0;
+    pointer-events: none;
     transition: all 0.3s ease-out;
-    background-color:transparent;
-    background-repeat:no-repeat;
-    background-position:center;
 }
-.edit-profile-page__header__info .avatar:hover{
-    width:200px;
-    height:200px;
+.edit-profile-page__header__info .avatar:hover::before{
+    opacity: 1;
+    content:var(--icon-settings);
     background-color:rgba(var(--text-rgb),0.3);
-    background-image: var(--icon-settings);
-}
-.edit-profile-page__header__info .avatar img{
-    z-index: -100;
 }
 .edit-profile-page__header__info__text{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: minmax(0px,auto) minmax(0px,auto);
     column-gap:10px;
-    grid-template-rows: 30px 30px 50px;
+    row-gap:8px;
+    grid-template-rows: auto auto auto;
     margin-left:20px;
     align-self: center;
     flex-direction:column;
 }
+.edit-profile-page__header__info__text h6{
+    width:100%;
+    word-wrap: break-word;
+}
 .edit-profile-page__header__info__text .stars-bar{
     grid-column:span 2;
-    height:45px;
-    padding:0;
-    padding-top:7px;
-    padding-left:10px;
-    gap:0px;
-    width: 200px;
+    height:100%;
+    padding:0px 10px;
+    gap:10px;
+    width: 100%;
     place-self: end start;
 }
-.edit-profile-page__header__info__text .stars-bar svg{
-    width:30px;
-    height:30px;
-}
 .edit-profile-page form{
-    margin-top:30px;    
-    min-width: 750px;
+    margin-top:30px;
+    width: 100%;
     align-self: center;
 }
 .edit-profile-page__confirm-buttons{
@@ -79,6 +84,7 @@
     .edit-profile-page__confirm-buttons{
         flex-direction: column;
         align-items: center;
+        max-width: 100%;
         height:110px;
     }
     .edit-profile-page__confirm-buttons button{
@@ -88,7 +94,6 @@
         flex-direction:column;
     }
     .edit-profile-page__header__info .avatar{
-        width: 200px;
         align-self:center;
         margin-bottom:20px;
     }
