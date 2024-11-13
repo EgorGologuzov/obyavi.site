@@ -3,11 +3,24 @@
 }
 .ad-search-page__search-zone{
     display:grid;
-    grid-template-columns: 80% 10% 10%;
+    grid-template-columns: auto 15% 15%;
     gap:5px;
 }
-.ad-search-page__search-zone button{
-    height:40px;
+.ad-search-page__search-zone .btn{
+    height:max-content;
+    padding:5px 0px;
+    width: 100%;
+    text-wrap: wrap;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+.ad-search-page__search-zone .btn p{
+    margin:0;
+    align-self: center;
+}
+.ad-search-page__search-zone .search-string{
+    max-width:823px;
 }
 .ad-search-page .scrolling-list .tool-panel{
     display: none;

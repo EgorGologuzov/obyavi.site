@@ -21,10 +21,16 @@ export default function FavoritesListClient() {
     const adsInPagedList = (adService.getAds())
     const currentPageAds=([adsInPagedList[pageValue-1]])
     const userService=useUserService();
-    const dropdownSamples={'option_1':'White','option_2':'Red','option_3':'Green','option_4':'Blue','option_5':'Black'};
+    const dropdownSamples={'option_1':'Сначала новые','option_2':'Сначала старые'};
+    const [dropdownValue,setDropdownValue]=useState('');
 
     const handleOnPageValueChange=(event)=>{
         setPageValue(event.newValue);
+    }
+
+    const handleDropdownChange=(oldValue,newValue)=>{
+        setDropdownValue(newValue);
+        console.log(newValue);
     }
 
     return (
@@ -33,6 +39,8 @@ export default function FavoritesListClient() {
             <DropdownList 
             options={dropdownSamples}
             label='Сортировка:'
+            value={dropdownValue}
+            onChange={handleDropdownChange}
             comment=''
             />
             <ListContextProvider value={listContext}>

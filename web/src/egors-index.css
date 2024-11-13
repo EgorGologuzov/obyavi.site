@@ -397,6 +397,7 @@ h5 {
 
 .tool-btn__label {
     padding-left: 5px;
+    pointer-events: none;
 }
 
 .tool-btn:disabled>.tool-btn__curtain {

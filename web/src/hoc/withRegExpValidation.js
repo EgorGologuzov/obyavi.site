@@ -17,10 +17,11 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
         errorComment, // Коментарий в режиме ошибки
         showError = true, // Если false, то режим ошибки не активируется даже если значение не соотвествует регуляру
         onMontage, // событие вызвается при окночании монтирования и передает объект с резальтатами проверки начального значения
+        isValueFixed=false,
         ...otherProps }) { // любые другие пропсы, которые принимает расширяемый инпут, например label или id
 
         // Создаю состояния для значения и результата проверки
-        const [currentValue, setCurrentValue] = useState();
+        const [currentValue, setCurrentValue] = useState(value??undefined);
         const [isValid, setIsValid] = useState(true);
 
         // Устанавливаю значения переданные в хок по умолчанию, если не были переданны напрямую
@@ -54,12 +55,12 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
             setIsValid(isValid);
             setCurrentValue(newValue);
             // вызываю событие onChange, передаю новое значение и результат валидации
-            onChange && onChange({ newValue: newValue, isValid: isValid });
+            onChange && onChange({ newValue: isValueFixed?value:newValue, isValid: isValid });      
         }
 
         // первоначальная валидация при монтировании компонента
         useEffect(() => {
-            const realValue = value ?? currentValue;
+            const realValue = currentValue;
             onMontage && onMontage({ value: realValue, isValid: validate(realValue) })
         })
 
@@ -67,7 +68,7 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
         return (
             <Input
                 {...otherProps} // сначала задаю не используемые в этом хуке пропсы, потом все остальные
-                value={value ?? currentValue}
+                value={isValueFixed?value:currentValue}
                 valid={(!showError) || (showError && isValid)}
                 comment={(!showError) || (showError && isValid) ? comment : errorComment}
                 required={required}
