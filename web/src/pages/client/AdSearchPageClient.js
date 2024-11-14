@@ -58,7 +58,7 @@ export default function AdSearchPageClient() {
                 <Button color='secondary' onClick={()=>appContext.showModal('Выберите категорию',(<FilterDialogClient/>))}><img style={{width:'35px',height:'30px',content:'var(--icon-filter)',alignSelf:'center'}}/> <p>Фильтры</p></Button>
                 <Button color='secondary' onClick={()=>appContext.showModal('Сортировка',(<SortingDialogClient/>))}><img style={{width:'40px',height:'30px',content:'var(--icon-sort)',alignSelf:'center'}}/> <p>Сортировка</p></Button>
             </div>
-            <Subcaption level={2}>Найдено {adsInScrollingList.length} товаров из {adCount}</Subcaption>
+            <Header level={3}>Найдено {adsInScrollingList.length} товаров из {adCount}</Header>
             <ListContextProvider value={listContext}>
                 <ScrollingList onBottomReached={()=>console.log('wow')}>
                     {adsInScrollingList.map((ad, index) =>

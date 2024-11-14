@@ -116,6 +116,7 @@
     border: 1px solid var(--primary);
     background-color: var(--fg);
     padding-left:15px;
+    min-width: 0px;
 }
 
 .search-string_search-bar_input:focus {
@@ -873,13 +874,17 @@
 
 .ad{
     display: grid;
-    grid-template-columns:250px 250px auto;
-    grid-template-rows:auto auto;
+    grid-template-columns:repeat(3,minmax(0px,auto));
+    grid-template-rows:repeat(2,minmax(0px,auto));
     margin-bottom:15px;
     padding:10px;
 }
 .ad__text-info{
     margin-left:15px;
+}
+.ad__text-info h1, .ad__text-info h3, .ad__text-info h6{
+    word-wrap: break-word;
+    max-width: fit-content;
 }
 .ad__text-info h1{
     cursor:pointer;
@@ -891,41 +896,31 @@
 .ad__text-info .subcaption.subcaption_level_1{
     margin-top:10px;
     font-size:16px;
+    place-self: start;
+    word-wrap: break-word;
 }
 .ad__user-info{
-    display:inline-flex;
+    display:grid;
     grid-column: span 2;
+    grid-template-columns: minmax(0px,50px) minmax(0px,125px) minmax(0px,auto);
+    grid-template-rows:repeat(2,minmax(0px,auto));
     align-items: flex-end;
     margin-left:10px;
+    column-gap:15px;
 }
-.ad__user-info__c2{
-    display:flex;
-    flex-direction: column;
-    margin-left:15px;
-}
-.ad__user-info__c2 h5{
-    align-self:start;
-    margin:0;
-    margin-bottom:5px;
-}
-.ad__user-info__c2__r2{
-    display: flex;
-    flex-direction:row;
-}
-.ad__user-info__c2__r2 h6{
-    align-self: center;
-    margin-left:10px;
+.ad__user-info h5{
+    grid-column:span 2;
 }
 .ad__user-info .avatar{
-    height:50px;
-    width:50px;
+    height:100%;
+    aspect-ratio: 1/1;
     grid-row:span 2;
 }
 .ad__user-info .stars-bar{
-    height: 25px;
+    height: 30px;
     padding: 5px;
-    gap: 0px;
-    width: 100px;
+    gap: 2px;
+    max-width: 100%;
     place-self: end start;
 }
 .ad .switch{
@@ -948,6 +943,23 @@
 }
 .ad .switch input::before{
     display: none;
+}
+.ad__img-presenter{
+    grid-row:span 2;
+    max-height: 250px;
+    aspect-ratio: 1/1;  
+}
+.ad__img-presenter img{
+    border-radius:10%;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+@media (width<750px){
+    .ad__text-info .subcaption.subcaption_level_1{
+        place-self: auto;
+    }
 }
 
 @keyframes movingStroke{

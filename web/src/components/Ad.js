@@ -7,8 +7,8 @@ import StarsBar from "./StarsBar";
 const Ad = ({img,title,description,checked,user,price,onTitleClick,onAvatarClick}) => {
     return ( 
         <div className="ad">
-            <div className="ad__img-presenter" style={{gridRow:'span 2'}}>
-                                    <img src={img} style={{width:'250px',height:'250px',borderRadius:'10%'}}/>
+            <div className="ad__img-presenter">
+                                    <img src={img}/>
                                 </div>
                                 <div className="ad__text-info">
                                     <Header level={1} onClick={onTitleClick}>{title}</Header>
@@ -19,15 +19,11 @@ const Ad = ({img,title,description,checked,user,price,onTitleClick,onAvatarClick
                                 <Switch checked={checked}/>
                                 <div className="ad__user-info">
                                     <Avatar src={user.avatar} onClick={onAvatarClick}/>
-                                    <div className="ad__user-info__c2">
-                                        <Header level={5}>{user.firstname} {user.lastname}</Header>
-                                        <div className="ad__user-info__c2__r2">
-                                            <StarsBar input_mode={false} value={user.rating}/>
-                                            <Subcaption level={2} color={'secondary'}>Отзывы</Subcaption>
-                                        </div>
+                                    <Header level={5}>{user.firstname} {user.lastname}</Header>
+                                    <StarsBar input_mode={false} value={user.rating}/>
+                                    <Subcaption level={2} color={'secondary'}>Отзывы</Subcaption>
                                     </div>
                                 </div>
-                            </div>
     );
 }
  

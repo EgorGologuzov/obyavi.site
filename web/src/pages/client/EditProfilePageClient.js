@@ -45,7 +45,6 @@ export default function EditProfilePageClient() {
                         <Subcaption level={2} color={'text'}>{`Дата регистрации: `}</Subcaption>
                         <Subcaption level={2}>{`${appContext.loginedUser.regDate}`}</Subcaption>
                         <Subcaption level={2} color={'secondary'}>{`#${appContext.loginedUser.id}`}</Subcaption>
-                        <br/>
                         <StarsBar value={4}/>
                     </div>
                 </div>
