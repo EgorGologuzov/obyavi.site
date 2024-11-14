@@ -84,6 +84,7 @@
     height: 250px;
     object-fit: cover;
     border-radius: 7px 7px 0 0;
+    cursor: pointer;
 }
 
 .my-ads-list-client .card__content {
@@ -119,4 +120,11 @@
 .my-ads-list-client .paged-list {
     border: none;
     margin-bottom: 40px;
+}
+
+.my-ads-list-client__desc {
+    font-weight: var(--regular);
+    margin: 0;
+    color: var(--text);
+    font-size: 14px;
 }

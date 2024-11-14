@@ -1,20 +1,21 @@
 import ToolButton from "./ToolButton";
 import { useState } from "react";
 
-export default function UpDown({ min = 1, max = 10, value = 1, onChange }) {
+export default function UpDown({
+    min = 1,
+    max = 10,
+    value = 1,
+    needSetValueForce,
+    disabled,
+    canPrintValue = true,
+    onChange
+}) {
     min = +min;
     max = +max;
     value = +value;
 
     const [numValue, setNumValue] = useState(value);
     const [pastNumValue, setPastNumValue] = useState(value);
-
-    const up = () => {
-        checkCorrectAndSetNumValue(numValue + 1);
-    }
-    const down = () => {
-        checkCorrectAndSetNumValue(numValue - 1);
-    }
 
     const checkCorrectAndSetNumValue = (value) => {
         value = Number(value);
@@ -32,7 +33,10 @@ export default function UpDown({ min = 1, max = 10, value = 1, onChange }) {
         const oldValue = pastNumValue;
 
         setPastNumValue(newValue);
-        onChange && onChange({newValue: newValue, oldValue: oldValue});
+        onChange && onChange({
+            newValue,
+            oldValue,
+        });
     }
 
     const handleChange = (event) => {
@@ -50,12 +54,29 @@ export default function UpDown({ min = 1, max = 10, value = 1, onChange }) {
         }
     };
 
+    const realValue = needSetValueForce ? value : numValue;
+    if (needSetValueForce && value != numValue) setTimeout(() => checkCorrectAndSetNumValue(value), 100);
+
     return (
         <div className="up-down">
-            <ToolButton icon="icon-left-arrow" onClick={down} disabled={numValue <= min} />
-            <input className="up-down__input" type="number" value={numValue} onChange={handleChange} onBlur={handleBlur} onKeyUp={handleKeyUp}/>
+            <ToolButton
+                icon="icon-left-arrow"
+                onClick={() => checkCorrectAndSetNumValue(realValue - 1)}
+                disabled={realValue <= min || disabled} />
+            <input
+                className="up-down__input"
+                type="number"
+                value={realValue}
+                disabled={disabled}
+                readOnly={!canPrintValue}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                onKeyUp={handleKeyUp}/>
             <label className="up-down__label">/{max}</label>
-            <ToolButton icon="icon-right-arrow" onClick={up} disabled={numValue >= max} />
+            <ToolButton
+                icon="icon-right-arrow"
+                onClick={() => checkCorrectAndSetNumValue(realValue + 1)}
+                disabled={realValue >= max || disabled} />
         </div>
     )
 }

@@ -14,6 +14,7 @@ import { useAppContext } from '../../contexts/AppContext';
 import './MyAdsListClient.css';
 import { PagedList_withLoad } from '../../hoc/withLoad';
 import { busyProcess } from '../../utils/utils';
+import parse from 'html-react-parser'
 
 export default function MyAdsListClient() {
     const [ads, setAds] = useState([]);
@@ -21,15 +22,15 @@ export default function MyAdsListClient() {
     const [pageMax, setPageMax] = useState(0);
     const [isBusy, setIsBusy] = useState(false);
     const listContext = useNewListContext();
+    const appContext = useAppContext();
     const adService = useAdService();
     const navigate = useNavigate();
-    const appContext = useAppContext();
 
     const publish = ({ idList }) => {
         busyProcess(isBusy, setIsBusy, () => adService.publish({ idList })
             .then(() => {
                 listContext.setSelectMode(false);
-                load({ page });
+                setTimeout(() => load({ page }), 300);
                 appContext.showNotification(
                     'Успех',
                     `Объявления опубликованы`,
@@ -50,7 +51,7 @@ export default function MyAdsListClient() {
         busyProcess(isBusy, setIsBusy, () => adService.unpublish({ idList })
             .then(() => {
                 listContext.setSelectMode(false);
-                load({ page });
+                setTimeout(() => load({ page }), 300);
                 appContext.showNotification(
                     'Успех',
                     `Объявления сняты с публикации`,
@@ -71,7 +72,7 @@ export default function MyAdsListClient() {
         busyProcess(isBusy, setIsBusy, () => adService.delete({ idList })
             .then(() => {
                 listContext.setSelectMode(false);
-                load({ page });
+                setTimeout(() => load({ page }), 300);
                 appContext.showNotification(
                     'Успех',
                     `Объявления удалены`,
@@ -92,7 +93,7 @@ export default function MyAdsListClient() {
         busyProcess(isBusy, setIsBusy, () => {
             setAds([]);
             setPage(page);
-            return adService.getMyAds({ page })
+            return adService.getMyAds({ page, userId: appContext.loginedUser.id })
                 .then((data) => {
                     setAds(data.list);
                     setPageMax(data.totalPages);
@@ -107,11 +108,15 @@ export default function MyAdsListClient() {
     }
 
     const handlePageValueChange = (event) => {
-        load({ page: event.newValue })
+        load({ page: event.newValue });
     }
 
     const hasSelectedAdsWithStatus = (status) => {
         return !!ads.filter((ad) => listContext.selectedCards.has(ad.id) && ad.main.status === status).length;
+    }
+
+    const navigateToAd = (adId) => {
+        !listContext.selectMode && navigate("/c/ad/" + adId);
     }
 
     useEffect(() => {
@@ -125,6 +130,7 @@ export default function MyAdsListClient() {
                 <Header level={2}>Мои объявления</Header>
                 <Button color="secondary" onClick={() => navigate("/c/ad/new")}>Создать объявление</Button>
             </div>
+            
             <PagedList_withLoad
                 listContext={listContext}
                 pageMax={pageMax}
@@ -155,14 +161,14 @@ export default function MyAdsListClient() {
                     <Card id={ad.id} key={ad.id}>
                         <div className="my-ads-list-client__card-content">
                             <div className="my-ads-list-client__up-content">
-                                <img className="my-ads-list-client__ad-avatar" src={ad.main.avatar} />
+                                <img className="my-ads-list-client__ad-avatar" src={ad.main.avatar} onClick={() => navigateToAd(ad.id)}/>
                                 <div className="my-ads-list-client__text-content">
-                                    <div className="my-ads-list-client__card-header" onClick={() => !listContext.selectMode && navigate("/c/ad/" + ad.id)}>
+                                    <div className="my-ads-list-client__card-header" onClick={() => navigateToAd(ad.id)}>
                                         <Header level={4}>{ ad.main.header }</Header>
                                     </div>
                                     <Subcaption level={2}>{ `г. ${ad.adress.city}, ${ad.adress.district}` }</Subcaption>
-                                    <Header level={4}>{ `${ad.price.value.toLocaleString(undefined, { minimumFractionDigits: 0 }) } ${ad.price.currency}` }</Header>
-                                    <Paragraf fontSize="small">{ ad.main.shortDesc }</Paragraf>
+                                    <Header level={4}>{ `${Number(ad.price.value).toLocaleString(undefined, { minimumFractionDigits: 0 }) } ${ad.price.currency}` }</Header>
+                                    <div className="my-ads-list-client__desc">{ ad.desc && parse(ad.desc) }</div>
 
                                     <ContextMenu>
                                         <ContextMenuButton text="Выбрать" onClick={() => selectCards(listContext, [ad.id])} />
