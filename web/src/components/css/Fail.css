@@ -1,7 +1,8 @@
-.with-load__placeholder {
+.fail {
     grid-column: 1 / 10;
     width: 100%;
     color: var(--text);
     font-weight: var(--medium);
     text-align: center;
+    margin-top: 10px;
 }

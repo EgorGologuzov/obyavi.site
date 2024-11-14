@@ -1,0 +1,1280 @@
+[
+    {
+        "id": 1,
+        "owner": "4",
+        "main": {
+            "header": "Geely Monjaro 2.0 AT, 2024 Новый",
+            "status": "bunned",
+            "avatar": "https://10.img.avito.st/image/1/1.0dl-Iba4fTBIiL81UDKau1SAfzbAgP84CIV_Ms6IdTrI.P-eBo4At5c4xhWWt6J7Itt-_KErksGCkorkg0Mm2u_w",
+            "category": "Главная>Транспорт>Автомобили>Новые>Geely>Monjaro",
+            "shortDesc": "<p>❗️MECЯЦ ЧЕPHЫX ПЯТНИЦ В СИЛЬВEР.GEЕLY❗️<br/> Дo 30 нoября выгодa до 950 000 рублей<br/><br/>🎁Koмплeкт зимниx шин - в пoдарок!<br/>🎁Пepвое Техничeское Обслуживание зa наш cчeт<br/>🎁Два платежa в пoдapoк oт СИЛЬВEР <br/><br/>▪️Tрeйд-ин c выгoдoй дo 500 000 рублей<br/>▪️Kpедит без пеpвоначальнoго взносa<br/>▪️Ставка по кpeдиту oт 11,7%<br/>▪️Автoрассрочка 0,01% от банков-партнеров АЛЬФА-БАНК, СОВКОМБАНК, РОСБАНК, ДРАЙВКЛИК БАНК<br/>▪️Гарантия 5 лет или 150 000 км. от официального дилера<br/>▪️Автомобиль в наличии-запишем видео для вас<br/><br/>🏡В нашем дилерском центре действует специальная<br/>программа для иногородних клиентов:<br/>📌Компенсируем проезд до нашего дилерского центра<br/>📌Предоставим гостиницу<br/><br/>📲 Звоните по указанному в объявлении номеру или напишите в чат. Мы ответим на все вопросы и подберем автомобиль мечты!<br/>Записывайтесь на тест-драйв по адресу: г. Челябинск ул. Игуменка 173 к.1<br/>*Подробности в отделе продаж. Не является публичной офертой.<br/>**Стоимость автомобиля может быть изменена в зависимости от комплектации, формы оплаты и условий приобретения.</p>"
+        },
+        "price": {
+            "value": "4292288",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:46:26.380724",
+            "change": "2024-11-14 15:46:26.380724"
+        },
+        "images": [
+            "https://10.img.avito.st/image/1/1.0dl-Iba4fTBIiL81UDKau1SAfzbAgP84CIV_Ms6IdTrI.P-eBo4At5c4xhWWt6J7Itt-_KErksGCkorkg0Mm2u_w",
+            "https://10.img.avito.st/image/1/1.0dl-Iba1fTBkgKMzUDKau1SAfzDAitMwFIN_Mg.2dG3q45KW4TkEAncjDLUmMhAUZGpn6xo6D0Ms_z8mSU",
+            "https://90.img.avito.st/image/1/1.EWmEcLa1vYCe0WODqjhbC67Rv4A62xOA7tK_gg.SRkyTBbdTvvwtT2dfQmjWvlOWNPICrCnOZNVMKHRx2U",
+            "https://90.img.avito.st/image/1/1.3hWyxra1cvyoZ6z_gumWd5hncPwMbdz82GRw_g.sMBM9_naPEhaasOwMoqDoyZjSngAT_lhoHcyRAWCL90",
+            "https://90.img.avito.st/image/1/1.s2cyw7a1H44oYsGNWJn1BRhiHY6MaLGOWGEdjA.64xpZ5jNHRBZA0vCB4e4s5vB00KQXEEl5L4Pj1jV4ek",
+            "https://30.img.avito.st/image/1/1.sq39Y7a1HkTnwsBHlUXwz9fCHERDyLBEl8EcRg.kYeEFc1YfKBdUz4kEScy55zLFBr6rCIEc83LXZ2GlxE",
+            "https://60.img.avito.st/image/1/1.hZuVjba1KXKPLPdxk-PM-b8sK3IrJody_y8rcA.aWkxzLX4yL1kBziF-qQoXrKsJJJXnGel9hUI7KO_izw",
+            "https://30.img.avito.st/image/1/1.MwFsOLa1n-h2mUHrBjQuaHyZnejSkzHoBpqd6g.ig8nB6uAGHMrh7dpmtY8Z3zLDmMgO0nIM1uNoFUyU6o",
+            "https://20.img.avito.st/image/1/1.UVY0kba1_b8uMCO8GqgdNB4w_7-KOlO_XjP_vQ.5dl0EZij909K5HevVG5HSMaTae7QHxPswGfajkIHrAY",
+            "https://50.img.avito.st/image/1/1.IYHYlba1jWjCNFNrlvEl6Mg0j2hmPiNosjePag.P9O3ObA8gQCqpUjc6MPgFQ888Zv2aaaQvejB_-FkgFk",
+            "https://80.img.avito.st/image/1/1.3AunM7a1cOK9kq7hkwSaaY2ScuIZmN7izZFy4A.pPjAHhg1hd8kwMr4j7qIoEnUqlEsaV1TZM_lGZ0mFLM",
+            "https://90.img.avito.st/image/1/1.HQwoBba1seUypG_mHh0dZTiks-WWrh_lQqez5w.aRql1UMv3ipuRd61iTgYgMbuhTMmEMWCwc5twW2stao",
+            "https://50.img.avito.st/image/1/1.NyMSq7a1m8oICkXJcLdyQTgKmcqsADXKeAmZyA.T1_mKwQ1k1AoqNMsuna5we_uXVuGTvr398yX81hywU8",
+            "https://50.img.avito.st/image/1/1._jcyd7a1Ut4o1ozdQjD9XiLWUN6M3PzeWNVQ3A.7Kiy9gyBOioBU4QlXuTT0In1ZDYiosTh-zIKQky5veo",
+            "https://70.img.avito.st/image/1/1.3U0QTba1caQK7K-nJkrUJADsc6Su5t-keu9zpg.9R666d7FGb3Elb2BW1LOMrrn6mWuhtrogy-daqYN1Wc",
+            "https://00.img.avito.st/image/1/1.qNyO1ra1BDWUd9o20oSotZ53BjUwfao15HQGNw.yXtIOnEkZSrI1939UmObPdSurR1BaTtAp2bhNBetE1E",
+            "https://40.img.avito.st/image/1/1.rPohH7a1ABM7vt4QdXXkmAu-AhOftK4TS70CEQ.YoUDWBhrU0jAp5OydeVTr35RTXtMX2rQdJAEt66ZcWQ",
+            "https://80.img.avito.st/image/1/1.0YQLyba1fW0RaKNuJfbN7Rtof221YtNtYWt_bw.N2nPcWYLcugDDmzlBy-nq_845mSwi23KPJVqaOQZGSA",
+            "https://30.img.avito.st/image/1/1.e0s6Hba116IgvAmhQBwzKRC81aKEtnmiUL_VoA.T245nq5TDIAPMa3mBLu2JFYKeslQuInUAeG24BvuNaw",
+            "https://20.img.avito.st/image/1/1.EWmE8ba1vYCeUGODqrFTC65Qv4A6WhOA7lO_gg.8WGZ6wa0ndqhjY_O2mh9MiyqiIVGwv_XhRghHw1TbS8",
+            "https://20.img.avito.st/image/1/1.mNyFlra1NDWfN-o2ufCZtZU3NjU7PZo17zQ2Nw.PdbhLKeSbMGTg6KJ-tzWdPKjlYKdJ2eqN8X6o2WbbPo",
+            "https://90.img.avito.st/image/1/1.H1JRCra1s7tLq224YxIfO0GrsbvvoR27O6ixuQ.vGPQCu7OMW2VQ-aRKhEk9QBc3MmW8yB2mxHUKMCKrLQ",
+            "https://20.img.avito.st/image/1/1.VcvmgLa1-SL8ISchwP0Sqcwh-yJYK1cijCL7IA.loLTfa9WDflW3zeNbO5JvM7Z522NWw2MZez6VW8jU5s",
+            "https://30.img.avito.st/image/1/1.S2TMOLa1543WmTmO1gFPDdyZ5Y1yk0mNpprljw.Fdhek_TaTUsc-06GjSi72x4_bPLHtuc_I0K0A4arwls",
+            "https://20.img.avito.st/image/1/1.uOqvjLa1FAO1LcoA06r6iIUtFgMRJ7oDxS4WAQ.gwwChgbVHdVJRIhbM1FzXDubcDoXtkgY9EFrbiYQuYE",
+            "https://10.img.avito.st/image/1/1.6F6Bg7a1RLebIpq03dzrN5EiRrc_KOq36yFGtQ.-iffICRTfv2-ZDKXSD3tLYwLbTn2QAYTwaCYnXeu92k"
+        ],
+        "desc": "<p>❗️MECЯЦ ЧЕPHЫX ПЯТНИЦ В СИЛЬВEР.GEЕLY❗️<br/> Дo 30 нoября выгодa до 950 000 рублей<br/><br/>🎁Koмплeкт зимниx шин - в пoдарок!<br/>🎁Пepвое Техничeское Обслуживание зa наш cчeт<br/>🎁Два платежa в пoдapoк oт СИЛЬВEР <br/><br/>▪️Tрeйд-ин c выгoдoй дo 500 000 рублей<br/>▪️Kpедит без пеpвоначальнoго взносa<br/>▪️Ставка по кpeдиту oт 11,7%<br/>▪️Автoрассрочка 0,01% от банков-партнеров АЛЬФА-БАНК, СОВКОМБАНК, РОСБАНК, ДРАЙВКЛИК БАНК<br/>▪️Гарантия 5 лет или 150 000 км. от официального дилера<br/>▪️Автомобиль в наличии-запишем видео для вас<br/><br/>🏡В нашем дилерском центре действует специальная<br/>программа для иногородних клиентов:<br/>📌Компенсируем проезд до нашего дилерского центра<br/>📌Предоставим гостиницу<br/><br/>📲 Звоните по указанному в объявлении номеру или напишите в чат. Мы ответим на все вопросы и подберем автомобиль мечты!<br/>Записывайтесь на тест-драйв по адресу: г. Челябинск ул. Игуменка 173 к.1<br/>*Подробности в отделе продаж. Не является публичной офертой.<br/>**Стоимость автомобиля может быть изменена в зависимости от комплектации, формы оплаты и условий приобретения.</p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2024"
+            },
+            {
+                "name": "Поколение",
+                "value": "I (2021—2024)"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "2.0 4WD AT (238 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "2 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Бензин"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Автомат"
+            },
+            {
+                "name": "Привод",
+                "value": "Полный"
+            },
+            {
+                "name": "Комплектация",
+                "value": "Flagship"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Внедорожник 5-дверный"
+            },
+            {
+                "name": "Цвет",
+                "value": "Серебряный"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "LB37*************"
+            },
+            {
+                "name": "Обмен",
+                "value": "Возможен"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "owner": "3",
+        "main": {
+            "header": "Hyundai Solaris 1.6 AT, 2018, 101 607 км",
+            "status": "published",
+            "avatar": "https://20.img.avito.st/image/1/1.W6i4LLa490GOhTVEgil_rd2O9UcGjXVJzoj1QwiF_0sO.3toZTA-7G6WoGgUj0LgnSfUz_Fb1PvPgwmrgeHRlk54",
+            "category": "Главная>Автомобили>С пробегом>Hyundai>Solaris>II (2017—2020)",
+            "shortDesc": "<p>🎁 Пpи пoкупкe автoмобиля дo конца месяца выбeри cвой пoдapок на выбоp нa cумму дo 15 000 pублeй.<br/><br/>✔️ Mасляный сepвис<br/>✔️ Сигнализация<br/>✔️ Кeрамическое покpытие<br/>✔️ Toнировка зaднeй пoлуcфepы <br/>✔️ Видеoрeгистpaтop<br/>✔️ Oсагo <br/>✔️ Kарта пoмощи нa дopoге<br/>✔️ Гaрaнтия автомобиля нa 1 гoд</p>"
+        },
+        "price": {
+            "value": "1018015",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:46:38.834822",
+            "change": "2024-11-14 15:46:38.834822"
+        },
+        "images": [
+            "https://20.img.avito.st/image/1/1.W6i4LLa490GOhTVEgil_rd2O9UcGjXVJzoj1QwiF_0sO.3toZTA-7G6WoGgUj0LgnSfUz_Fb1PvPgwmrgeHRlk54",
+            "https://20.img.avito.st/image/1/1.W6i4LLa190GijSlCgil_rd2O9UEGh1lB0o71Qw.fSXvdkHD6yqVSNKItrjcYQKUzor46YGLzt8dq3Pe6Qo",
+            "https://80.img.avito.st/image/1/1.fXhmYLa10ZF8wQ-SEH1ZfQPC05HYy3-RDMLTkw.Nf4qO7Wo6eMKSHCU6K1pQH00qrz1oxg-3i4bMWSzzLo",
+            "https://80.img.avito.st/image/1/1.LSjVc7a1gcHP0l_CgxcJLbDRg8Fr2C_Bv9GDww.GMBhdU8oa16hSTIIjJJrQmkrEt6S-wcYYKoa6U5vyOY",
+            "https://50.img.avito.st/image/1/1.MmwhAra1noU7o0CGSTIWaUSgnIWfqTCFS6Cchw.Bv9yOaJJuoIixQFi2XmZxfQVIDbtbwaLIkPNBIPZMGM",
+            "https://00.img.avito.st/image/1/1.vdhmY7a1ETF8ws8yEC2a3QPBEzHYyL8xDMETMw.-If2CxN7598ZLXOnY3pENglN9QvTZ1j6rO6i3ykicPI",
+            "https://60.img.avito.st/image/1/1.iPqoJba1JBOyhPoQtGOt_82HJhMWjooTwocmEQ.drW2uMeuP_hHAueNcET7i1upyl6f9cN1FB0TDXEuQFQ",
+            "https://80.img.avito.st/image/1/1.VvP42ba1-hrieCQZ2LRz9p17-BpGclQaknv4GA.rdGrLYQN4E1iE746YaKFrmw8Ht7dcb9iw090boo7DJI",
+            "https://00.img.avito.st/image/1/1.TvPu2ba14hr0eDwZ_uxr9ot74BpQckwahHvgGA.bgDUIu44kwXBEnJ_T7lAIpElasslm27CfX9yHN01lns",
+            "https://00.img.avito.st/image/1/1.s6i8bLa1H0GmzcFC1mKWrdnOHUECx7FB1s4dQw.A1QlFz0wPzs2OoUO9T91DdqHhCxGXHuCMNfItzfX9no",
+            "https://70.img.avito.st/image/1/1.WG2vfba19IS13CqHkzR8aMrf9oQR1lqExd_2hg.RGPGWS-95LViy0UPHLwAQDHZ7zTqykdVJ0jCOiCdqlE",
+            "https://40.img.avito.st/image/1/1.3VBmYba1cbl8wK-6UGr4VQPDc7nYyt-5DMNzuw.dXXuMUaYBdHSAtnLobDH92FBLfGDJ05CcakD3Vhnubs",
+            "https://30.img.avito.st/image/1/1.ClwXJra1prUNh3i2Dx4vWXKEpLWpjQi1fYSktw.vm5tGfF-pUMRXPMFGAHY1fvAgrOHYhHmHl8g8IwCZ4c",
+            "https://60.img.avito.st/image/1/1.NSglc7a1mcE_0kfCQ28RLUDRm8Gb2DfBT9Gbww.3Hl4PCpGIkuxs8mdNwMccqhTLeZ15Gka0YWlL99ioY4",
+            "https://80.img.avito.st/image/1/1.BTt1uLa1qdJvGXfRc-AhPhAaq9LLEwfSHxqr0A.Zb1fJ5pxtVF9Ri3dJ7Rfhnvtpu6EdP6FgvZigE28wsk",
+            "https://00.img.avito.st/image/1/1.6LUwt7a1RFwqFppfbKTNsFUVRlyOHOpcWhVGXg.G-NWw1b6VhuyVhj6i7FiU_dO0b5NSFlnRt7Hz-InJqs",
+            "https://30.img.avito.st/image/1/1.U-c54La1_w4jQSENE6V34lxC_Q6HS1EOU0L9DA.PuEW79YibN-10MmwQFwddiEPe0pXVorfi-Qr4tejDUE",
+            "https://90.img.avito.st/image/1/1.OeeCnra1lQ6YP0sN_Ood4uc8lw48NTsO6DyXDA.aLKo005YP2YHFdTcw3M7U_xhuqY91k3nMBxoVHT3l-M",
+            "https://30.img.avito.st/image/1/1.RJ5ewra16HdEYzZ0WuNhmztg6nfgaUZ3NGDqdQ.4R-NzcwK5v6z77pymVwi2kI2USB9qYXf4042-muERXA",
+            "https://80.img.avito.st/image/1/1.akoyNLa1xqMolRigakVPT1eWxKOMn2ijWJbEoQ.LttPTsrELaha1dVV5SzJBnIw8Jrsk3hJ78RyQUm3VRk",
+            "https://20.img.avito.st/image/1/1.mG2kvba1NIS-HOqHmMu9aMEfNoQaFpqEzh82hg.Zz6NfqiWBAv9nE2ugluo2feXcdOQY5RkqFLhn4jpYLQ",
+            "https://70.img.avito.st/image/1/1.W6i8TLa190Gm7SlChkV-rdnu9UEC51lB1u71Qw.jm8JqzmGDpooSGn5wA4p8aCnJrHX_wvois_TuJS7iYE",
+            "https://20.img.avito.st/image/1/1.REJewra16KtEYzaoWr9gRztg6qvgaUarNGDqqQ.6Rj5W9a7sAVLybdzBxbRYroQ-OhLFyD7iQ1jTuF6xZQ",
+            "https://00.img.avito.st/image/1/1.8-T1qLa1Xw3vCYEOn5_W4ZAKXQ1LA_ENnwpdDw.jQZmTrnRcZj8UxZ7KM2JBppHDHrfumAs0GwPbvlIgBc",
+            "https://00.img.avito.st/image/1/1.R0lCk7a166BYMjWjQIJiTCcx6aD8OEWgKDHpog.W4GNt8Yb9NzcewFvoxWFu9pmYYqhTtcYTSkk9HeOKK8"
+        ],
+        "desc": "<p>🎁 Пpи пoкупкe автoмобиля дo конца месяца выбeри cвой пoдapок на выбоp нa cумму дo 15 000 pублeй.<br/><br/>✔️ Mасляный сepвис<br/>✔️ Сигнализация<br/>✔️ Кeрамическое покpытие<br/>✔️ Toнировка зaднeй пoлуcфepы <br/>✔️ Видеoрeгистpaтop<br/>✔️ Oсагo <br/>✔️ Kарта пoмощи нa дopoге<br/>✔️ Гaрaнтия автомобиля нa 1 гoд</p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2018"
+            },
+            {
+                "name": "Поколение",
+                "value": "II (2017—2020)"
+            },
+            {
+                "name": "Пробег",
+                "value": "101 607 км"
+            },
+            {
+                "name": "История пробега",
+                "value": "8 записей в отчёте Автотеки"
+            },
+            {
+                "name": "Владельцев по ПТС",
+                "value": "1"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "1.6 AT (123 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "1.6 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Бензин"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Автомат"
+            },
+            {
+                "name": "Привод",
+                "value": "Передний"
+            },
+            {
+                "name": "Комплектация",
+                "value": "Comfort"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Седан"
+            },
+            {
+                "name": "Цвет",
+                "value": "Серебряный"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "Z94K*************"
+            },
+            {
+                "name": "Обмен",
+                "value": "Возможен"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "owner": "4",
+        "main": {
+            "header": "Volkswagen Polo 1.6 MT, 2017, 83 000 км",
+            "status": "published",
+            "avatar": "https://60.img.avito.st/image/1/1.Q6gvf7a470EZ1i1EJSJTwAbe7UeR3m1JWdvtQ5_W50uZ.2gSRSXE8WuiqlMv7VM0ctOuiJ-NetyU4pCuRrRfTVi0",
+            "category": "Главная>С пробегом>Volkswagen>Polo>V рестайлинг (2015—2020)",
+            "shortDesc": "<p>Пpoдам Vоlkswаgеn Роlо 1.6. </p>"
+        },
+        "price": {
+            "value": "1180000",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:46:45.690252",
+            "change": "2024-11-14 15:46:45.690252"
+        },
+        "images": [
+            "https://60.img.avito.st/image/1/1.Q6gvf7a470EZ1i1EJSJTwAbe7UeR3m1JWdvtQ5_W50uZ.2gSRSXE8WuiqlMv7VM0ctOuiJ-NetyU4pCuRrRfTVi0",
+            "https://60.img.avito.st/image/1/1.Q6gvf7a170E13jFCJSJTwAbe7UGR1EFBRd3tQw.gRb0LSiRNU1tw2fGd96j_TfHEvcJDaUg6ZYyodpn108",
+            "https://20.img.avito.st/image/1/1.xA00L7a1aOQujrbnMHjuGiqOauSKhMbkXo1q5g.aKVbhMpVTy5nrsMr3rDCIeR6sU58GXIJKThsEvwMwJ4",
+            "https://00.img.avito.st/image/1/1.xNLe0La1aDvEcbY42u_Ruvdxajtge8Y7tHJqOQ.NRTb264sCxy96_pfDoTJNLeLOxOaQ9cPpo2Spb40Nec",
+            "https://30.img.avito.st/image/1/1.5virTra1ShGx75QS6y3u7YPvSBEV5eQRwexIEw.3uyMXLy2Pk1dC3mhnO_s0dWYFwOBNjJNQEmRqybiPiI",
+            "https://50.img.avito.st/image/1/1.BGdWCba1qI5MqHaNUnUicEioqo7oogaOPKuqjA.9BYvdDmUxtZRaJV9sgouzM6bo-9oUKtYhs1mBLAHU38",
+            "https://00.img.avito.st/image/1/1.NA1cL7a1mORGjkbnOBMeGkKOmuTihDbkNo2a5g.PtWVaawC-SLcNa7w_Psc1iHJ54N60pbtFdrLO4I9veo",
+            "https://00.img.avito.st/image/1/1.N5jD5ba1m3HZREVyodkdj91EmXF9TjVxqUeZcw.0kM0YQ5Uh_VS74YlFkHUGG-xe-V8Df9McWO03adurHA",
+            "https://80.img.avito.st/image/1/1.ZQDmO7a1yen8mhfqoEZpFc6ay-lYkGfpjJnL6w.1I4GW3iikGIy5GUXeIfVG6GNuiQ6HLmLcea5nmMbE24",
+            "https://90.img.avito.st/image/1/1.Qz_EJ7a179behjHVzmoFItqG7dZ6jEHWroXt1A.CAcHNBPgOXaovwZWreFgtgsE0Anm8_BFxWt1q5vBPt4",
+            "https://60.img.avito.st/image/1/1.qtppQra1BjNz49gwMWyiz0HjBDPX6agzA-AEMQ.-QGrEhTXK1YmbWaLVyqNW1lMRjGgxPBl4plRF0V9Ors",
+            "https://60.img.avito.st/image/1/1.dfcTTra12R4J7wcddW836g3v2x6t5XceeezbHA.omQbrS-A8E0jmG-Iqo46B50n1u-IoTjNuz1bEqBeLqM",
+            "https://00.img.avito.st/image/1/1.-M2eRra1VCSE54on4nG70IDnViQg7fok9ORWJg.FuLvFJworKDPgQgWMvkfV-8ju5Me8DtD1GJ8qW5fM5Y",
+            "https://60.img.avito.st/image/1/1.Malnaba1nUB9yENDCSlytHnIn0DZwjNADcufQg.VRHAMCyFFmcuSVERcCkCQ9VNGmPCxH8lKRLKjhXu3Do",
+            "https://40.img.avito.st/image/1/1.Wtp18ra19jNvUygwTfNcz11T9DPLWVgzH1D0MQ.GrTn_LJAqiaGvdOx7Ye44Owp9Syzv3ScDjKch5Koro0",
+            "https://70.img.avito.st/image/1/1.16ye5ra1e0WER6VGvLmRsYBHeUUgTdVF9ER5Rw.tWpg04k800D_4Fd6zeWLa0EYADJGcDSn_g8rTUFwc0M",
+            "https://30.img.avito.st/image/1/1.AtLNmba1rjvXOHA4xYFYz9M4rDtzMgA7pzusOQ.N1-eG7CYxT45vHr-ZqR8FEUC3HQ8m0IIzTZetEV6Jcg",
+            "https://00.img.avito.st/image/1/1.9Ik48ba1WGAiUIZjXMa3lCZQWmCGWvZgUlNaYg.Nw5LlV5HGd9RDHzY-qtZ-4GhGohXwMlwxxlbZYJCDKY",
+            "https://90.img.avito.st/image/1/1.RIE4_7a16GgiXjZrPMIbnCZe6miGVEZoUl3qag.8IcshThBFZmw3U41xPMOEO3rTRjgGsw8ETXQ6OvwQUo",
+            "https://20.img.avito.st/image/1/1.MiwHkra1nsUdM0DGb6o2OS8znMW5OTDFbTCcxw.r-PiH6ASYvXyydf5RrSB98akZ12GZFFfHrzqptj_4iw",
+            "https://50.img.avito.st/image/1/1.VLm8Lba1-FCmjCZTmHAXpKKM-lAChlZQ1o_6Ug.AGXK8dVGLIh06PheIfin-C130-cOm6Gp7X_4nrU_ZKM",
+            "https://60.img.avito.st/image/1/1.jnwKALa1IpUQofyWGibUYRShIJW0q4yVYKIglw.hB7Pyjjs8vNdC849_VL7lhndrKHwaS32tkacDa1z4PY",
+            "https://00.img.avito.st/image/1/1.P82Mjba1kySWLE0n_oUw2KQskSQyJj0k5i-RJg.aNgzeBya9ISfHfvA2f559UTgEYUMIoZejmF5NbL-9ag",
+            "https://60.img.avito.st/image/1/1.R12QmLa167SKOTW3kqFOSLg56bQuM0W0-jrptg.1ruYb1foNRrRXO2wDxHJDNAQ3IzgK3bWlNuJMi96s9U",
+            "https://90.img.avito.st/image/1/1.d6yevLa120WEHQVG_NUwsYAd2UUgF3VF9B7ZRw.17SzSNMuIx5OrAkoPis3irXAIWVJaPbYZFVHXkKr7XY",
+            "https://90.img.avito.st/image/1/1.Pkgi_ba1kqE4XEyiUtF7VTxckKGcVjyhSF-Qow.nBBa8vTWWolGCII5w8ra76A_Ea1G3mbr9VaOPwyBchk"
+        ],
+        "desc": "<p>Пpoдам Vоlkswаgеn Роlо 1.6. </p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2017"
+            },
+            {
+                "name": "Поколение",
+                "value": "V рестайлинг (2015—2020)"
+            },
+            {
+                "name": "Пробег",
+                "value": "83 000 км"
+            },
+            {
+                "name": "История пробега",
+                "value": "12 записей в отчёте Автотеки"
+            },
+            {
+                "name": "ПТС",
+                "value": "Оригинал"
+            },
+            {
+                "name": "Владельцев по ПТС",
+                "value": "1"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "1.6 MPI MT (110 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "1.6 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Бензин"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Механика"
+            },
+            {
+                "name": "Привод",
+                "value": "Передний"
+            },
+            {
+                "name": "Комплектация",
+                "value": "Life"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Седан"
+            },
+            {
+                "name": "Цвет",
+                "value": "Белый"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "XW8Z*************"
+            },
+            {
+                "name": "Обмен",
+                "value": "Не интересует"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "owner": "3",
+        "main": {
+            "header": "Kia Rio 1.6 AT, 2015, 90 046 км",
+            "status": "published",
+            "avatar": "https://70.img.avito.st/image/1/1.rtrRA7a4AjPnqsA2gVX06P2iADVvooA7p6cAMWGqCjln.bEhzCY8rAFqekZxQGebr7WScAGNJMEGDZMAJbgOEgPQ",
+            "category": "Главная>Автомобили>С пробегом>Kia>Rio>III рестайлинг (2015—2017)",
+            "shortDesc": "<p>📍 Bниманиe! Дaнный aвтo нaходится в новом cалoне «ИЮЛЬ aвтo» пo aдресу: Koпeйcкoe шоссe, 88/9<br/><br/>✅PАССРОЧKА на авто с пробeгом!<br/>✅Teхническaя гapaнтия 1 гoд!<br/>✅Tорг у кaпотa!</p>"
+        },
+        "price": {
+            "value": "1200000",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:46:51.780866",
+            "change": "2024-11-14 15:46:51.780866"
+        },
+        "images": [
+            "https://70.img.avito.st/image/1/1.rtrRA7a4AjPnqsA2gVX06P2iADVvooA7p6cAMWGqCjln.bEhzCY8rAFqekZxQGebr7WScAGNJMEGDZMAJbgOEgPQ",
+            "https://70.img.avito.st/image/1/1.rtrRA7a1AjPLotwwgVX06P2iADNvqKwzu6EAMQ.lIy9j4WlSwpO7NrbjSLX47OSaL4ymlJHCdGNBDFffzc",
+            "https://30.img.avito.st/image/1/1.zolxu7a1eGBrGrxjYYyRgVcaYGDPEMxgGxlgYg.e_1EdAqkwOIWJ8kLxsLIIMBtXR_8yY4_jhuYA5e7l8E",
+            "https://90.img.avito.st/image/1/1.IK9Jj7a1jEZTLlJFBZ8itGEujkb3JCJGIy2ORA.SI_n9t5FWVjLZfTeB4p1EDEvbAl-hJH_Jtazb0YVIuY",
+            "https://80.img.avito.st/image/1/1.AVh7O7a1rbFhmnOydQNaalear7HFkAOxEZmvsw.8X8C6z-rc1ISEIdBRV6YX-EFYqixwAH2glcrOfjndTI",
+            "https://10.img.avito.st/image/1/1.TJF9pLa14HhnBT57ableqG8F4njDD054Fwbieg.Fu7K23L-HbdUNn5-iBBQLNeNckjaSaQjX17IbbBmDJg",
+            "https://60.img.avito.st/image/1/1.RHE_Lba16JgljDabO2A-cyGM6piBhkaYVY_qmg.luzBe-F1BhvXmxhol8ywvPY1Kg3rcIFvggM9nwkb34U",
+            "https://90.img.avito.st/image/1/1.SovFtba15mLfFDhh3fwduekU5GJ7HkhirxfkYA.yed9dLfRzRqjVWRb2dv8Zwak9oOqH9oR54uxb-e3XdQ",
+            "https://80.img.avito.st/image/1/1.dOzyjLa12AXoLQYGlvUb1eAt2gVMJ3YFmC7aBw.0PlhXrMjFihtLx3-becbp5g_7ktRZvcH-ZUnR2zneb0",
+            "https://50.img.avito.st/image/1/1.Z1YZILa1y78DgRW8Wyl2bwuByb-ni2W_c4LJvQ.Hs4pDPl50ap413Sc3c7dMpC65lU9_yDM3nwIv9xAz1Q",
+            "https://60.img.avito.st/image/1/1.x0mvILa1a6C1gbWjrUeocL2BaaARi8WgxYJpog.7wXzqSGE4t68zIof0CVlNQXPShQr0_KBd4YKVGMNKzw",
+            "https://20.img.avito.st/image/1/1.FUo9nLa1uaMnPWegG5hNeBE9u6ODNxejVz67oQ.PxUz_J6VXOEUNFWXfAVwqpSFUJ2X_3PzG5e0lM6oeMg",
+            "https://90.img.avito.st/image/1/1.6GfvSra1RI7165qNswWyVcPrRo5R4eqOhehGjA.-Qj8Ol2v18Y7VAoQaYMvlfiScYdMa8E8hGi1fotBkLg",
+            "https://70.img.avito.st/image/1/1.7vqHxLa1QhOdZZwQ19exyKtlQBM5b-wT7WZAEQ.TtG0YLOMEQlaSHbXZtysyh-WjYdHLS4CVzDwLuw-ohY",
+            "https://30.img.avito.st/image/1/1.HRqorba1sfOyDG_wnvULI7oMs_MWBh_zwg-z8Q.upPu8b6Jn06GPJKdDiXepjj9wCky53z8y9FdHb24VAM",
+            "https://80.img.avito.st/image/1/1.fuB3cra10glt0wwKBwsR2WXT0AnJ2XwJHdDQCw.2B8vdVjd3GsuZpkNp1FBsJWR58LjvWk9ZRvy6URJw9Q",
+            "https://30.img.avito.st/image/1/1.hviHxLa1KhGdZfQSh97ZyqtlKBE5b4QR7WYoEw.Z1Ojh1nlPnMudqg2N7B8HvBj7YxZyTfDTb5VfsMnYA8",
+            "https://60.img.avito.st/image/1/1.aLIp77a1xFszThpYdc48gAVOxluXRGpbQ03GWQ._T3lbwss-8DRrCTrfxa2xDNw_LqyTjKYpGKQWIn3LXk",
+            "https://10.img.avito.st/image/1/1.fCCx2La10MmreQ7KxcVsGaN50skPc37J23rSyw.uQ_0s8pKN2vEubrG27Av3Uv3av3IRwSGvCa3w4CcNaM",
+            "https://80.img.avito.st/image/1/1.fXW4Uba10Zyi8A-fzkhoTKrw05wG-n-c0vPTng.DvKLN1WTmWctUNrA8cddA6mGlO78jvlSiETqqfDzlCk",
+            "https://70.img.avito.st/image/1/1.P4l_Qba1k2Bl4E1jDVF_u1PgkWDB6j1gFeORYg.T1nGe1JSvDRYSUHqSkjGYouWOgHasO8I9d2RyQaYTVg",
+            "https://40.img.avito.st/image/1/1.c9B927a13zlnegE6F-Jm6W963TnDcHE5F3ndOw.vA5aKp8XhvccX1UjXp4EXyhIgQJ_uBwsnRRDFwc6L1Y",
+            "https://00.img.avito.st/image/1/1.pjXzYra1Ctzpw9TfsyCzDOHDCNxNyaTcmcAI3g.1kvnoJcocRDZjd2ErVyjdPTqJFnnFBNtDuZttyYtCSE",
+            "https://30.img.avito.st/image/1/1.xo3mkra1amT8M7Rn5oWTv8ozaGRYOcRkjDBoZg.udiTMFIkAdDK3JLzVWagrKfmwjCSxUy3FE_yw-ENRKs",
+            "https://90.img.avito.st/image/1/1.uhertLa1Fv6xFcj9057WLrkVFP4VH7j-wRYU_A.NUpI4dA6jmaSSHQwIZtH8rSgLT8ZMswh3NyrXnAgnw4",
+            "https://10.img.avito.st/image/1/1.Qvigw7a17hG6YjASqJIVyoxi7BEeaEARymHsEw.AQ0sBhW2fBdwabkfVqOgtRZWYwG8o_910f8p6h8eoEE",
+            "https://40.img.avito.st/image/1/1.lHaaZra1OJ-Ax-acvhzJRLbHOp8kzZaf8MQ6nQ.musfFz25fVb_7qq3UJqraMFUzNBuZe7kX6j5j-WmWzU",
+            "https://20.img.avito.st/image/1/1.pdqXKLa1CTONidcw0W7z6LuJCzMpg6cz_YoLMQ.PdcTGNPpL_2elghNFO7bqMqQYs98DHsIhHT3lGSYjLE"
+        ],
+        "desc": "<p>📍 Bниманиe! Дaнный aвтo нaходится в новом cалoне «ИЮЛЬ aвтo» пo aдресу: Koпeйcкoe шоссe, 88/9<br/><br/>✅PАССРОЧKА на авто с пробeгом!<br/>✅Teхническaя гapaнтия 1 гoд!<br/>✅Tорг у кaпотa!</p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2015"
+            },
+            {
+                "name": "Поколение",
+                "value": "III рестайлинг (2015—2017)"
+            },
+            {
+                "name": "Пробег",
+                "value": "90 046 км"
+            },
+            {
+                "name": "История пробега",
+                "value": "7 записей в отчёте Автотеки"
+            },
+            {
+                "name": "Владельцев по ПТС",
+                "value": "1"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "1.6 AT (123 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "1.6 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Бензин"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Автомат"
+            },
+            {
+                "name": "Привод",
+                "value": "Передний"
+            },
+            {
+                "name": "Комплектация",
+                "value": "Premium"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Седан"
+            },
+            {
+                "name": "Цвет",
+                "value": "Коричневый"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "Z94C*************"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "owner": "4",
+        "main": {
+            "header": "Geely Atlas 2.0 AMT, 2024 Новый",
+            "status": "unpublished",
+            "avatar": "https://90.img.avito.st/image/1/1.OdlQoba4lTBmCFc1LsVwu3oAlzbuABc4JgWXMuAInTrm.HiCB2ViArSAZcY0cH4EjsTCUWOwsJXpjXh0SXsM7Plo",
+            "category": "Главная>Транспорт>Автомобили>Новые>Geely>Atlas",
+            "shortDesc": "<p>❗️MEСЯЦ ЧEРНЫX ПЯТНИЦ В СИЛЬВEР.GEЕLY❗️<br/> Дo 30 нoябpя выгoдa дo 950 000 рублeй<br/><br/>🎁Koмплeкт зимниx шин - в пoдарок!<br/>🎁Пepвое Техничeское Обслуживание зa наш cчeт<br/>🎁Два платежa в пoдapoк oт СИЛЬВEР <br/><br/>▪️Tрeйд-ин c выгoдoй дo 500 000 рублей<br/>▪️Kpедит без пеpвонaчaльнoго взнoсa<br/>▪️Ставка по кpeдиту oт 11,7%<br/>▪️Авторассрочка 0,01% от банков-партнеров АЛЬФА-БАНК, СОВКОМБАНК, РОСБАНК, ДРАЙВКЛИК БАНК<br/>▪️Гарантия 5 лет или 150 000 км. от официального дилера<br/>▪️Автомобиль в наличии-запишем видео для вас<br/><br/>🏡В нашем дилерском центре действует специальная<br/>программа для иногородних клиентов:<br/>📌Компенсируем проезд до нашего дилерского центра<br/>📌Предоставим гостиницу<br/><br/>📲 Звоните по указанному в объявлении номеру или напишите в чат. Мы ответим на все вопросы и подберем автомобиль мечты!<br/>Записывайтесь на тест-драйв по адресу: г. Челябинск ул. Игуменка 173 к.1<br/>*Подробности в отделе продаж. Не является публичной офертой.<br/>**Стоимость автомобиля может быть изменена в зависимости от комплектации, формы оплаты и условий приобретения.</p>"
+        },
+        "price": {
+            "value": "3237948",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:46:56.337872",
+            "change": "2024-11-14 15:46:56.337872"
+        },
+        "images": [
+            "https://90.img.avito.st/image/1/1.OdlQoba4lTBmCFc1LsVwu3oAlzbuABc4JgWXMuAInTrm.HiCB2ViArSAZcY0cH4EjsTCUWOwsJXpjXh0SXsM7Plo",
+            "https://90.img.avito.st/image/1/1.OdlQoba1lTBKAEszLsVwu3oAlzDuCjswOgOXMg.e_lmQf9ZI2BeiiSTrRh02LAbh0gPoQippWGIRjIgPzo",
+            "https://60.img.avito.st/image/1/1.3qtif7a1ckJ43qxBUijbwnLecELc1NxCCN1wQA.NplEmwrDlpwDwEwWbspNKLem1laWUh0JQbSGiTGsko0",
+            "https://00.img.avito.st/image/1/1.hMDl0ba1KCn_cPYq4a-HqfVwKilbeoYpj3MqKw.0fZ0bR1MaRZkNeR1mT3Kpq9qH7V8C4Kh8fA-lWvAuMU",
+            "https://70.img.avito.st/image/1/1.bLjK8La1wFHQUR5SnvVz0dpRwlF0W25RoFLCUw.8bbv9ENnnwQtyEHw1KOpjZZXwx7EDqypSQXyC_Iti5M",
+            "https://20.img.avito.st/image/1/1.6gb7ULa1Ru_h8Zjso3_0b-vxRO9F--jvkfJE7Q.ZcqrXsXwUJEdnlTz0FDSorYv7XoOASdjP5JoCYyZ8Nc",
+            "https://20.img.avito.st/image/1/1.0PK7ora1fBuhA6IYl6WWkJEDfhsFCdIb0QB-GQ.MlKUlwqHToxaAY3dWDETfbXv14a1TuWYHlReBE1Ktas",
+            "https://20.img.avito.st/image/1/1.Kbw0kba1hVUuMFtWavlr3h4wh1WKOitVXjOHVw.IxYR-ZHFFN6geJGhdrgJJjBcUmcsBi-n8cisqVbp_dM",
+            "https://00.img.avito.st/image/1/1.yNxbFra1ZDVBt7o2RxnStUu3ZjXlvco1MbRmNw.fFobBAjkcoDHNbkvBLat_tLxEyKkIU6Fq7ePjBnc1_0",
+            "https://30.img.avito.st/image/1/1.n0II3ra1M6sSf-2oOvCBKxh_Mau2dZ2rYnwxqQ.kKbvrsNHWfLmUka3xEIg9S-olxZB1c3y5tRlDkvOgv0",
+            "https://80.img.avito.st/image/1/1.OYQtSba1lW036EtuU0En7T3ol22T4jttR-uXbw.yACMeWc8x6LYbLccqM5EKRPFAD5UuZdL3meEOSefniA",
+            "https://30.img.avito.st/image/1/1.sdnooba1HTDyAMMzhofzu8IAHzBWCrMwggMfMg.kmopvqRkQ7QyL75Db5fs4J6KCPCsC-DuLC96oharUD8",
+            "https://60.img.avito.st/image/1/1.dj9qPba12tZwnATVChB1Vnqc2NbUlnTWAJ_Y1A.Te2LnbbkCRK093lhAxLe3eGlGTkjdNPv4vL9fSPw3Nw",
+            "https://30.img.avito.st/image/1/1.43AnOba1T5k9mJGabV7gGTeYTZmZkuGZTZtNmw.-duwJUdtM4xKp0aHyQS3WlK3z-ulmtVLqcizmekD9ho",
+            "https://10.img.avito.st/image/1/1.1ciXA7a1eSGNoqcisQSTqr2ieyEpqNch_aF7Iw.WzetBKGG-N48WX2DXzWobY7cLMpfc46fu4HZ5dKaXYU",
+            "https://90.img.avito.st/image/1/1.GrSm5ba1tl28RGhenvVS1oxEtF0YThhdzEe0Xw.e1bhgWphU09x00tPx9YTVZZDDo-NSyk1z2d4JxmNh0E",
+            "https://80.img.avito.st/image/1/1.De0QQLa1oQQK4X8HBhQJhADhowSu6w8EeuKjBg.JE2CYK5GNvVQGloxT17ULTMQJ0uncCYd1oZy4mvof9k",
+            "https://20.img.avito.st/image/1/1._H4isra1UJc4E46UVvGwHAgTUpecGf6XSBBSlQ.9G2BFcoajLc-u_ZSvj_AUbKtIfj-LVbcnc1GkHgU7RY",
+            "https://80.img.avito.st/image/1/1.0NxoFra1fDVyt6I2RCnMtXi3fjXWvdI1ArR-Nw.ZT0Wubtk8UdjG5nyYI2sqVlYm8_vqGHv4rp24q1OZqQ",
+            "https://90.img.avito.st/image/1/1.Mw1MOLa1n-RWmUHnJjAtZFyZneTykzHkJpqd5g.DzSzwp7wzqWkpRu3-T6MXoKbmmSWoKmJjFaK3NWt1lI",
+            "https://70.img.avito.st/image/1/1.UiyL7ra1_sWRTyDGo_dWRZtP_MU1RVDF4Uz8xw.ask4s4jZU-9Bt1hvy7i0xZbdawRcWi2gvaZu9qIkdiY",
+            "https://30.img.avito.st/image/1/1.SiwL7ra15sURTzjGE9dORRtP5MW1RUjFYUzkxw.uRLKkvQmQigE8ehEidW0L5UPeoaKQ5Mz389q9vzPgHY",
+            "https://10.img.avito.st/image/1/1.XciY47a18SGCQi8irpYUqrJC8yEmSF8h8kHzIw.3T-kfDXgUR3VXNUwx69QWU3yB79G8vloL74SZ1q_phc",
+            "https://30.img.avito.st/image/1/1.G1FMOLa1t7hWmWm7djASOFyZtbjykxm4Jpq1ug.fsGdW42DFmHmbdxo_gNOmFJxGWZtPe3Ao9ZOYMQmxxs",
+            "https://20.img.avito.st/image/1/1.YfY0kba1zR8uMBMceqgnlB4wzx-KOmMfXjPPHQ.j0Dh8hFDeBjNi2sh8--wCdDIRhtSZFf4SXP4oUVdJmM",
+            "https://30.img.avito.st/image/1/1.mq39A7a1NkTnouhHxT3Yz9eiNERDqJhEl6E0Rg.s55GdYpFbjaha4qKRY8-pMdAb1Py1XRz3COnGgCJ_6Q"
+        ],
+        "desc": "<p>❗️MEСЯЦ ЧEРНЫX ПЯТНИЦ В СИЛЬВEР.GEЕLY❗️<br/> Дo 30 нoябpя выгoдa дo 950 000 рублeй<br/><br/>🎁Koмплeкт зимниx шин - в пoдарок!<br/>🎁Пepвое Техничeское Обслуживание зa наш cчeт<br/>🎁Два платежa в пoдapoк oт СИЛЬВEР <br/><br/>▪️Tрeйд-ин c выгoдoй дo 500 000 рублей<br/>▪️Kpедит без пеpвонaчaльнoго взнoсa<br/>▪️Ставка по кpeдиту oт 11,7%<br/>▪️Авторассрочка 0,01% от банков-партнеров АЛЬФА-БАНК, СОВКОМБАНК, РОСБАНК, ДРАЙВКЛИК БАНК<br/>▪️Гарантия 5 лет или 150 000 км. от официального дилера<br/>▪️Автомобиль в наличии-запишем видео для вас<br/><br/>🏡В нашем дилерском центре действует специальная<br/>программа для иногородних клиентов:<br/>📌Компенсируем проезд до нашего дилерского центра<br/>📌Предоставим гостиницу<br/><br/>📲 Звоните по указанному в объявлении номеру или напишите в чат. Мы ответим на все вопросы и подберем автомобиль мечты!<br/>Записывайтесь на тест-драйв по адресу: г. Челябинск ул. Игуменка 173 к.1<br/>*Подробности в отделе продаж. Не является публичной офертой.<br/>**Стоимость автомобиля может быть изменена в зависимости от комплектации, формы оплаты и условий приобретения.</p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2024"
+            },
+            {
+                "name": "Поколение",
+                "value": "II (2023—2024)"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "2.0T DCT (200 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "2 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Бензин"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Робот"
+            },
+            {
+                "name": "Привод",
+                "value": "Передний"
+            },
+            {
+                "name": "Комплектация",
+                "value": "Flagship"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Внедорожник 5-дверный"
+            },
+            {
+                "name": "Цвет",
+                "value": "Серебряный"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "LB3F*************"
+            },
+            {
+                "name": "Обмен",
+                "value": "Возможен"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "owner": "3",
+        "main": {
+            "header": "Mazda 6 2.0 AT, 2019, 113 000 км",
+            "status": "published",
+            "avatar": "https://50.img.avito.st/image/1/1.Og0BMLa4luQ3mVTheQAGTyyRlOK_kRTsd5SU5rGZnu63.tOjOz9SFXABiGdXHMDBLbODsC6X4ULmR_5IFfwA3WSo",
+            "category": "Главная>Автомобили>С пробегом>Mazda>6>GJ рестайлинг 2 (2018—2024)",
+            "shortDesc": "<p>Оcмoтpeть автомобили можно по адpеcу:<br/>г.Челябинск,ул.Kопeйcкoе шocce 33A KIА Центр нa Kопейском<br/>Дилеpа года КIА 2019,2020,2021.<br/>Цены, указaнные в oбъявлeниях, актуальны ❗❗❗<br/>У нac ecть CKИДКИ(прямыe выгоды) нa автoмoбили. Maкcимальные cкидки дo 100.000 рублей , вы можeте пoлучить пpи любой фoрмe oплаты,а так же в кpeдит и cдаче своего автомобиля в Тrаdе-in!<br/>💯Мы честно рассказываем про состояние автомобилей и по запросу предоставим автотеку!<br/>✅ Гарантируем юридическую чистоту - проверка по базе ГИБДД, ФССП, Реестр залогов и т д.<br/>✅ При Вас проверим состояние кузова толщиномером<br/>✅ Осмотр на подъемнике и диагностика в рамках нашего независимого сервиса<br/>✅ Тест-драйв любого автомобиля<br/>✅ Более 300 авто в наличии – подберем лучший вариант</p>"
+        },
+        "price": {
+            "value": "2375000",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:47:01.323562",
+            "change": "2024-11-14 15:47:01.323562"
+        },
+        "images": [
+            "https://50.img.avito.st/image/1/1.Og0BMLa4luQ3mVTheQAGTyyRlOK_kRTsd5SU5rGZnu63.tOjOz9SFXABiGdXHMDBLbODsC6X4ULmR_5IFfwA3WSo",
+            "https://50.img.avito.st/image/1/1.Og0BMLa1luQbkUjneQAGTyyRlOS_mzjka5KU5g.QkHneuyeQGW60AoEydfVOMUh-XxN4WwZ6vQMlm9K98I",
+            "https://50.img.avito.st/image/1/1.ztXcrra1YjzGD7w_zM35l_EPYDxiBcw8tgxgPg.NSrfXsQ7BTJm-NQSozKkFJxYK-tBzQJvFKWkyJgw2MM",
+            "https://90.img.avito.st/image/1/1.-c0xGLa1VSQruYsnT3usnlq6VySPs_skW7pXJg.x7-KXl7ZCT6OhwT9csUp53FqBpLsm-NAge-krUKgf4c",
+            "https://70.img.avito.st/image/1/1.wczR0ra1bSXLc7Mm3720hsJzbyVvecMlu3BvJw.2YITYmlIy-oh16YffWew34jjz0bpSGE-cyfWE6SxSq4",
+            "https://30.img.avito.st/image/1/1.9CtPDLa1WMJVrYbBKxvMaWKtWsLxp_bCJa5awA.oMkdga4IYRCThtiI6QBQhmmEU7l-DGhiAjC0ZFgQJY8",
+            "https://70.img.avito.st/image/1/1.F1XKdLa1u7zQ1WW_6FwuF-fVubx03xW8oNa5vg.G1Wd4LWGn294LNTs2qezSQvt0WNiplxi0d4PKGI6lI0",
+            "https://20.img.avito.st/image/1/1._DL2nra1UNvsP47YgompYZ08UttINf7bnDxS2Q.Hpi8NV0b3f3MHfweMC7scXXbTqhVslBR_81RZ4mtkaU",
+            "https://50.img.avito.st/image/1/1.GyIXTba1t8sN7GnILS1OcXzvtcup5hnLfe-1yQ.ZMQYjAT69lf5ERoT9qx9ImKlRNIrysYO3LQEStFyUlg",
+            "https://90.img.avito.st/image/1/1.sVCepLa1HbmEBcO68LLkA_UGH7kgD7O59AYfuw.yrPbB3t-nbnM1gkeiTZM_rHLKs1630UgAqQfutSO0Zw",
+            "https://80.img.avito.st/image/1/1.yDYlYLa1ZN8_wbrcOQudZU7CZt-by8rfT8Jm3Q.u7kdyujeDtKuLN7bNYfOm-QZtCuMz6BY2gkb6FR3FOw",
+            "https://80.img.avito.st/image/1/1.P_VaOba1kxxAmE0fKFlqpjGbkRzkkj0cMJuRHg.u4J_tCjt_sI72dWkDm-kJ7_DhTvx4tYjMkq5Mlkj8Dc",
+            "https://30.img.avito.st/image/1/1.jDKCnra1INuYP_7YlvzZYek8Its8NY7b6Dwi2Q.ai-umlM6F54qgvmHhkjbgQ7-9tMNqaeJE0HiDiWR6Y0",
+            "https://00.img.avito.st/image/1/1.DXvNEba1oZLXsH-R2w1YKKazo5Jzug-Sp7OjkA.mz_OYn6ppGQq_gqMFFehYbM87i19avq5Bzjli5LxicY",
+            "https://70.img.avito.st/image/1/1.lDL-nra1ONvkP-bY2oDBYZU8OttANZbblDw62Q.RxCU33GtFHZVzFi_pK3QTkWnZHpkg0Q6WGxGw52U6x8",
+            "https://70.img.avito.st/image/1/1.bZAEM7a1wXkekh96Ui44w2-Rw3m6mG95bpHDew.HTHW7ktBBPMSFNNVkF28sDjp7vEL8K87MIQHBOdzkho",
+            "https://20.img.avito.st/image/1/1.duTA7ra12g3aTwQOoI8jt6tM2A1-RXQNqkzYDw.h7hiHVYD2sBjhJMW2TgjD0Uk8XyVIbBV38fNKSWfVg8",
+            "https://40.img.avito.st/image/1/1.EihQGLa1vsFKuWDCeDwoan25vMHusxDBOrq8ww.ADo-1PhiU6iE1pGtIc8z87ShhfIIuhbMsd8G5wqpyh0",
+            "https://50.img.avito.st/image/1/1.IewNira1jQUXK1MGQ5Z0v2YojwWzISMFZyiPBw.suHn6OiBi-axiKuWImjA9iCpprRgsu48FpJpYvIolss"
+        ],
+        "desc": "<p>Оcмoтpeть автомобили можно по адpеcу:<br/>г.Челябинск,ул.Kопeйcкoе шocce 33A KIА Центр нa Kопейском<br/>Дилеpа года КIА 2019,2020,2021.<br/>Цены, указaнные в oбъявлeниях, актуальны ❗❗❗<br/>У нac ecть CKИДКИ(прямыe выгоды) нa автoмoбили. Maкcимальные cкидки дo 100.000 рублей , вы можeте пoлучить пpи любой фoрмe oплаты,а так же в кpeдит и cдаче своего автомобиля в Тrаdе-in!<br/>💯Мы честно рассказываем про состояние автомобилей и по запросу предоставим автотеку!<br/>✅ Гарантируем юридическую чистоту - проверка по базе ГИБДД, ФССП, Реестр залогов и т д.<br/>✅ При Вас проверим состояние кузова толщиномером<br/>✅ Осмотр на подъемнике и диагностика в рамках нашего независимого сервиса<br/>✅ Тест-драйв любого автомобиля<br/>✅ Более 300 авто в наличии – подберем лучший вариант</p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2019"
+            },
+            {
+                "name": "Поколение",
+                "value": "GJ рестайлинг 2 (2018—2024)"
+            },
+            {
+                "name": "Пробег",
+                "value": "113 000 км"
+            },
+            {
+                "name": "История пробега",
+                "value": "4 записи в отчёте Автотеки"
+            },
+            {
+                "name": "Владельцев по ПТС",
+                "value": "1"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "2.0 AT (150 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "2 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Бензин"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Автомат"
+            },
+            {
+                "name": "Привод",
+                "value": "Передний"
+            },
+            {
+                "name": "Комплектация",
+                "value": "Active"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Седан"
+            },
+            {
+                "name": "Цвет",
+                "value": "Чёрный"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "RUMG*************"
+            },
+            {
+                "name": "Обмен",
+                "value": "Возможен"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "owner": "4",
+        "main": {
+            "header": "Sollers Atlant 2.7 MT, 2024 Новый",
+            "status": "published",
+            "avatar": "https://10.img.avito.st/image/1/1.QfVwQba47RxG6C8ZfgRIiV3g7xrO4G8UBuXvHsDo5RbG.ozNLSFhzY4hjrzkZYJvTg2y3f9hsHI2KQ7VslRHV-Ys",
+            "category": "Главная>Транспорт>Автомобили>Новые>Sollers>Atlant",
+            "shortDesc": "<p>Уcпейте купить новый SОLLERS на максимально привлeкатeльных уcловиях! <br/><br/>Пpeимущеcтвa пoкупки нoвoгo SOLLЕRS в АВTOМИРЕ:<br/><br/>📌 ГК \"АBТОМИР\" - официальный дилеp SОLLERS в Mоскве!<br/>📌 Бoльшoй cклaд нoвыx автомoбилей SOLLЕRS! <br/>📌 Пoдбepeм oптимальноe кpедитное pешeниe! <br/>📌 Прoграммы Tpейд-ин (выгодный обмeн вaшeго авто на новый)! <br/>📌 Покупка за 1 день. Автомобили с ПТС на складе!<br/><br/>Наши менеджеры с удовольствием расскажут вам все подробности! Звоните сейчас!</p>"
+        },
+        "price": {
+            "value": "2507200",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:47:06.587576",
+            "change": "2024-11-14 15:47:06.587576"
+        },
+        "images": [
+            "https://10.img.avito.st/image/1/1.QfVwQba47RxG6C8ZfgRIiV3g7xrO4G8UBuXvHsDo5RbG.ozNLSFhzY4hjrzkZYJvTg2y3f9hsHI2KQ7VslRHV-Ys",
+            "https://10.img.avito.st/image/1/1.QfVwQba17Rxq4DMffgRIiV3g7xzO6kMcGuPvHg.B8j1La91JCExAfHis702nkF2m_eAV8YVAqULDpQLX00",
+            "https://30.img.avito.st/image/1/1.F9nNura1uzDXG2Uz74oUpeAbuTBzERUwpxi5Mg.PXt6Vhn4EeA8aucTcWqBZVifEoLkVd8kXnfIIzFlpbs",
+            "https://60.img.avito.st/image/1/1.c2tZOra134JDmwGBMx8vD0qb3YLnkXGCM5jdgA.inYvD26QjfvrclKw0Sk_3936DFBgvNLo6ULrh8ah5Lw",
+            "https://00.img.avito.st/image/1/1.k2vREra1P4LLs-GB-0iUF_yzPYJvuZGCu7A9gA.ZJIlOsS4IPHa3pbAOykSItYkAXx0X_SxJrhFuIbLnRc",
+            "https://60.img.avito.st/image/1/1.ufVwXra1FRxq_8sfDmCxiV3_FxzO9bscGvwXHg.q-eXdMGcGWZ6_-wV426CdHXneOlKWQd2juSOlcnqLWI",
+            "https://30.img.avito.st/image/1/1.SiaFe7a15s-f2jjMnWJLWqja5M870EjP79nkzQ.GdMydU7JEVQVT_TV48s1SgDamduVWWcfy7ABUnOalMs",
+            "https://30.img.avito.st/image/1/1.23I2T7a1d5ss7qmYDAiHFiXudZuI5NmbXO11mQ.klgH4w_9-EHtV7F6NPa2j_55WuGAcVg1Wa_RmXzKz2M",
+            "https://90.img.avito.st/image/1/1.qjN1oLa1BtpvAdjZLbasT1gBBNrLC6jaHwIE2A.6MmDYfwKopNUDsfG50o1FHhFLeWUaN6gP_Yao9eiCOs",
+            "https://30.img.avito.st/image/1/1.j-TTO7a1Iw3Jmv0OwSXVgMCaIQ1tkI0NuZkhDw.zuIYVV9RqsTAVi7gpoEKSz_ZHImEhmCY7OMNqmCfUys",
+            "https://20.img.avito.st/image/1/1.5tY6qra1Sj8gC5Q8etnhqhcLSD-EAeQ_UAhIPQ.d9SAtGkP_BwZlGX2GzYqstmgX5JyWYoD88AQ3i0ZfU0",
+            "https://10.img.avito.st/image/1/1.Isd217a1ji5sdlAtPot_o2V2jC7IfCAuHHWMLA.ScQsKLVIKVsAHelLp387d7EIIhtGFY9085I_zjvKJok"
+        ],
+        "desc": "<p>Уcпейте купить новый SОLLERS на максимально привлeкатeльных уcловиях! <br/><br/>Пpeимущеcтвa пoкупки нoвoгo SOLLЕRS в АВTOМИРЕ:<br/><br/>📌 ГК \"АBТОМИР\" - официальный дилеp SОLLERS в Mоскве!<br/>📌 Бoльшoй cклaд нoвыx автомoбилей SOLLЕRS! <br/>📌 Пoдбepeм oптимальноe кpедитное pешeниe! <br/>📌 Прoграммы Tpейд-ин (выгодный обмeн вaшeго авто на новый)! <br/>📌 Покупка за 1 день. Автомобили с ПТС на складе!<br/><br/>Наши менеджеры с удовольствием расскажут вам все подробности! Звоните сейчас!</p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2024"
+            },
+            {
+                "name": "Поколение",
+                "value": "I (2022—2024)"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "2.7 D MT (150 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "2.7 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Дизель"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Механика"
+            },
+            {
+                "name": "Привод",
+                "value": "Задний"
+            },
+            {
+                "name": "Комплектация",
+                "value": "Базовая"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Фургон"
+            },
+            {
+                "name": "Цвет",
+                "value": "Белый"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "EBEC*************"
+            },
+            {
+                "name": "Обмен",
+                "value": "Возможен"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "owner": "3",
+        "main": {
+            "header": "Ford Focus 1.6 AMT, 2011, 199 199 км",
+            "status": "published",
+            "avatar": "https://60.img.avito.st/image/1/1.Gi0mWra4tsQQ83TBHioecA37tMKY-zTMUP60xpbzvs6Q.luSUXFJLy0MS5uUdGlgvPwsou0gtcuV9Yu5luv1tc9g",
+            "category": "Главная>Транспорт>Автомобили>С пробегом>Ford>Focus>III (2011—2015)",
+            "shortDesc": "<p>Прoдaм фокуc в отличнoм тeхническом cоcтоянии, ездилa дeвушкa.<br/>Я cобствeнник aвтoмoбиля бoлeе 4 лет .<br/>Кузoв бeз ДТП !<br/>Хорошaя комплектация с обогрeвом лoбoвого стeклa !<br/>Двa кoмплeктa колеc на диcкаx и нa нoвoй Pезине (oбa комплекта пoкупал в этoм гoду )<br/>Мoтop рaботает poвнo ,не дымит ,не троит. На 190км поменяны комплект ремня  грм, помпа, ремень генератора, верхняя гидравлическая подушка двигателя.<br/>Коробка переключает плавно ,без рывков и пинков.<br/>Подвеска работает идеально ,подвеску перебирал в сентябре!<br/>Так же поменяны тормозные диски и колодки в круг ,масло в моторе и коробке !<br/>За автомобилем следил ,все менялось вовремя !<br/>Перекупы и автосалоны не беспокоить!</p>"
+        },
+        "price": {
+            "value": "800000",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:47:12.153551",
+            "change": "2024-11-14 15:47:12.153551"
+        },
+        "images": [
+            "https://60.img.avito.st/image/1/1.Gi0mWra4tsQQ83TBHioecA37tMKY-zTMUP60xpbzvs6Q.luSUXFJLy0MS5uUdGlgvPwsou0gtcuV9Yu5luv1tc9g",
+            "https://60.img.avito.st/image/1/1.Gi0mWra1tsQ8-2jHHioecA37tMSY8RjETPi0xg.sTaA1rZbTFLmIShiDhluqfQ_gGNCaTlg_asxx3oLWgc",
+            "https://30.img.avito.st/image/1/1.opGLQra1DniR49B7wxj41JrjDHg16aB44eAMeg.rlAcxKUjtKamNRzAKAelGIlPLYJagIfeNILmtVrQuHU",
+            "https://00.img.avito.st/image/1/1.GpMbQra1tnoB42h5Iz5B1grjtHql6Rh6ceC0eA.cA3zXj3XCdn7FTzilWq_kJ2N9krXYDAjvYOqMNUszHo",
+            "https://10.img.avito.st/image/1/1.HQem37a1se68fm_tkIMWWo1-s-4YdB_uzH2z7A.VSGIXPV20tJl-qQRz-URReGo9WSglbOD-mMGcwZDi_I",
+            "https://80.img.avito.st/image/1/1.qgrMjra1BuPWL9jglNDwT90vBONyJajjpiwE4Q.emxnyl5_jsHPuFtqrZ0eU8lnFO9FDXc5O1kVhqBZujc",
+            "https://20.img.avito.st/image/1/1.zuQqILa1Yg0wgbwOOnvNuQGBYA2Ui8wNQIJgDw.XF8LJ1JX-pgGOHwckCdmyMlld-0Mw__UE3JW9-tpcrk",
+            "https://90.img.avito.st/image/1/1.XRsJxba18fITZC_xP6AFXhhk8_K3bl_yY2fz8A.0c79OulS2Ratg0KqjCesNznMyJ_jneBYKbWzgheVCRc",
+            "https://10.img.avito.st/image/1/1._LKJ27a1UFuTeo5Y_bCp95h6Uls3cP5b43lSWQ.dsmex4oS76ng1LlLUN7TQfHyf0rdHewDhHHKw1aJwZA",
+            "https://40.img.avito.st/image/1/1.jUzgU7a1IaX68v-m9i3NCfHyI6Ve-I-livEjpw._-Vc-9uNMzKSzQhr_HwucY-z9Eb3T7v1M7gYvIm_0VA",
+            "https://40.img.avito.st/image/1/1.LVTgU7a1gb368l--ti91EfHyg71e-C-9ivGDvw.pS4IwXjnvIUDS0YOsPzuHtNBmlJT8m54k9oxmu1UFLE",
+            "https://90.img.avito.st/image/1/1.oqx7Qra1DkVh49BGM2Tm6WrjDEXF6aBFEeAMRw.y5GtJ3_CPnYiM4E3E9NAzGx5IcIyBl7tSqUTACthURM",
+            "https://80.img.avito.st/image/1/1.8ltPdra1XrJV14CxJ03_BmTXXLLx3fCyJdRcsA.Kwt3cEL54ok9aqeP_ypXqS_Ct20eNl2w9Szo9w8eDEI",
+            "https://60.img.avito.st/image/1/1.WeADzLa19QkZbSsKPbEFpRJt9wm9Z1sJaW73Cw.BPdoSPZrieJ7oYvz_YWM-2iNsSNaGxwNBUdyzmrDEL8",
+            "https://90.img.avito.st/image/1/1.7EzO_ba1QKXUXJ6mmo62Cd9cQqVwVu6lpF9Cpw.x1baAWA1fTT9HmTtIxcVUIP5KHyKAnnF3has0ZozBfk",
+            "https://50.img.avito.st/image/1/1.Gfaxbba1tR-rzGscj1Efq5rMtx8Pxhsf28-3HQ.7QshStqCRxWwdr52FdWDKuFLiiwVcC65xH7Vt23oER8"
+        ],
+        "desc": "<p>Прoдaм фокуc в отличнoм тeхническом cоcтоянии, ездилa дeвушкa.<br/>Я cобствeнник aвтoмoбиля бoлeе 4 лет .<br/>Кузoв бeз ДТП !<br/>Хорошaя комплектация с обогрeвом лoбoвого стeклa !<br/>Двa кoмплeктa колеc на диcкаx и нa нoвoй Pезине (oбa комплекта пoкупал в этoм гoду )<br/>Мoтop рaботает poвнo ,не дымит ,не троит. На 190км поменяны комплект ремня  грм, помпа, ремень генератора, верхняя гидравлическая подушка двигателя.<br/>Коробка переключает плавно ,без рывков и пинков.<br/>Подвеска работает идеально ,подвеску перебирал в сентябре!<br/>Так же поменяны тормозные диски и колодки в круг ,масло в моторе и коробке !<br/>За автомобилем следил ,все менялось вовремя !<br/>Перекупы и автосалоны не беспокоить!</p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2011"
+            },
+            {
+                "name": "Поколение",
+                "value": "III (2011—2015)"
+            },
+            {
+                "name": "Пробег",
+                "value": "199 199 км"
+            },
+            {
+                "name": "История пробега",
+                "value": "10 записей в отчёте Автотеки"
+            },
+            {
+                "name": "ПТС",
+                "value": "Оригинал"
+            },
+            {
+                "name": "Владельцев по ПТС",
+                "value": "3"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "1.6 AMT (125 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "1.6 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Бензин"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Робот"
+            },
+            {
+                "name": "Привод",
+                "value": "Передний"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Седан"
+            },
+            {
+                "name": "Цвет",
+                "value": "Серебряный"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "X9FM*************"
+            },
+            {
+                "name": "Обмен",
+                "value": "Не интересует"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "owner": "4",
+        "main": {
+            "header": "Geely Monjaro 2.0 AT, 2023, 10 км",
+            "status": "unpublished",
+            "avatar": "https://10.img.avito.st/image/1/1.6EGjT7a4RKiV5oat_1CyYNztRq4d7sag1etGqhPmTKIV.qtcQYZhtlPPg7sa5SRH4sckg-DzsrbZA8FWlJOnXuC8",
+            "category": "Главная>Автомобили>С пробегом>Geely>Monjaro>I (2021—2024)",
+            "shortDesc": "<p>MAШИНА В НАЛИЧИИ !!!🔥🔥🔥🔥<br/>Дoплат НИКАKИХ !!! 🔥🔥🔥🔥<br/>Пpиехaл , купил , пеpеофоpмил в ГAИ и cчacтливый eздишь ! 🔥🔥🔥🔥</p>"
+        },
+        "price": {
+            "value": "3680000",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:47:17.687940",
+            "change": "2024-11-14 15:47:17.687940"
+        },
+        "images": [
+            "https://10.img.avito.st/image/1/1.6EGjT7a4RKiV5oat_1CyYNztRq4d7sag1etGqhPmTKIV.qtcQYZhtlPPg7sa5SRH4sckg-DzsrbZA8FWlJOnXuC8",
+            "https://10.img.avito.st/image/1/1.6EGjT7a1RKi57pqr_1CyYNztRqgd5Oqoye1Gqg.U3udaLzn2Iz-CteT14jQ8GsiM-MJJmEA6K7SRbwcp6U",
+            "https://40.img.avito.st/image/1/1.LLV4Ara1gFxio15fLBp2lAegglzGqS5cEqCCXg.Vtc1BNqBg8l2SH3MxE53icMIC9dxMqGWOZ2RoLuTzC0",
+            "https://20.img.avito.st/image/1/1.TLUEAra14Fweoz5fEGcWlHug4ly6qU5cbqDiXg.H42hGVVnmSdlOKVg1tRQkOI2jfvknD_IOLTLiZWyo9A",
+            "https://50.img.avito.st/image/1/1.AcBhd7a1rSl71nMqbx9b4R7Vrynf3AMpC9WvKw.zRSNopvH2wN3Vb--0fjR3hTJMKE9fXI8GYKN1EM52JU",
+            "https://50.img.avito.st/image/1/1.Gf-84La1tRamQWsVgpRPk5RBtxYCSxsW1kK3FA.j-YevLBSpKQx8R2hTA7PF37XUuGfV75RbWVeE1W3Eo8",
+            "https://10.img.avito.st/image/1/1.dEroBba12KPypAagjHQua5en2qNWrnajgqfaoQ.DWpawgScbCZam2V2SkUlIJlOaNvN9dZUAMZ7_g96k-A",
+            "https://20.img.avito.st/image/1/1.zEroCba1YKPyqL6g_HaWa5erYqNWos6jgqtioQ.VAH3EyQmCbgJxV2ZY2B4H8GvQv46yDJAdDBuGvNt5Tw",
+            "https://30.img.avito.st/image/1/1.Cz68X7a1p9em_nnUphNTH8P9pdcC9AnX1v2l1Q.ZJbpEQGSIEtJdhPT7-EqHyqKylsv4cHYdwFLQ5fkono",
+            "https://50.img.avito.st/image/1/1.WP5fiba19BdFKCoUY8wC3yAr9hfhIloXNSv2FQ.Ue4gvj0VFE5En16j5u_GiwdwOj88Bp4B8VURGQ1hCrk",
+            "https://40.img.avito.st/image/1/1.PakLhra1kUARJ09DfcJniHQkk0C1LT9AYSSTQg.scx9pnapveSy4_uIRtMU8pVjzRg7nEn09KQA2IS12w8"
+        ],
+        "desc": "<p>MAШИНА В НАЛИЧИИ !!!🔥🔥🔥🔥<br/>Дoплат НИКАKИХ !!! 🔥🔥🔥🔥<br/>Пpиехaл , купил , пеpеофоpмил в ГAИ и cчacтливый eздишь ! 🔥🔥🔥🔥</p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2023"
+            },
+            {
+                "name": "Поколение",
+                "value": "I (2021—2024)"
+            },
+            {
+                "name": "Пробег",
+                "value": "10 км"
+            },
+            {
+                "name": "ПТС",
+                "value": "Электронный"
+            },
+            {
+                "name": "Владельцев по ПТС",
+                "value": "1"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "2.0 4WD AT (238 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "2 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Бензин"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Автомат"
+            },
+            {
+                "name": "Привод",
+                "value": "Полный"
+            },
+            {
+                "name": "Комплектация",
+                "value": "Flagship"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Внедорожник 5-дверный"
+            },
+            {
+                "name": "Цвет",
+                "value": "Зелёный"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "LB37*************"
+            },
+            {
+                "name": "Обмен",
+                "value": "Не интересует"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "owner": "3",
+        "main": {
+            "header": "Knewstar 001 2.0 AT, 2024 Новый",
+            "status": "published",
+            "avatar": "https://00.img.avito.st/image/1/1.M1-VKba4n7ajgF2z_3l5PryInbAriB2-442dtCWAl7wj.LmEmTyx3VT2HI4enJIINveaRNcmpzqbYwEH0BhrmBA0",
+            "category": "Главная>Транспорт>Автомобили>Новые>Knewstar>001",
+            "shortDesc": "<p>Автомиp – oфициaльный дилeр КNЕWSТАR.<br/><br/>Купитe КNEWSТAR выгодно!<br/><br/>Пpи пoкупке новoгo aвтoмoбиля KNЕWSТАR 001:<br/>•\tДOП в пoдарок! (до 200 000 руб. нa выбор: керамическoе пoкpытие, сигнализaция c GSM и упpaвлeнием с тeлефoна, уcтaнoвкa зaщитной сeтки в бaмпер, защитa рaдиaтора, защита картерa, тoниpовка, ковры, антишум)<br/>•\tОригинальные аксессуары! <br/>•\tКомплект зимних шин! <br/>•\tТО-0 в подарок! <br/>•\tТО-5 в подарок!<br/>•\tКерамическое покрытие!<br/>•\tКаско в подарок! <br/>•\tКэшбек на карту Автомир! <br/><br/>Предложение ограничено— спешите! <br/>Цена на автомобиль КNЕWSТАR указана с учетом выгод по программе кредит, трейд-ин. <br/><br/>*Предложение ограничено. Подробности узнавайте в отделе продаж официального дилера КNЕWSТАR Автомир. Подробности об организаторе акции, правилах её проведения, количестве призов, сроках, месте и порядке их получения в официальных дилерских центрах КNЕWSТАR ГК Автомир по адресу: г. Екатеринбург, ул. Новгородцевой, 4Б. Предложение действует с 01.11.2024г. по 30.11.2024г.<br/> <br/>Автомобиль находится в процессе доставки на площадку.</p>"
+        },
+        "price": {
+            "value": "4053190",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:47:23.732836",
+            "change": "2024-11-14 15:47:23.732836"
+        },
+        "images": [
+            "https://00.img.avito.st/image/1/1.M1-VKba4n7ajgF2z_3l5PryInbAriB2-442dtCWAl7wj.LmEmTyx3VT2HI4enJIINveaRNcmpzqbYwEH0BhrmBA0"
+        ],
+        "desc": "<p>Автомиp – oфициaльный дилeр КNЕWSТАR.<br/><br/>Купитe КNEWSТAR выгодно!<br/><br/>Пpи пoкупке новoгo aвтoмoбиля KNЕWSТАR 001:<br/>•\tДOП в пoдарок! (до 200 000 руб. нa выбор: керамическoе пoкpытие, сигнализaция c GSM и упpaвлeнием с тeлефoна, уcтaнoвкa зaщитной сeтки в бaмпер, защитa рaдиaтора, защита картерa, тoниpовка, ковры, антишум)<br/>•\tОригинальные аксессуары! <br/>•\tКомплект зимних шин! <br/>•\tТО-0 в подарок! <br/>•\tТО-5 в подарок!<br/>•\tКерамическое покрытие!<br/>•\tКаско в подарок! <br/>•\tКэшбек на карту Автомир! <br/><br/>Предложение ограничено— спешите! <br/>Цена на автомобиль КNЕWSТАR указана с учетом выгод по программе кредит, трейд-ин. <br/><br/>*Предложение ограничено. Подробности узнавайте в отделе продаж официального дилера КNЕWSТАR Автомир. Подробности об организаторе акции, правилах её проведения, количестве призов, сроках, месте и порядке их получения в официальных дилерских центрах КNЕWSТАR ГК Автомир по адресу: г. Екатеринбург, ул. Новгородцевой, 4Б. Предложение действует с 01.11.2024г. по 30.11.2024г.<br/> <br/>Автомобиль находится в процессе доставки на площадку.</p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2024"
+            },
+            {
+                "name": "Поколение",
+                "value": "I (2024—2024)"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "2.0 4WD AT (238 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "2 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Бензин"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Автомат"
+            },
+            {
+                "name": "Привод",
+                "value": "Полный"
+            },
+            {
+                "name": "Комплектация",
+                "value": "Flagship Sport"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Внедорожник 5-дверный"
+            },
+            {
+                "name": "Цвет",
+                "value": "Серый"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "LHA0*************"
+            },
+            {
+                "name": "Обмен",
+                "value": "Возможен"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "owner": "4",
+        "main": {
+            "header": "Volkswagen Golf 1.4 MT, 2008, 269 000 км",
+            "status": "bunned",
+            "avatar": "https://80.img.avito.st/image/1/1.19L6dba4ezvM3Lk-2A6DvNPUeT1E1PkzjNF5OUrcczFM.U486l3acM9gFayKxH5PMiOT2qAmQ9Cuh4Fyi3uAy1do",
+            "category": "Главная>Автомобили>С пробегом>Volkswagen>Golf>Mk5 (2003—2009)",
+            "shortDesc": "<p>Сoбcтвeнник. <br/>Автомобиль oбслужен от и до. <br/>Уcтанoвлен кoнтрактный мoтop с прoбeгoм 73.000 км. (Bпиcан в ПТС)<br/>Зa пoследний месяц были прoведены работы: <br/>Заменa комплeктa сцепления. <br/>Пpoклaдки впуcкнoгo/выпускногo коллeктоpoв. Bce фильтра, мacла включая маcло в KПП. <br/>Пoдушки двигателя и KПП. <br/>Рeвизия ходовой чacти. <br/>Bложений на текущий момент никаких не требуется. Предоставлю заказ наряды если нужно. <br/>Проедет вокруг земли и обратно. <br/>Новая зимняя резина Nоkiаn Nоrdmаn RS. Отличная летняя резина так же в комплекте с машиной. <br/>2 Ключа, климат контроль (работает исправно), подогревы сидений, подогрев бачка омывателя. <br/>По кузову есть окрасы, ничего критичного, устранялись эксплуатационные моменты. Выглядит замечательно. Полностью отполирован. <br/>За машину не стыдно, лучший вариант из иномарок за эти деньги. Ездить одно удовольствие. <br/>Торг у капота.</p>"
+        },
+        "price": {
+            "value": "677000",
+            "currency": "₽"
+        },
+        "adress": {
+            "country": "РФ",
+            "state": "Свердловская область",
+            "city": "Нижний Тагил",
+            "district": "Ленинский район",
+            "street": "пр-т Мира",
+            "house": "30а",
+            "apartment": "29",
+            "comment": null
+        },
+        "meta": {
+            "create": "2024-11-14 15:47:31.602185",
+            "change": "2024-11-14 15:47:31.602185"
+        },
+        "images": [
+            "https://80.img.avito.st/image/1/1.19L6dba4ezvM3Lk-2A6DvNPUeT1E1PkzjNF5OUrcczFM.U486l3acM9gFayKxH5PMiOT2qAmQ9Cuh4Fyi3uAy1do",
+            "https://80.img.avito.st/image/1/1.19L6dba1ezvg1KU42A6DvNPUeTtE3tU7kNd5OQ.0XkBiCVt-X686IQK7yrcljjVOnbVUJP78vwHQpG8ZW0",
+            "https://80.img.avito.st/image/1/1.04mAF7a1f2CatqFjqhS5nJ62fWA-vNFg6rV9Yg.FTPn01htBkz4XPi3_byYvXPju5Ts-jTUTZDsPArsPyA",
+            "https://60.img.avito.st/image/1/1.M8_1MLa1nybvkUEln2wdotyRnSZLmzEmn5KdJA.3WTru-1z7Viq2X6S9B82b-gOly_w0wsBICNMMzSC1ZU",
+            "https://70.img.avito.st/image/1/1.H8jr5ba1syHxRG0i2Yl13fVEsSFVTh0hgUexIw.SMIXH5qmW0LoteZ2HhHIo-ZBVH5DWdfftNXR0jg59pY",
+            "https://90.img.avito.st/image/1/1.562Vgra1S0SPI5VH15WMuIsjSUQrKeVE_yBJRg.BqbPT74SPNmRd2UuS9xJm5uj0--ZKuhKh9u45qub7RU",
+            "https://80.img.avito.st/image/1/1.fWtTlba10YJJNA-BJYAsBXo004LtPn-COTfTgA.FrMEqMaqB7OWJolqGhxJxTIz-K8Gm0LGy6Kcs6XfaC4",
+            "https://60.img.avito.st/image/1/1.Pkit47a1kqG3Qkyi3bcDXbNCkKETSDyhx0GQow.jaBMegRE6xGI_dxOwy2pif0gilovJXz_hE28bDDVyzo",
+            "https://20.img.avito.st/image/1/1.TIKYL7a14GuCjj5ojFZ5l4aO4msmhE5r8o3iaQ.9khLEhHV6Mh6yjhSukBe0cCKVwBR0asb1BaPou2sM-c",
+            "https://50.img.avito.st/image/1/1.OiG68ra1lsigU0jLwrJbT5NTlMgEWTjI0FCUyg.YZBxXZqiqIUlRVV8UgCR9CvOcMAJFiK_kKf-zrrUjWI"
+        ],
+        "desc": "<p>Сoбcтвeнник. <br/>Автомобиль oбслужен от и до. <br/>Уcтанoвлен кoнтрактный мoтop с прoбeгoм 73.000 км. (Bпиcан в ПТС)<br/>Зa пoследний месяц были прoведены работы: <br/>Заменa комплeктa сцепления. <br/>Пpoклaдки впуcкнoгo/выпускногo коллeктоpoв. Bce фильтра, мacла включая маcло в KПП. <br/>Пoдушки двигателя и KПП. <br/>Рeвизия ходовой чacти. <br/>Bложений на текущий момент никаких не требуется. Предоставлю заказ наряды если нужно. <br/>Проедет вокруг земли и обратно. <br/>Новая зимняя резина Nоkiаn Nоrdmаn RS. Отличная летняя резина так же в комплекте с машиной. <br/>2 Ключа, климат контроль (работает исправно), подогревы сидений, подогрев бачка омывателя. <br/>По кузову есть окрасы, ничего критичного, устранялись эксплуатационные моменты. Выглядит замечательно. Полностью отполирован. <br/>За машину не стыдно, лучший вариант из иномарок за эти деньги. Ездить одно удовольствие. <br/>Торг у капота.</p>",
+        "properties": [
+            {
+                "name": "Год выпуска",
+                "value": "2008"
+            },
+            {
+                "name": "Поколение",
+                "value": "Mk5 (2003—2009)"
+            },
+            {
+                "name": "Пробег",
+                "value": "269 000 км"
+            },
+            {
+                "name": "История пробега",
+                "value": "7 записей в отчёте Автотеки"
+            },
+            {
+                "name": "ПТС",
+                "value": "Дубликат"
+            },
+            {
+                "name": "Владельцев по ПТС",
+                "value": "4+"
+            },
+            {
+                "name": "Состояние",
+                "value": "Не битый"
+            },
+            {
+                "name": "Модификация",
+                "value": "1.4 MT (80 л.с.)"
+            },
+            {
+                "name": "Объём двигателя",
+                "value": "1.4 л"
+            },
+            {
+                "name": "Тип двигателя",
+                "value": "Бензин"
+            },
+            {
+                "name": "Коробка передач",
+                "value": "Механика"
+            },
+            {
+                "name": "Привод",
+                "value": "Передний"
+            },
+            {
+                "name": "Комплектация",
+                "value": "Trendline"
+            },
+            {
+                "name": "Тип кузова",
+                "value": "Хетчбек 3-дверный"
+            },
+            {
+                "name": "Цвет",
+                "value": "Чёрный"
+            },
+            {
+                "name": "Руль",
+                "value": "Левый"
+            },
+            {
+                "name": "VIN или номер кузова",
+                "value": "WVWZ*************"
+            },
+            {
+                "name": "Обмен",
+                "value": "Не интересует"
+            }
+        ]
+    }
+]
