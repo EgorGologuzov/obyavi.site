@@ -61,6 +61,9 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
         // первоначальная валидация при монтировании компонента
         useEffect(() => {
             const realValue = currentValue;
+            if(isValueFixed){
+                setCurrentValue(value);
+            }
             onMontage && onMontage({ value: realValue, isValid: validate(realValue) })
         })
 
@@ -68,7 +71,7 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
         return (
             <Input
                 {...otherProps} // сначала задаю не используемые в этом хуке пропсы, потом все остальные
-                value={isValueFixed?value:currentValue}
+                value={currentValue}
                 valid={(!showError) || (showError && isValid)}
                 comment={(!showError) || (showError && isValid) ? comment : errorComment}
                 required={required}

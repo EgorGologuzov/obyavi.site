@@ -3,6 +3,7 @@ import Subcaption from "./Subcaption";
 import Switch from "./Switch";
 import Avatar from "./Avatar";
 import StarsBar from "./StarsBar";
+import { Header_withOnClick } from "../hoc/Header_withOnClick";
 
 const Ad = ({img,title,description,checked,user,price,onTitleClick,onAvatarClick}) => {
     return ( 
@@ -11,7 +12,7 @@ const Ad = ({img,title,description,checked,user,price,onTitleClick,onAvatarClick
                                     <img src={img}/>
                                 </div>
                                 <div className="ad__text-info">
-                                    <Header level={1} onClick={onTitleClick}>{title}</Header>
+                                    <Header_withOnClick level={1} onClick={onTitleClick}>{title}</Header_withOnClick>
                                     <Subcaption level={2}>{user.location}</Subcaption>
                                     <Subcaption level={1} color={'text'}>{description}</Subcaption>
                                     <Header level={3} color={'text'}>{price} руб.</Header>

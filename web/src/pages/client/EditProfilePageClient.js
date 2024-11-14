@@ -17,11 +17,11 @@ export default function EditProfilePageClient() {
     const appContext=useAppContext();
     const formState = useNewFormState();
     const [isDefaulted,setIsDefaulted]=useState(false);
-    const [name,setName]=useState('Fucker');
     const navigate=useNavigate();
 
     const restoreToDefault=()=>{
-
+        setTimeout(()=>setIsDefaulted(false),50);
+        setIsDefaulted(true);
     }
 
     const submitChanges=()=>{
@@ -65,6 +65,7 @@ export default function EditProfilePageClient() {
                         placeholder={appContext.loginedUser.firstname}
                         value={appContext.loginedUser.firstname}
                         regExp={/^([А-Яа-яA-za-z]){1,50}$/g}
+                        isValueFixed={isDefaulted}
                         required
                         errorComment="Имя может содержать только буквенные символы и не должно быть длиннее 50 символов" />
                     <InputString_withRegExp
@@ -73,27 +74,45 @@ export default function EditProfilePageClient() {
                         value={appContext.loginedUser.patronymic}
                         placeholder={appContext.loginedUser.patronymic||null}
                         regExp={/^([А-Яа-яA-za-z]){1,50}$/g}
+                        isValueFixed={isDefaulted}
                         errorComment="Отчество может содержать только буквенные символы и не должно быть длиннее 50 символов" />
                     <InputEmail_withRegExp
                         name="email"
                         label="Электронная почта"
                         value={appContext.loginedUser.email}
                         placeholder={appContext.loginedUser.email}
+                        isValueFixed={isDefaulted}
                         required />
-                    <InputPhone_withRegExp name="phone" required placeholder={appContext.loginedUser.phone} value={formatPhone(appContext.loginedUser.phone)}/>
-                    <InputString_withRegExp name='birthDate' placeholder={appContext.loginedUser.birthDate} value={appContext.loginedUser.birthDate} label='Дата рождения'/>
-                    <InputString_withRegExp name='location' placeholder={appContext.loginedUser.location} value={appContext.loginedUser.location} label='Местоположение'/>
+                    <InputPhone_withRegExp 
+                        name="phone" 
+                        required 
+                        placeholder={appContext.loginedUser.phone} 
+                        value={formatPhone(appContext.loginedUser.phone)} 
+                        isValueFixed={isDefaulted}/>
+                    <InputString_withRegExp 
+                        name='birthDate' 
+                        placeholder={appContext.loginedUser.birthDate} 
+                        value={appContext.loginedUser.birthDate} 
+                        label='Дата рождения' 
+                        isValueFixed={isDefaulted}/>
+                    <InputString_withRegExp 
+                        name='location' 
+                        placeholder={appContext.loginedUser.location} 
+                        value={appContext.loginedUser.location} 
+                        label='Местоположение' 
+                        isValueFixed={isDefaulted}/>
                     <InputText_withRegExp
                         name='description'
                         label="Описание"
                         value={appContext.loginedUser.description}
                         comment=''
+                        isValueFixed={isDefaulted}
                         onChange={()=>alert('')}
                     />
             </AutoForm>
             <div className="edit-profile-page__confirm-buttons">
                 <Button onClick={()=>submitChanges()}>Сохранить</Button>
-                <Button color='secondary' onClick={()=>navigate('/c/settings')}>Отменить</Button>
+                <Button color='secondary' onClick={()=>restoreToDefault()}>Отменить</Button>
             </div>
         </div>
     )

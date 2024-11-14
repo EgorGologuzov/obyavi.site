@@ -19,6 +19,7 @@ import FilterDialogClient from '../../components/FilterDialogClient';
 import Switch from '../../components/Switch';
 import Ad from '../../components/Ad';
 import { useNavigate } from 'react-router-dom';
+import {Header_withOnClick} from '../../hoc/Header_withOnClick'
 
 export default function AdSearchPageClient() {
     const appContext=useAppContext();
@@ -58,19 +59,19 @@ export default function AdSearchPageClient() {
                 <Button color='secondary' onClick={()=>appContext.showModal('Выберите категорию',(<FilterDialogClient/>))}><img style={{width:'35px',height:'30px',content:'var(--icon-filter)',alignSelf:'center'}}/> <p>Фильтры</p></Button>
                 <Button color='secondary' onClick={()=>appContext.showModal('Сортировка',(<SortingDialogClient/>))}><img style={{width:'40px',height:'30px',content:'var(--icon-sort)',alignSelf:'center'}}/> <p>Сортировка</p></Button>
             </div>
-            <Header level={3}>Найдено {adsInScrollingList.length} товаров из {adCount}</Header>
+            <Header_withOnClick level={3}>Найдено {adsInScrollingList.length} товаров из {adCount}</Header_withOnClick>
             <ListContextProvider value={listContext}>
                 <ScrollingList onBottomReached={()=>console.log('wow')}>
                     {adsInScrollingList.map((ad, index) =>
                         <Card id={ad.id} key={ad.id}>
-                            <Ad user={userService.getUserById(ad.userId)}
-                            img='https://alpinabook.ru/upload/resize_cache/iblock/8d9/550_800_1/8d9cd63476f15e85f0d8796555ab1e6b.jpg'
+                            <Ad user={userService.getUserById(ad.owner)}
+                            img={ad.images[0]}
                             onTitleClick={()=>navigate("/c/ad/" + ad.id)}
                             onAvatarClick={()=>navigate('/c/profile')}
-                            title={ad.title}
-                            description={ad.description}
+                            title={ad.main.header}
+                            description={ad.main.shortDesc}
                             checked={appContext.loginedUser.favoriteAds.includes(ad.id)}
-                            price={ad.price}
+                            price={ad.price.value}
                             />
                         </Card>
                     )}
