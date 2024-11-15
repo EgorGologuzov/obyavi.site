@@ -16,6 +16,7 @@ import { useAppContext } from '../../contexts/AppContext'
 import Load from '../../components/Load'
 import Fail from '../../components/Fail'
 import parse from 'html-react-parser'
+import { useTitleWithDeps } from '../../hook/useTitle'
 
 export default function AdPageClient() {
     const adService = useAdService();
@@ -32,6 +33,8 @@ export default function AdPageClient() {
             .then((adValue) => setAd(adValue))
         )
     }, []);
+
+    useTitleWithDeps({ text: ad?.main?.header, deps: [ad] });
 
     return !isBusy && ad && (
         <div className="ad-page-client">

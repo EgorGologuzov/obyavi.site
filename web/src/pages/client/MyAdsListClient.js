@@ -6,7 +6,6 @@ import { useAdService } from '../../data/AdService';
 import Card from '../../components/Card';
 import Header from '../../components/Header';
 import Subcaption from '../../components/Subcaption';
-import Paragraf from '../../components/Paragraf';
 import ToolButton from '../../components/ToolButton';
 import ContextMenu from '../../components/ContextMenu';
 import ContextMenuButton from '../../components/ContextMenuButton';
@@ -15,10 +14,11 @@ import './MyAdsListClient.css';
 import { PagedList_withLoad } from '../../hoc/withLoad';
 import { busyProcess } from '../../utils/utils';
 import parse from 'html-react-parser'
+import useTitle from '../../hook/useTitle';
 
 export default function MyAdsListClient() {
     const [ads, setAds] = useState([]);
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState();
     const [pageMax, setPageMax] = useState(0);
     const [isBusy, setIsBusy] = useState(false);
     const listContext = useNewListContext();
@@ -116,12 +116,14 @@ export default function MyAdsListClient() {
     }
 
     const navigateToAd = (adId) => {
-        !listContext.selectMode && navigate("/c/ad/" + adId);
+        !listContext.selectMode && window.open("/c/ad/" + adId, '_blank');
     }
 
     useEffect(() => {
         load({ page: 1 });
     }, []);
+
+    useTitle("Мои объявления")
 
     return (
         <div className="my-ads-list-client">
