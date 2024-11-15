@@ -30,7 +30,7 @@ const InputString = ({value='',
                     )}
                 </div>
             )}
-            <input value={value} className={`input-string_input${!valid?' error':hasFocus?' focus':''}`} type='text' onChange={onChange} placeholder={placeholder} onFocus={(e)=>handleFocus(value,e.target.value)} onBlur={handleFocusOut}/>
+            <input value={value} name={name} className={`input-string_input${!valid?' error':hasFocus?' focus':''}`} type='text' onChange={onChange} placeholder={placeholder} onFocus={(e)=>handleFocus(value,e.target.value)} onBlur={handleFocusOut}/>
             {comment&&(
                 <p className={`input-string_comment${!valid?' error':hasFocus?' focus':''}`}>{comment}</p>
             )}

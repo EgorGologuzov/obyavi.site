@@ -30,6 +30,7 @@ const InputText = ({
             onFocus={()=>setFocus(true)}
             onBlur={()=>setFocus(false)}
             onChange={onChange}
+            name={name}
             />
             {comment&&(
                 <p className={`input-text_comment${!valid?' error':hasFocus?' focus':''}`}>{comment}</p>

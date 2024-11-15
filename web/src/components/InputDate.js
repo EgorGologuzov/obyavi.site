@@ -39,6 +39,7 @@ const InputDate = ({label='Date',
             dateFormat="dd/MM/yyyy"
             startDate={min}
             showIcon
+            name={name}
             icon="icon-calender"
             customInput={
                 <InputMask mask='__/__/____' replacement={{_:/\d/}} className={`input-date_input${!valid?' error':isFocused?' focus':''}`} style={{padding:'0px',paddingBottom:'3px'}}/>

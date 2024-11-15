@@ -35,6 +35,7 @@ const InputPassword = ({onChange,
                 className='input-password_input-box_input'
                 onChange={onChange} 
                 onFocus={handleFocus}
+                name={name}
                 onBlur={handleFocusOut}
                 value={value}/>
                 <VisibilityIcon value={visibility} onClick={()=>setVisibility(!visibility)}/>
