@@ -70,7 +70,7 @@ export default function AdSearchPageClient() {
                             onAvatarClick={()=>navigate('/c/profile')}
                             title={ad.main.header}
                             description={ad.main.shortDesc}
-                            checked={appContext.loginedUser.favoriteAds.includes(ad.id)}
+                            checked={appContext.loginedUser.favoriteAds?.includes(ad.id)}
                             price={ad.price.value}
                             />
                         </Card>

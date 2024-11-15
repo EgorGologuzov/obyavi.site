@@ -19,18 +19,12 @@
 }
 
 .profile-info .stars-bar {
-    grid-column: 2;
-    grid-row: 2;
-    height: 20px;
-    overflow: hidden;
     padding: 2px 5px 2px 5px;
     width: min-content;
-    grid-template-columns: min-content min-content min-content min-content min-content;
-    gap: 0;
-    column-gap: 5px;
+    height: 20px;
+    gap: 5px;
 }
 
 .profile-info .stars-bar svg {
-    height: 100%;
-    width: auto;
+    max-height: none;
 }

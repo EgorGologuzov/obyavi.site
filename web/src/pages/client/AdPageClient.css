@@ -79,6 +79,7 @@
     .ad-page-client__data {
         width: 100%;
         flex: none;
+        max-height: none;
     }
     .ad-page-client .image-list {
         display: none;
