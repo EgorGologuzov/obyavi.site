@@ -1,7 +1,7 @@
 .profile-page{
     display:flex;
     flex-direction:column;
-    margin-top:100px;
+    margin: 100px 10px 0px 10px;
 }
 .profile-page__header{
     border:1px solid var(--text);
@@ -14,33 +14,52 @@
 .profile-page__header__info{
     display:inline-flex;
     flex-direction:row;
+    align-self:center;
+    max-width: 100%;
+    margin-right:50px;
 }
 .profile-page__header__info .avatar{
-    min-width:200px;
+    max-width:100%;
     height:200px;
+    align-self:center;
 }
 .profile-page__header button{
-    width:400px;
+    max-width:400px;
+    height: max-content;
+    padding:10px 0px;
     align-self:center;
 }
 .profile-page__header__info__text{
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-self:center;
     margin-left:20px;
-    grid-template-columns:130px 150px;
-    grid-template-rows:90px 30px 60px;
+    gap:6px;
+    max-width: 100%;
 }
 .profile-page__header__info__text h2{
-    grid-column:span 2;
+    max-width: max-content;
+    word-wrap: break-word;
+}
+.profile-page__header__info .stats{
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+    max-width: max-content;
+    max-height: fit-content;
+    flex-wrap: wrap;
+}
+.profile-page__header__info .stats h6{
+    max-width: max-content;
+    word-wrap: break-word;
 }
 .profile-page__header__info__text .stars-bar{
     grid-column:span 2;
-    height:45px;
-    padding:0;
-    padding-top:7px;
-    padding-left:10px;
-    gap:0px;
-    width: 200px;
-    place-self: end start;
+    height:100%;
+    max-width: 225px;
+    place-self: start start;
+    gap:0;
+    padding:10px 0px;
 }
 .profile-page__header__info__text .stars-bar svg{
     width:30px;
@@ -58,10 +77,10 @@
     border:1px solid var(--text);
     border-radius:10px;
     padding:10px;
-    width:600px;
+    max-width:600px;
     display:grid;
     row-gap:10px;
-    grid-template-columns:200px auto;
+    grid-template-columns: minmax(0px, auto) minmax(0px, auto);
     column-gap: 20px;
 }
 .profile-page__description .subcaption.subcaption_level_1{
@@ -76,18 +95,35 @@
     gap:15px;
     border:1px solid var(--text);
 }
-
 @media (width<750px){
     .profile-page__header{
         flex-direction:column;
     }
+    .profile-page__header__info{
+        flex-direction: column;
+        margin-right:0px;
+    }
     .profile-page__header button{
         margin-top:11px;
+        word-wrap: break-word;
     }
     .profile-page__actions{
         display: none;
     }
-    .profile-page__description{
+    .profile-page__header__info .avatar{
+        width:100%;
+        height:100%;
+    }
+    .profile-page__header__info__text .stars-bar{
+        max-width: 100%;
+    }
+    .profile-page__header__info__text{
+        margin-left:0px;
+    }
+    .profile-page__body{
         align-self:center;
+    }
+    .profile-page__description h6{
+        word-wrap: break-word;
     }
 }

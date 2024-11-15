@@ -6,7 +6,7 @@ import InputText from "../components/InputText";
 
 // Рекомендую посмореть на ютубе или почитать что такое hoc в react
 // Расширение (hoc) поверх любого инпута, для добавления логики валидации по рег. выражениям
-export function withRegExpValidation(Input, regExpDefault, commentDefault, errorCommentDefault) {
+export function withFixedValueRegExp(Input, regExpDefault, commentDefault, errorCommentDefault) {
     // Возвращаю расширенный компонент
     return function ({
         value, // значение инпута, если задано, то будет жестко ставиться, если не задано, то можно свободно редактировать поле
@@ -17,10 +17,11 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
         errorComment, // Коментарий в режиме ошибки
         showError = true, // Если false, то режим ошибки не активируется даже если значение не соотвествует регуляру
         onMontage, // событие вызвается при окночании монтирования и передает объект с резальтатами проверки начального значения
+        isValueFixed=false,
         ...otherProps }) { // любые другие пропсы, которые принимает расширяемый инпут, например label или id
 
         // Создаю состояния для значения и результата проверки
-        const [currentValue, setCurrentValue] = useState();
+        const [currentValue, setCurrentValue] = useState(value??undefined);
         const [isValid, setIsValid] = useState(true);
 
         // Устанавливаю значения переданные в хок по умолчанию, если не были переданны напрямую
@@ -54,12 +55,15 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
             setIsValid(isValid);
             setCurrentValue(newValue);
             // вызываю событие onChange, передаю новое значение и результат валидации
-            onChange && onChange({ newValue: newValue, isValid: isValid });
+            onChange && onChange({ newValue: isValueFixed?value:newValue, isValid: isValid });      
         }
 
         // первоначальная валидация при монтировании компонента
         useEffect(() => {
-            const realValue = value ?? currentValue;
+            const realValue = currentValue;
+            if(isValueFixed){
+                setCurrentValue(value);
+            }
             onMontage && onMontage({ value: realValue, isValid: validate(realValue) })
         })
 
@@ -67,7 +71,7 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
         return (
             <Input
                 {...otherProps} // сначала задаю не используемые в этом хуке пропсы, потом все остальные
-                value={value ?? currentValue}
+                value={currentValue}
                 valid={(!showError) || (showError && isValid)}
                 comment={(!showError) || (showError && isValid) ? comment : errorComment}
                 required={required}
@@ -76,31 +80,31 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
 }
 
 // оборачиваю InputPhone в это расширение, задаю значения по умочанию для regExp, comment и errorComment
-export const InputPhone_withRegExp = 
-    withRegExpValidation(  
+export const InputPhone_withFixedValueRegExp = 
+    withFixedValueRegExp(  
         InputPhone,
         /^\+7\s\(\d{3}\)\s\d{3}\s\d{2}\-\d{2}$/g,
         "Российский номер телефона",
         "Номер должен соотвествовать формату +7 (000) 000 00-00");
 
 // оборачиваю InputPassword в это расширение, задаю значения по умочанию для regExp, comment и errorComment
-export const InputPassword_withRegExp = 
-    withRegExpValidation(  
+export const InputPassword_withFixedValueRegExp = 
+    withFixedValueRegExp(  
         InputPassword,
         /^.{8,256}$/g,
         "Ваш пароль",
         "Пароль должен состоять минимум из 8 символов, максимум из 256");
 
 // оборачиваю InputString в это расширение, regExp, comment и errorComment нужно будет передать пропсами при использовании
-// <InputString_withRegExp regExp={/someRegExp/g} comment="some text" errorComment="error"/>
-export const InputString_withRegExp = withRegExpValidation(InputString);
+// <InputString_withFixedValueRegExp regExp={/someRegExp/g} comment="some text" errorComment="error"/>
+export const InputString_withFixedValueRegExp = withFixedValueRegExp(InputString);
 
-// создаю InputEmail_withRegExp на основе InputString оборачивая его в расширение и задавая значения по умолчанию
-export const InputEmail_withRegExp = 
-    withRegExpValidation(
+// создаю InputEmail_withFixedValueRegExp на основе InputString оборачивая его в расширение и задавая значения по умолчанию
+export const InputEmail_withFixedValueRegExp = 
+    withFixedValueRegExp(
         InputString,
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g,
         "",
         "Неверный формат почты");
 
-export const InputText_withRegExp = withRegExpValidation(InputText);
+export const InputText_withFixedValueRegExp = withFixedValueRegExp(InputText);

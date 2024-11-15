@@ -18,6 +18,8 @@ import Header from '../../components/Header';
 import FilterDialogClient from '../../components/FilterDialogClient';
 import Switch from '../../components/Switch';
 import Ad from '../../components/Ad';
+import { useNavigate } from 'react-router-dom';
+import {Header_withOnClick} from '../../hoc/Header_withOnClick'
 
 export default function AdSearchPageClient() {
     const appContext=useAppContext();
@@ -28,10 +30,8 @@ export default function AdSearchPageClient() {
     const adService=useAdService();
     const adCount=adService.getAds().length;
     const userService=useUserService();
-    const userList=userService.getUsers();
     const [adsInScrollingList,setAds] = useState(adService.getAds())
-    const dropdownSamples={'option_1':'White','option_2':'Red','option_3':'Green','option_4':'Blue','option_5':'Black'};
-    const [isChecked,setIsChecked]=useState(false);
+    const navigate=useNavigate();
 
     const handleSearchRequestChanged = (oldValue, newValue) => {
         setSearchRequest(newValue);
@@ -56,20 +56,22 @@ export default function AdSearchPageClient() {
                     inputValue={searchRequest ?? ""}
                     onSearch={()=>handleSearch(searchRequest)}
                 />
-                <Button color='secondary' onClick={()=>appContext.showModal('Выберите категорию',(<FilterDialogClient/>))}>Фильтры</Button>
-                <Button color='secondary' onClick={()=>appContext.showModal('Сортировка',(<SortingDialogClient/>))}>Сортировка</Button>
+                <Button color='secondary' onClick={()=>appContext.showModal('Выберите категорию',(<FilterDialogClient/>))}><img style={{width:'35px',height:'30px',content:'var(--icon-filter)',alignSelf:'center'}}/> <p>Фильтры</p></Button>
+                <Button color='secondary' onClick={()=>appContext.showModal('Сортировка',(<SortingDialogClient/>))}><img style={{width:'40px',height:'30px',content:'var(--icon-sort)',alignSelf:'center'}}/> <p>Сортировка</p></Button>
             </div>
-            <Subcaption level={2}>Найдено {adsInScrollingList.length} товаров из {adCount}</Subcaption>
+            <Header_withOnClick level={3}>Найдено {adsInScrollingList.length} товаров из {adCount}</Header_withOnClick>
             <ListContextProvider value={listContext}>
                 <ScrollingList onBottomReached={()=>console.log('wow')}>
                     {adsInScrollingList.map((ad, index) =>
                         <Card id={ad.id} key={ad.id}>
-                            <Ad user={userService.getUserById(ad.userId)}
-                            img='https://alpinabook.ru/upload/resize_cache/iblock/8d9/550_800_1/8d9cd63476f15e85f0d8796555ab1e6b.jpg'
-                            title={ad.title}
-                            description={ad.description}
+                            <Ad user={userService.getUserById(ad.owner)}
+                            img={ad.images[0]}
+                            onTitleClick={()=>navigate("/c/ad/" + ad.id)}
+                            onAvatarClick={()=>navigate('/c/profile')}
+                            title={ad.main.header}
+                            description={ad.main.shortDesc}
                             checked={appContext.loginedUser.favoriteAds.includes(ad.id)}
-                            price={ad.price}
+                            price={ad.price.value}
                             />
                         </Card>
                     )}

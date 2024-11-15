@@ -12,6 +12,7 @@ import { useUserService } from '../../data/UserService';
 import { useAppContext } from '../../contexts/AppContext';
 import { useAdService } from '../../data/AdServiceArtem';
 import DropdownList from '../../components/DropdownList';
+import { useNavigate } from 'react-router-dom';
 
 export default function FavoritesListClient() {
     const appContext=useAppContext();
@@ -19,12 +20,19 @@ export default function FavoritesListClient() {
     const listContext=useNewListContext();
     const [pageValue,setPageValue]=useState(1);
     const adsInPagedList = (adService.getAds())
-    const currentPageAds=([adsInPagedList[pageValue-1]])
+    const currentPageAds=(pageValue===1?adsInPagedList.slice(1,6):adsInPagedList.slice(-1))
     const userService=useUserService();
-    const dropdownSamples={'option_1':'White','option_2':'Red','option_3':'Green','option_4':'Blue','option_5':'Black'};
+    const dropdownSamples={'option_1':'Сначала новые','option_2':'Сначала старые'};
+    const [dropdownValue,setDropdownValue]=useState('');
+    const navigate=useNavigate();
 
     const handleOnPageValueChange=(event)=>{
         setPageValue(event.newValue);
+    }
+
+    const handleDropdownChange=(oldValue,newValue)=>{
+        setDropdownValue(newValue);
+        console.log(newValue);
     }
 
     return (
@@ -33,19 +41,22 @@ export default function FavoritesListClient() {
             <DropdownList 
             options={dropdownSamples}
             label='Сортировка:'
+            value={dropdownValue}
+            onChange={handleDropdownChange}
             comment=''
             />
             <ListContextProvider value={listContext}>
-                <PagedList pageMax="3" pageValue={pageValue} onPageValueChange={handleOnPageValueChange}> 
+                <PagedList pageMax="2" pageValue={pageValue} onPageValueChange={handleOnPageValueChange}> 
                     {currentPageAds.map((ad)=>
                         <Card id={ad.id} key={ad.id}>
-                            <Ad user={userService.getUserById(ad.userId)}
-                            img='https://alpinabook.ru/upload/resize_cache/iblock/8d9/550_800_1/8d9cd63476f15e85f0d8796555ab1e6b.jpg'
-                            title={ad.title}
-                            description={ad.description}
+                            <Ad user={userService.getUserById(ad.owner)}
+                            img={ad.images[0]}
+                            onTitleClick={()=>navigate("/c/ad/" + ad.id)}
+                            onAvatarClick={()=>navigate('/c/profile')}
+                            title={ad.main.header}
+                            description={ad.main.shortDesc}
                             checked={appContext.loginedUser.favoriteAds.includes(ad.id)}
-                            price={ad.price}
-                            />
+                            price={ad.price.value}/>
                         </Card>
                     )}
                 </PagedList>

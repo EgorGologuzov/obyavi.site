@@ -5,17 +5,22 @@ import './SortingDialogClient.css';
 
 const SortingDialogClient = () => {
     const [isAscending,setIsAscending]=useState(true);
-    const dropdownSamples={'option_1':'White','option_2':'Red','option_3':'Green','option_4':'Blue','option_5':'Black'};
+    const dropdownSamples={'option_1':'ОЗУ','option_2':'ПЗУ','option_3':'Ядра','option_4':'Состояние','option_5':'Цена'};
+    const [dropdownValue,setDropdownValue]=useState('');
+
+    const handleDropdownChange=(oldValue,newValue)=>{
+        setDropdownValue(newValue);
+    }
 
     return ( 
         <div className='sort-dialog'>
-                <DropdownList options={dropdownSamples} comment='' label=''/>
+                <DropdownList options={dropdownSamples} value={dropdownValue} onChange={handleDropdownChange} comment='' label=''/>
                 <img 
                     className='sort-btn'
                     onClick={()=>setIsAscending(!isAscending)} 
                     style={{content:`${isAscending?'var(--icon-sort-asc)':'var(--icon-sort-desc)'}`}}
                 />
-                <Button onClick={()=>alert('apply')}>Применить</Button>
+                <Button onClick={()=>console.log({'value':dropdownValue,'method':isAscending?'asc':'desc'})}>Применить</Button>
         </div>
      );
 }

@@ -35,6 +35,8 @@
     --calender:url("../public/img/calender-l.png");
     --icon-sort-asc: url('../public/img/sort-asc-l.png');
     --icon-sort-desc: url('../public/img/sort-desc-l.png');
+    --icon-sort:url('../public/img/sort-l.png');
+    --icon-filter:url('../public/img/filter-l.png');
 
     /* Theme independed icons */
     --icon-empty: url("../public/img/empty.png");
@@ -70,6 +72,8 @@
     --calender:url("../public/img/calender-d.png");
     --icon-sort-asc: url('../public/img/sort-asc-d.png');
     --icon-sort-desc: url('../public/img/sort-desc-d.png');
+    --icon-sort:url('../public/img/sort-d.png');
+    --icon-filter:url('../public/img/filter-d.png');
 }
 
 .icon-mag-glass {
@@ -112,6 +116,7 @@
     border: 1px solid var(--primary);
     background-color: var(--fg);
     padding-left:15px;
+    min-width: 0px;
 }
 
 .search-string_search-bar_input:focus {
@@ -166,6 +171,7 @@
 .dropdown {
     position: relative;
     width: 100%;
+    height:min-content;
 }
 
 .dropdown_header {
@@ -423,8 +429,7 @@
 }
 
 .stars-bar {
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    display: flex;
     cursor: pointer;
     gap:10px;
     width: 350px;
@@ -433,6 +438,10 @@
     padding: 10px 15px 10px 15px;
     border-radius: 60px;
     background-color: var(--light);
+}
+.stars-bar svg{
+    max-width:max-content;
+    max-height: max-content;
 }
 .stars-bar.input-off{
     pointer-events: none;
@@ -865,13 +874,20 @@
 
 .ad{
     display: grid;
-    grid-template-columns:250px 250px auto;
-    grid-template-rows:auto auto;
+    grid-template-columns:repeat(3,minmax(0px,auto));
+    grid-template-rows:repeat(2,minmax(0px,auto));
     margin-bottom:15px;
     padding:10px;
 }
 .ad__text-info{
     margin-left:15px;
+}
+.ad__text-info h1, .ad__text-info h3, .ad__text-info h6{
+    word-wrap: break-word;
+    max-width: fit-content;
+}
+.ad__text-info h1{
+    cursor:pointer;
 }
 .ad__text-info .subcaption.subcaption_level_2{
     margin-top:5px;
@@ -880,48 +896,32 @@
 .ad__text-info .subcaption.subcaption_level_1{
     margin-top:10px;
     font-size:16px;
+    place-self: start;
+    word-wrap: break-word;
 }
 .ad__user-info{
-    display:inline-flex;
+    display:grid;
     grid-column: span 2;
+    grid-template-columns: minmax(0px,50px) minmax(0px,125px) minmax(0px,auto);
+    grid-template-rows:repeat(2,minmax(0px,auto));
     align-items: flex-end;
     margin-left:10px;
+    column-gap:15px;
 }
-.ad__user-info__c2{
-    display:flex;
-    flex-direction: column;
-    margin-left:15px;
-}
-.ad__user-info__c2 h5{
-    align-self:start;
-    margin:0;
-    margin-bottom:5px;
-}
-.ad__user-info__c2__r2{
-    display: flex;
-    flex-direction:row;
-}
-.ad__user-info__c2__r2 h6{
-    align-self: center;
-    margin-left:10px;
+.ad__user-info h5{
+    grid-column:span 2;
 }
 .ad__user-info .avatar{
-    height:50px;
-    width:50px;
+    height:100%;
+    aspect-ratio: 1/1;
     grid-row:span 2;
 }
 .ad__user-info .stars-bar{
-    height: 25px;
-    padding: 0;
-    padding-top: 4px;
-    padding-left: 8px;
-    gap: 0px;
-    width: 100px;
+    height: 30px;
+    padding: 5px;
+    gap: 2px;
+    max-width: 100%;
     place-self: end start;
-}
-.ad__user-info .stars-bar svg{
-    width:13px;
-    height:15px;
 }
 .ad .switch{
     place-self: start;
@@ -943,6 +943,23 @@
 }
 .ad .switch input::before{
     display: none;
+}
+.ad__img-presenter{
+    grid-row:span 2;
+    max-height: 250px;
+    aspect-ratio: 1/1;  
+}
+.ad__img-presenter img{
+    border-radius:10%;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+@media (width<750px){
+    .ad__text-info .subcaption.subcaption_level_1{
+        place-self: auto;
+    }
 }
 
 @keyframes movingStroke{

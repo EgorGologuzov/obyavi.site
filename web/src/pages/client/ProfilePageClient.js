@@ -21,8 +21,10 @@ export default function ProfilePageClient() {
                     <Avatar src={appContext.loginedUser.avatar}/>
                     <div className="profile-page__header__info__text">
                         <Header level={2}>{`${appContext.loginedUser.lastname} ${appContext.loginedUser.firstname} ${(appContext.loginedUser.fathername)||''}`}</Header>
-                        <Subcaption level={2}>{`#${appContext.loginedUser.id}`}</Subcaption>
-                        <Subcaption level={2} color={'accent'}>Онлайн</Subcaption>
+                        <div className="stats">
+                            <Subcaption level={2}>{`#${appContext.loginedUser.id}`}</Subcaption>
+                            <Subcaption level={2} color={'accent'}>Онлайн</Subcaption>
+                        </div>
                         <StarsBar value={4}/>
                     </div>
                 </div>
