@@ -1,29 +1,30 @@
-import myAds from './db/my-ads.json';
+import ads from './db/ads.json';
+import users from './db/users.json';
 
 export function useAdService() {
     return fakeService;
 }
 
-const pageSize = 6;
+const pageSize = 8;
 
 const fakeService = {
-    getMyAds({ page }) {
-        return new Promise((resolve, _) => {
-            setTimeout(() => {
-                const start = (page - 1) * pageSize;
-                const end = start + pageSize;
-                resolve({
-                    totalPages: Math.ceil(myAds.length / pageSize),
-                    list: myAds.slice(start, end)
-                })
-            }, 500);
-        })
+    getMyAds({ page, userId }) {
+        const myAds = ads.filter((ad) => Number(ad.owner) === Number(userId))
+        const start = (page - 1) * pageSize;
+        const end = start + pageSize;
+
+        const result = {
+            totalPages: Math.ceil(myAds.length / pageSize),
+            list: myAds.slice(start, end).map((ad) => JSON.parse(JSON.stringify(ad)))
+        };
+
+        return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
     },
 
     publish({ idList }) {
         return new Promise((resolve, _) => {
             setTimeout(() => {
-                myAds.forEach((ad) => {
+                ads.forEach((ad) => {
                     if (idList.includes(ad.id)) {
                         ad.main.status = "published";
                     }
@@ -37,7 +38,7 @@ const fakeService = {
     unpublish({ idList }) {
         return new Promise((resolve, _) => {
             setTimeout(() => {
-                myAds.forEach((ad) => {
+                ads.forEach((ad) => {
                     if (idList.includes(ad.id)) {
                         ad.main.status = "unpublished";
                     }
@@ -51,10 +52,20 @@ const fakeService = {
     delete({ idList }) {
         return new Promise((resolve, _) => {
             setTimeout(() => {
-                myAds = myAds.filter((ad) => !idList.includes(ad.id));
+                ads = ads.filter((ad) => !idList.includes(ad.id));
                 resolve({ result: "ok" });
                 console.log("Delete", idList);
             }, 500);
         })
+    },
+
+    getById({ id }) {
+        const result = ads.find((ad) => ad.id == id);
+        return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
+    },
+
+    getOwner({ ownerId }) {
+        const result = users.find((user) => user.id == ownerId);
+        return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
     }
 }

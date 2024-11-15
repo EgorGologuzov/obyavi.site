@@ -18,3 +18,15 @@ export function busyProcess(busy, setBusy, process) {
     setBusy(true);
     process().finally(() => setBusy(false));
 }
+
+export function busyProcessWithFail(busy, setBusy, setFail, process) {
+    if (busy) {
+        return;
+    }
+
+    setBusy(true);
+    process()
+        .then(() => setFail(false))
+        .catch((err) => {setFail(true); console.log(err);})
+        .finally(() => setBusy(false));
+}
