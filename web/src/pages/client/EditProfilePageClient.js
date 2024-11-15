@@ -5,7 +5,7 @@ import Header from '../../components/Header'
 import Subcaption from '../../components/Subcaption'
 import StarsBar from '../../components/StarsBar'
 import Button from '../../components/Button'
-import { InputEmail_withRegExp, InputPassword_withRegExp, InputPhone_withRegExp, InputString_withRegExp, InputText_withRegExp } from '../../hoc/withRegExpValidation';
+import { InputEmail_withFixedValueRegExp, InputPassword_withFixedValueRegExp, InputPhone_withFixedValueRegExp, InputString_withFixedValueRegExp, InputText_withFixedValueRegExp } from '../../hoc/withFixedValueRegExp';
 import { useUserService } from '../../data/UserService'
 import { useAppContext } from "../../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
@@ -50,7 +50,7 @@ export default function EditProfilePageClient() {
                 </div>
             </div>
             <AutoForm formState={formState}>
-                    <InputString_withRegExp
+                    <InputString_withFixedValueRegExp
                         name="lastname"
                         label="Фамилия"
                         placeholder={appContext.loginedUser.lastname}
@@ -59,7 +59,7 @@ export default function EditProfilePageClient() {
                         regExp={/^([А-Яа-яA-za-z]){1,50}$/g}
                         required
                         errorComment="Фамилия может содержать только буквенные символы и не должна быть длиннее 50 символов" />
-                    <InputString_withRegExp
+                    <InputString_withFixedValueRegExp
                         name="firstname"
                         label="Имя"
                         placeholder={appContext.loginedUser.firstname}
@@ -68,7 +68,7 @@ export default function EditProfilePageClient() {
                         isValueFixed={isDefaulted}
                         required
                         errorComment="Имя может содержать только буквенные символы и не должно быть длиннее 50 символов" />
-                    <InputString_withRegExp
+                    <InputString_withFixedValueRegExp
                         name="patronymic"
                         label="Отчество"
                         value={appContext.loginedUser.patronymic}
@@ -76,32 +76,32 @@ export default function EditProfilePageClient() {
                         regExp={/^([А-Яа-яA-za-z]){1,50}$/g}
                         isValueFixed={isDefaulted}
                         errorComment="Отчество может содержать только буквенные символы и не должно быть длиннее 50 символов" />
-                    <InputEmail_withRegExp
+                    <InputEmail_withFixedValueRegExp
                         name="email"
                         label="Электронная почта"
                         value={appContext.loginedUser.email}
                         placeholder={appContext.loginedUser.email}
                         isValueFixed={isDefaulted}
                         required />
-                    <InputPhone_withRegExp 
+                    <InputPhone_withFixedValueRegExp 
                         name="phone" 
                         required 
                         placeholder={appContext.loginedUser.phone} 
                         value={formatPhone(appContext.loginedUser.phone)} 
                         isValueFixed={isDefaulted}/>
-                    <InputString_withRegExp 
+                    <InputString_withFixedValueRegExp 
                         name='birthDate' 
                         placeholder={appContext.loginedUser.birthDate} 
                         value={appContext.loginedUser.birthDate} 
                         label='Дата рождения' 
                         isValueFixed={isDefaulted}/>
-                    <InputString_withRegExp 
+                    <InputString_withFixedValueRegExp 
                         name='location' 
                         placeholder={appContext.loginedUser.location} 
                         value={appContext.loginedUser.location} 
                         label='Местоположение' 
                         isValueFixed={isDefaulted}/>
-                    <InputText_withRegExp
+                    <InputText_withFixedValueRegExp
                         name='description'
                         label="Описание"
                         value={appContext.loginedUser.description}
