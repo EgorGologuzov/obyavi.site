@@ -67,5 +67,10 @@ const fakeService = {
     getOwner({ ownerId }) {
         const result = users.find((user) => user.id == ownerId);
         return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
+    },
+
+    getByField({field,fieldName}){
+        const result = ads.find((ad) => ad[fieldName] == field);
+        return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
     }
 }
