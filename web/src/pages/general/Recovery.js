@@ -87,7 +87,13 @@ export default function Recovery() {
         setIsBusy(true);
 
         userService.changePassword({ phone: phoneFormState.values.phone, newPassword: passwordFormState.values.password })
-            .then(({ login }) => { appContext.signIn(login); navigate(fromPage); })
+            .then(({ login }) => {
+                userService.signIn({ login })
+                .then((user) => {
+                    appContext.setUser(user);
+                    navigate(fromPage, { replace: true })
+                })
+            })
             .catch((error) => appContext.showNotification("", error.message, "critical"))
             .finally(() => setIsBusy(false));
     }
