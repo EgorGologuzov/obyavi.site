@@ -42,6 +42,7 @@ const InputPhone = ({
                 onFocus={handleFocus}
                 onBlur={handleFocusOut}
                 value={value}
+                name={name}
                 ref={inputRef}
             />
 
