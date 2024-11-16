@@ -52,7 +52,7 @@ export default function Reg() {
         setIsBusy(true);
 
         // Запрос на авторизацию
-        userService.reg(formState.values)
+        userService.reg({ ...formState.values, phone: formState.values.login })
             // В случае успеха логиню пользователя и перенаправляю пользователя по заранее запрашиваему адресу
             .then(({ phone }) => {
                 userService.signIn({ login: phone })
@@ -106,12 +106,12 @@ export default function Reg() {
                     regExp={/^([А-Яа-яA-za-z]){1,50}$/g}
                     errorComment="Отчество может содержать только буквенные символы и не должно быть длиннее 50 символов" />
                 <Spliter />
+                <InputPhone_withRegExp name="login" required />
                 <InputEmail_withRegExp
                     name="email"
                     label="Электронная почта"
                     placeholder="E-mail"
                     required />
-                <InputPhone_withRegExp name="phone" required />
                 <InputPassword_withRegExp
                     name="password"
                     required

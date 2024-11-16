@@ -43,7 +43,7 @@ const fakeService = {
             location: undefined,
             regDate: Date().toString(),
             birthDate: undefined,
-            description:undefined,
+            description: undefined,
             rating: 0,
             favoriteAds: []
         }
