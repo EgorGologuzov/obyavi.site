@@ -15,7 +15,6 @@ const fakeService = {
 
         return new Promise((resolve, reject) => {
             const user = fakeAccounts.find((account) => account.phone === login);
-            console.log(fakeAccounts, login);
             setTimeout(() => {
                 if (!user) {
                     reject(new Error("Неверный логин или пароль"));
