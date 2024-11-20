@@ -154,6 +154,11 @@
     padding-left: 0;
     overflow-y: auto;
     z-index: 10;
+    opacity: 1;
+}
+
+.search-string_results.hidden{
+    display: none;
 }
 
 .search-string_results li {
@@ -249,11 +254,13 @@
     margin: 0;
     padding: 0;
     z-index: 10;
+    height: 0px;
     transition:all 0.3s ease-out;
 }
 .dropdown_list.open{
     opacity: 1;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    height:auto;
 }
 
 .dropdown_list.open li{

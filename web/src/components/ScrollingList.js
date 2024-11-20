@@ -43,7 +43,7 @@ export default function ScrollingList({
                     </>
                 )}
             </ToolPanel>
-            <div className="scrolling-list__content" style={{maxHeight:`${maxHeight}px`}} onScroll={handleScroll}>
+            <div className="scrolling-list__content" onScroll={handleScroll}>
                 <ListView desktopColumns="2" mobileColumns="1" >
                     {children}
                 </ListView>

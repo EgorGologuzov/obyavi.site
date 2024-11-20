@@ -10,6 +10,7 @@ export default function SearchString({
     onChange}) {
     const [results, setResults] = useState([]);
     const [isFocused,setIsFocused]=useState(false);
+    const [isBusy,setIsBusy]=useState(false);
     let input;
     let button;
     
@@ -31,8 +32,16 @@ export default function SearchString({
         onSearch(value);
     }
 
-    const handleSelect = (result) => {
-        onChange(inputValue,result);
+    const handleFocus=(e)=>{
+        setIsFocused(true);
+    }
+
+    const handleFocusOut=(e)=>{
+        setIsFocused(false)
+    }
+
+    function handleSelect(result){
+        onChange(inputValue,result)
         setResults([]);
     };
 
@@ -46,8 +55,8 @@ export default function SearchString({
             id={id} 
             name={name} 
             style={{borderBottomRightRadius:"0px",borderBottomLeftRadius:"0px",borderBottom:"1px solid var(--secondary)"}}
-            onFocus={()=>setIsFocused(true)}
-            onBlur={()=>setIsFocused(false)}
+            onFocus={handleFocus}
+            onBlur={handleFocusOut}
         />
         button=<button className="search-string_search-bar_button" style={{borderBottomRightRadius:'0px'}} onClick={(e)=>handleSearch(e.target.value)}/>
     }
@@ -61,29 +70,26 @@ export default function SearchString({
             onChange={(e)=>handleChange(inputValue,e.target.value)} 
             id={id}
             name={name}
-            onFocus={()=>setIsFocused(true)}
-            onBlur={()=>setIsFocused(false)}
+            onFocus={handleFocus}
+            onBlur={handleFocusOut}
         />
         button=<button className="search-string_search-bar_button" onClick={(e)=>handleSearch(e.target.value)}/>
     }
 
     return (
-    <div className="search-string"> 
+    <div className="search-string" tabIndex={-1}> 
         <div className='search-string_search-bar'>
            {input}
            {button}
         </div>
                 
-
-        {results.length > 0 && isFocused && (
-                <ul className="search-string_results">
-                    {results.map((result, index) => (
-                        <li key={index} onClick={() => handleSelect(result)}>
-                            {result}
-                        </li>
-                    ))}
-                </ul>
-        )}
+        <ul className={`search-string_results${results.length > 0 && isFocused?'':' hidden'}`}>
+            {results.map((result, index) => (
+                <li key={index} onMouseDown={(e)=>e.preventDefault()} onClick={() => handleSelect(result)}>
+                    {result}
+                </li>
+            ))}
+        </ul>
     </div>
     );
 }

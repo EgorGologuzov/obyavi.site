@@ -31,7 +31,9 @@ export default function AdSearchPageClient() {
     const [ads, setAds] = useState([]);
     const [page, setPage] = useState();
     const [pageMax, setPageMax] = useState(0);
+    const [totalPages,setTotalPages]=useState(0);
     const [isBusy, setIsBusy] = useState(false);
+    const [value,setValue]=useState([1,2,3])
 
     const handleSearchRequestChanged = (oldValue, newValue) => {
         setSearchRequest(newValue);
@@ -40,19 +42,21 @@ export default function AdSearchPageClient() {
     }
 
     const handleSearch=(newValue)=>{
-        if(newValue)
-            setAds(adService.getAdsByTitle(newValue));
-        else
-            setAds(adService.getAds());
+        setAds([]);
+        adService.getByTitle({newValue}).then((data)=>{
+            console.log(data);
+            setAds(data);
+        })
+        const mainWindow=document.getElementsByClassName('layout-client__page')[0]
+        mainWindow.scrollTo({top:mainWindow.scrollHeight,behavior:'smooth'})
     }
 
     const load = ({ page }) => {
         busyProcess(isBusy, setIsBusy, () => {
-            setAds([]);
-            setPage(page);
-            return adService.getMyAds({ page, userId: appContext.loginedUser.id })
+            setPage(page+1)
+            return adService.getAds({page})
                 .then((data) => {
-                    setAds(data.list);
+                    setAds(oldValues=>[...oldValues,...data.list]);
                     setPageMax(data.totalPages);
                 })
                 .catch((err) => appContext.showNotification(
@@ -64,12 +68,18 @@ export default function AdSearchPageClient() {
         )
     }
 
+    const handleOnBottomReached=()=>{
+        load({page:page});
+        const mainWindow=document.getElementsByClassName('layout-client__page')[0]
+        mainWindow.scrollTo({top:mainWindow.scrollHeight,behavior:'smooth'})
+    }
+
     const navigateToAd = (adId) => {
         window.open("/c/ad/" + adId, '_blank');
     }
 
     useEffect(()=>{
-        load({page:1})
+        load({page:1});
     },[])
 
     return (
@@ -91,7 +101,7 @@ export default function AdSearchPageClient() {
                 listContext={listContext}
                 isBusy={isBusy}
                 hasItems={ads.length}
-                onBottomReached={()=>console.log('wow')}
+                onBottomReached={()=>handleOnBottomReached()}
                 >
                     {ads&&ads.map((ad, index) =>
                         <Card id={ad.id} key={ad.id}>

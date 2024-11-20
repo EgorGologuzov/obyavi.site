@@ -64,13 +64,31 @@ const fakeService = {
         return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
     },
 
+    getByIds({idArray}){
+        const result = ads.filter((ad) => idArray.includes(ad.id));
+        return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
+    },
+
     getOwner({ ownerId }) {
         const result = users.find((user) => user.id == ownerId);
         return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
     },
 
-    getByField({field,fieldName}){
-        const result = ads.find((ad) => ad[fieldName] == field);
+    getByTitle(title){
+        const result = ads.filter((ad)=>ad.main.header.includes(title.newValue))
+        console.log(result);
+        return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
+    },
+
+    getAds({page}){
+        const start = (page - 1) * pageSize;
+        const end = start + pageSize;
+
+        const result = {
+            totalPages: Math.ceil(ads.length / pageSize),
+            list: ads.slice(start, end).map((ad) => JSON.parse(JSON.stringify(ad)))
+        };
+
         return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
     }
 }
