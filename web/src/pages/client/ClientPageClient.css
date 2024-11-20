@@ -18,12 +18,12 @@
     flex-direction: column;
     max-width:539px;
 }
-.client-page__rating-zone{
+.client-page__review-zone{
     display: flex;
     flex-direction: column;
     max-width:686px;
 }
-.client-page__rating-zone .btn{
+.client-page__review-zone .btn{
     margin-top:15px;
 }
 .client-page__client-zone__header{
@@ -73,6 +73,34 @@
 .client-page__client-zone__info__buttons .btn_primary{
     grid-column:span 2;
 }
+.client-page__review-zone__review{
+    display: flex;
+    flex-direction:column;
+    gap:15px;
+    margin-bottom:15px;
+}
+.client-page__review-zone__review__user-info{
+    display:grid;
+    grid-template-columns: repeat(2,minmax(0px,max-content));
+    grid-template-rows: repeat(3,minmax(0px,max-content));
+    column-gap:18px;
+    row-gap:5px;
+}
+.client-page__review-zone__review__user-info .avatar{
+    grid-row:span 3;
+}
+.client-page__review-zone__review__user-info .stars-bar{
+    max-width: 100px;
+    width: 100%;
+    gap:0px;
+    padding:0px 5px;
+    height: 100%;
+}
+.client-page__review-zone__review__images{
+    display: flex;
+    flex-direction:row;
+    gap:15px;
+}
 
 @media (width<750px){
     .client-page{
@@ -88,7 +116,7 @@
     .client-page__client-zone{
         max-width:100%;
     }
-    .client-page__rating-zone{
+    .client-page__review-zone{
         max-width: 100%;
     }
 }

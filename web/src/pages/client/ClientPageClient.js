@@ -14,6 +14,7 @@ import Card from '../../components/Card'
 import { ListContextProvider } from '../../contexts/ListContext'
 import { ScrollingList_withLoad } from '../../hoc/withLoad'
 import { useAdService } from '../../data/AdService'
+import { useReviewService } from '../../data/ReviewService'
 
 
 
@@ -26,18 +27,13 @@ export default function ClientPageClient() {
     const [user,setUser]=useState({});;
     const {id}=useParams()
     const navigate=useNavigate();
-    const ratingList=[{
-        text:'Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 '
-    },
-    {
-        text:'Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 '
-    },
-    {
-        text:'Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 '
-    }]
+    const reviewService=useReviewService();
+    const [reviewList,setreviewList]=useState([])
 
     useEffect(()=>{
         setUser(userService.getUserById(id));
+        setreviewList(reviewService.getReviewsByAuthor(id))
+        console.log(reviewService.getReviewsByAuthor(id))
     },[])
 
     return (
@@ -70,7 +66,7 @@ export default function ClientPageClient() {
                     </div>
                 </div>
             </div>
-            <div className="client-page__rating-zone">
+            <div className="client-page__review-zone">
                 <Subcaption level={2} color={'text'}>
                     Отзывы:
                 </Subcaption>
@@ -78,13 +74,24 @@ export default function ClientPageClient() {
                     <ScrollingList_withLoad
                     listContext={listContext}
                     isBusy={isBusy}
-                    hasItems={ratingList.length}
+                    hasItems={reviewList.length}
                     >
-                        {ratingList&&ratingList.map((rating, index) =>
-                            <Card id={rating.id} key={rating.id}>
-                               <Subcaption level={1} color={'text'}>
-                                    {rating.text}
-                               </Subcaption>
+                        {reviewList&&reviewList.map((review, index) =>
+                            <Card id={index} key={index}>
+                                <div className="client-page__review-zone__review">
+                                    <div className="client-page__review-zone__review__user-info">
+                                        <Avatar/>
+                                        <Header level={3}>{userService.getUserById(review.targetUserId).lastname} {userService.getUserById(review.targetUserId).firstname} {userService.getUserById(review.targetUserId).patronym}</Header>
+                                        <Subcaption level={2}>{review.date}</Subcaption>
+                                        <StarsBar value={review.rating} input_mode={false}/>
+                                    </div>
+                                    <Subcaption level={1} color={'text'}>{review.description}</Subcaption>
+                                    <div className='client-page__review-zone__review__images'>
+                                        {review.images&&review.images.map((image,index)=>
+                                            <img src={image.src} key={index} style={{width:'60px',height:'60px',objectFit:'cover',borderRadius:'10px'}}/>
+                                        )}
+                                    </div>
+                                </div>
                             </Card>
                         )}
                     </ScrollingList_withLoad>
