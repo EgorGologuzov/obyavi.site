@@ -17,10 +17,11 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
         errorComment, // Коментарий в режиме ошибки
         showError = true, // Если false, то режим ошибки не активируется даже если значение не соотвествует регуляру
         onMontage, // событие вызвается при окночании монтирования и передает объект с резальтатами проверки начального значения
+        defaultValue, // значение по умолчанию, устанавливается при первом монтировании, далее игнорируется
         ...otherProps }) { // любые другие пропсы, которые принимает расширяемый инпут, например label или id
 
         // Создаю состояния для значения и результата проверки
-        const [currentValue, setCurrentValue] = useState();
+        const [currentValue, setCurrentValue] = useState(defaultValue);
         const [isValid, setIsValid] = useState(true);
 
         // Устанавливаю значения переданные в хок по умолчанию, если не были переданны напрямую

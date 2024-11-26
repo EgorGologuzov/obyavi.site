@@ -1,5 +1,6 @@
 import ads from './db/ads.json';
 import users from './db/users.json';
+import props from './db/props.json';
 
 export function useAdService() {
     return fakeService;
@@ -67,5 +68,31 @@ const fakeService = {
     getOwner({ ownerId }) {
         const result = users.find((user) => user.id == ownerId);
         return new Promise((resolve, _) => setTimeout(() => resolve(result), 500));
+    },
+
+    getAllProps({ categoryStr }) {
+        const categoryList = categoryStr.split(">");
+        const allProps = []
+        categoryList.forEach((cat, _) => {
+            const propsForCat = props[cat]
+            if (propsForCat) {
+                allProps.push(...propsForCat);
+            }
+        })
+        
+        return new Promise((resolve, _) => setTimeout(() => resolve(allProps), 500));
+    },
+
+    update({ updateData }) {
+        const old = ads.find((ad) => ad.id == updateData.id);
+        const updatedAd = { ...old, ...updateData }
+        const index = ads.indexOf(old);
+        ads[index] = updatedAd;
+
+        return new Promise((resolve, _) => {
+            setTimeout(() => {
+                resolve(updatedAd)
+            }, 500)
+        })
     }
 }

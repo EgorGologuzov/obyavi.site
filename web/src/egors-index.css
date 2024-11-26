@@ -46,6 +46,7 @@
     --icon-avatar-placeholder: url("../public/img/avatar-placeholder-l.png");
     --icon-send: url("../public/img/send-l.png");
     --icon-bin: url("../public/img/bin-l.png");
+    --icon-plus: url("../public/img/plus-l.png");
 
     /* Theme independed images */
     --icon-empty: url("../public/img/empty.png");
@@ -91,6 +92,7 @@
     --icon-avatar-placeholder: url("../public/img/avatar-placeholder-d.png");
     --icon-send: url("../public/img/send-d.png");
     --icon-bin: url("../public/img/bin-d.png");
+    --icon-plus: url("../public/img/plus-d.png");
 }
 
 #themeSwitch:checked~#root {
