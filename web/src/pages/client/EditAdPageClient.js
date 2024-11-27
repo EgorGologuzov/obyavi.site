@@ -9,7 +9,7 @@ import { InputString_withRegExp, InputText_withRegExp } from '../../hoc/withRegE
 import Grid from '../../components/Grid';
 import { useAdService } from '../../data/AdService'
 import { useNavigate, useParams } from 'react-router-dom';
-import { busyProcessWithFail } from '../../utils/utils'
+import { busyProcessWithFail, formatDesc, formatDescForEdit, formatShortDesc } from '../../utils/utils'
 import Load from '../../components/Load'
 import Fail from '../../components/Fail'
 import Spliter from '../../components/Spliter'
@@ -50,6 +50,7 @@ export default function EditAdPageClient() {
     const saveChanges = async () => {
         if (!generalFormState.isValid() || !adressFormState.isValid() || !detailsFormState.isValid()) {
             appContext.showNotification("", "Заполните все обязательные поля правильными значениями", "common");
+            return;
         }
 
         let urls;
@@ -63,7 +64,7 @@ export default function EditAdPageClient() {
                 "status": ad.main.status,
                 "avatar": urls.length ? urls[0] : null,
                 "category": generalFormState.values.category,
-                "shortDesc": generalFormState.values.desc
+                "shortDesc": formatShortDesc(generalFormState.values.desc)
             },
             "price": {
                 "value": generalFormState.values.price,
@@ -75,7 +76,7 @@ export default function EditAdPageClient() {
                 "change": ad.meta.change
             },
             "images": urls,
-            "desc": generalFormState.values.desc,
+            "desc": formatDesc(generalFormState.values.desc),
             "properties": detailsFormState.values
         }
 
@@ -84,6 +85,7 @@ export default function EditAdPageClient() {
             const result = await adService.update({ updateData });
             setAd(result);
             appContext.showNotification("", "Сохранение прошло успешно", "common");
+            navigate(-1);
         }
         catch (err) { appContext.showNotification("Что-то пошло не так", err.message, "critical") }
         finally { setIsBusy(false) }
@@ -121,13 +123,29 @@ export default function EditAdPageClient() {
         updatePropsList(ad);
     }
 
-    useEffect(() => {
+    const publish = ({ idList }) => {
+        busyProcessWithFail(isBusy, setIsBusy, setIsFail, () => adService.publish({ idList })
+            .then(() => load())
+        )
+    }
+
+    const unpublish = ({ idList }) => {
+        busyProcessWithFail(isBusy, setIsBusy, setIsFail, () => adService.unpublish({ idList })
+            .then(() => load())
+        )
+    }
+
+    const load = () => {
         busyProcessWithFail(isBusy, setIsBusy, setIsFail, () => adService.getById({ id })
             .then((adValue) => {
                 setAd(adValue);
                 updatePropsList(adValue);
             })
         )
+    }
+
+    useEffect(() => {
+        load();
     }, []);
 
     useTitleWithDeps({ text: "Ред.: " + ad?.main?.header, deps: [ad] });
@@ -137,8 +155,8 @@ export default function EditAdPageClient() {
             <Header level={2}>Редактирование объявления</Header>
             <AdStatus ad={ad} />
             <Spliter />
-            {ad.main.status == "published" && <Button color="secondary">Снять с публикации</Button>}
-            {ad.main.status == "unpublished" && <Button color="primary">Опубликовать</Button>}
+            {ad.main.status == "published" && <Button color="secondary" onClick={() => unpublish({ idList: [ad.id] })}>Снять с публикации</Button>}
+            {ad.main.status == "unpublished" && <Button color="primary" onClick={() => publish({ idList: [ad.id] })}>Опубликовать</Button>}
 
             <div className="edit-ad-page-client__label">Общие данные</div>
 
@@ -168,7 +186,7 @@ export default function EditAdPageClient() {
                     errorComment="Ожидается положительное число" />
                 <InputText_withRegExp
                     name="desc"
-                    defaultValue={ad.desc}
+                    defaultValue={formatDescForEdit(ad.desc)}
                     label="Описание"
                     comment="Любая доп. информация (макс 1000 символов)"
                     placeholder="Введите описание"

@@ -20,14 +20,16 @@ export function withRegExpValidation(Input, regExpDefault, commentDefault, error
         defaultValue, // значение по умолчанию, устанавливается при первом монтировании, далее игнорируется
         ...otherProps }) { // любые другие пропсы, которые принимает расширяемый инпут, например label или id
 
-        // Создаю состояния для значения и результата проверки
-        const [currentValue, setCurrentValue] = useState(defaultValue);
-        const [isValid, setIsValid] = useState(true);
-
         // Устанавливаю значения переданные в хок по умолчанию, если не были переданны напрямую
         regExp ??= regExpDefault;
         comment ??= commentDefault;
         errorComment ??= errorCommentDefault;
+        defaultValue = typeof defaultValue == "number" ? defaultValue.toString() : defaultValue;
+        value = typeof value == "number" ? value.toString() : value;
+
+        // Создаю состояния для значения и результата проверки
+        const [currentValue, setCurrentValue] = useState(defaultValue);
+        const [isValid, setIsValid] = useState(true);
 
         // Функция валидации значения
         const validate = (newValue) => {
