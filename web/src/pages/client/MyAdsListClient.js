@@ -13,8 +13,8 @@ import { useAppContext } from '../../contexts/AppContext';
 import './MyAdsListClient.css';
 import { PagedList_withLoad } from '../../hoc/withLoad';
 import { busyProcess } from '../../utils/utils';
-import parse from 'html-react-parser'
 import useTitle from '../../hook/useTitle';
+import AdressView from '../../components/AdressView';
 
 export default function MyAdsListClient() {
     const [ads, setAds] = useState([]);
@@ -116,7 +116,8 @@ export default function MyAdsListClient() {
     }
 
     const navigateToAd = (adId) => {
-        !listContext.selectMode && window.open("/c/ad/" + adId, '_blank');
+        // !listContext.selectMode && window.open("/c/ad/" + adId, '_blank');
+        !listContext.selectMode && navigate("/c/ad/" + adId)
     }
 
     useEffect(() => {
@@ -163,14 +164,18 @@ export default function MyAdsListClient() {
                     <Card id={ad.id} key={ad.id}>
                         <div className="my-ads-list-client__card-content">
                             <div className="my-ads-list-client__up-content">
-                                <img className="my-ads-list-client__ad-avatar" src={ad.main.avatar} onClick={() => navigateToAd(ad.id)}/>
+                                <img
+                                    className="my-ads-list-client__ad-avatar"
+                                    src={ad.main.avatar}
+                                    style={ad.main.avatar ? null : {content: "var(--icon-picture)"}}
+                                    onClick={() => navigateToAd(ad.id)}/>
                                 <div className="my-ads-list-client__text-content">
                                     <div className="my-ads-list-client__card-header" onClick={() => navigateToAd(ad.id)}>
                                         <Header level={4}>{ ad.main.header }</Header>
                                     </div>
-                                    <Subcaption level={2}>{ `г. ${ad.adress.city}, ${ad.adress.district}` }</Subcaption>
+                                    <Subcaption level={2}><AdressView adress={ad.adress} /></Subcaption>
                                     <Header level={4}>{ `${Number(ad.price.value).toLocaleString(undefined, { minimumFractionDigits: 0 }) } ${ad.price.currency}` }</Header>
-                                    <div className="my-ads-list-client__desc">{ ad.desc && parse(ad.desc) }</div>
+                                    <p className="my-ads-list-client__desc">{ ad.main.shortDesc }</p>
 
                                     <ContextMenu>
                                         <ContextMenuButton text="Выбрать" onClick={() => selectCards(listContext, [ad.id])} />

@@ -40,7 +40,10 @@ export default function ImageCarousel({
         </div>
     ) || (
         <div className="image-carousel">
-            <img className="image-carousel__img" style={{content: "var(--icon-picture)"}} />
+            <div className="image-carousel__content">
+                <img className="image-carousel__back" style={{content: "var(--icon-picture)"}} />
+                <img className="image-carousel__img" style={{content: "var(--icon-picture)"}} />
+            </div>
             <UpDown min={0} max={0} value={0} disabled={true} />
         </div>
     )

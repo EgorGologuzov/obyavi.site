@@ -12,7 +12,8 @@ export function useNewFormState() {
     // собираю все в один объект
     const formState = {
         values: values,
-        invalidFields: invalidFields
+        invalidFields: invalidFields,
+        isValid: () => invalidFields.size == 0
     }
 
     // возврат
@@ -21,7 +22,7 @@ export function useNewFormState() {
 
 /* автоформа следит за изменениями значений внутренних валидируемых инпутов и их валидацией,
 результат отслеживания сохраняет в объект formState */
-export default function AutoForm({ children, formState }) {
+export default function AutoForm({ children, formState, desktopColumns = 1, mobileColumns = 1 }) {
 
     const handleInputChange = ({ fieldName, newValue, isValid }) => {
         // устанавливаю значение поля в объект значений formState.values
@@ -31,9 +32,13 @@ export default function AutoForm({ children, formState }) {
         isValid ? formState.invalidFields.delete(fieldName) : formState.invalidFields.add(fieldName);
     }
 
+    const onSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return (
-        <form className="auto-form">
-            <Grid desktopColumns={1} mobileColumns={1}>
+        <form className="auto-form" onSubmit={onSubmit}>
+            <Grid desktopColumns={desktopColumns} mobileColumns={mobileColumns}>
                 {/* прохожусь по всем внутр. элементам и клонирую их задавая новые обработчики*/}
                 {React.Children.map(children, (child) => {
                     if (React.isValidElement(child)) {
@@ -44,16 +49,22 @@ export default function AutoForm({ children, formState }) {
                         return React.cloneElement(child, {
                             // задаю обработчики на событие изменения значеня и событе первоначальной проверки значения
                             // передаю их в функцию, которая синхронизирует перенесет эти значения в formState
-                            onChange: (event) => handleInputChange({
-                                fieldName: child.props.name,
-                                newValue: event.newValue,
-                                isValid: event.isValid
-                            }),
-                            onMontage: (event) => handleInputChange({
-                                fieldName: child.props.name,
-                                newValue: event.value,
-                                isValid: event.isValid
-                            })
+                            onChange: (event) => {
+                                handleInputChange({
+                                    fieldName: child.props.name,
+                                    newValue: event.newValue,
+                                    isValid: event.isValid
+                                });
+                                child.props.onChange && child.props.onChange(event);
+                            },
+                            onMontage: (event) => {
+                                handleInputChange({
+                                    fieldName: child.props.name,
+                                    newValue: event.value,
+                                    isValid: event.isValid
+                                });
+                                child.props.onMontage && child.props.onMontage(event);
+                            }
                         });
                     }
                     return child;

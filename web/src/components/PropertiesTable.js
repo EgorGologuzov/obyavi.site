@@ -15,7 +15,7 @@ export default function PropertiesTable({ propsList }) {
                 {propsList && propsList.map((item, index) => (
                     <tr key={index} style={getLineStyle(index)}>
                         <th style={{textAlign: "start"}}>{ item.name }</th>
-                        <th style={{textAlign: "end"}}>{ item.value }</th>
+                        <th style={{textAlign: "end"}}>{ item.value + (item.metric ? ` ${item.metric}` : "") }</th>
                     </tr>
                 ))}
             </tbody>

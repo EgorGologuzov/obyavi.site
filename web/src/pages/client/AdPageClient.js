@@ -17,6 +17,7 @@ import Load from '../../components/Load'
 import Fail from '../../components/Fail'
 import parse from 'html-react-parser'
 import { useTitleWithDeps } from '../../hook/useTitle'
+import AdressView from '../../components/AdressView'
 
 export default function AdPageClient() {
     const adService = useAdService();
@@ -60,19 +61,25 @@ export default function AdPageClient() {
                 <Header level={4}>{ad.main.header}</Header>
                 <CategoryList list={ad.main.category} />
                 <div className="ad-page-client__label">
-                    Место сделки:
-                    <span className="ad-page-client__location">{ ` г. ${ad.adress.city}, ${ad.adress.district}` }</span>
+                    Место сделки: {" "}
+                    <span className="ad-page-client__location"><AdressView adress={ad.adress} /></span>
                 </div>
                 <Header level={4}>{ `${Number(ad.price.value).toLocaleString(undefined, { minimumFractionDigits: 0 }) } ${ad.price.currency}` }</Header>
                 
                 <ProfileInfo clientId={ad.owner} />
                 
-                <div className="ad-page-client__label">Описание:</div>
-                <div className="ad-page-client__desc">
-                    { ad.desc && parse(ad.desc) }
-                </div>
-                <div className="ad-page-client__label">Характеристики:</div>
-                <PropertiesTable propsList={ad.properties} />
+                {ad.desc && <>
+                    <div className="ad-page-client__label">Описание:</div>
+                    <div className="ad-page-client__desc">
+                        { ad.desc && parse(ad.desc) }
+                    </div>
+                </>}
+
+                {ad.properties?.length && <>
+                    <div className="ad-page-client__label">Характеристики:</div>
+                    <PropertiesTable propsList={ad.properties} />
+                </> || ""}
+
             </div>
         </div>
     ) || isBusy && <Load /> || isFail && <Fail/>

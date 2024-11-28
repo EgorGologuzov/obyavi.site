@@ -28,6 +28,10 @@ export default function ImageList({
             ))}
         </div>
     ) || (
-        <Paragraf>Нет изображений</Paragraf>
+        <div className="image-list">
+                <img
+                    className={`image-list__img image-list__img_selected`}
+                    style={{content: "var(--icon-picture)"}} />
+        </div>
     )
 }
