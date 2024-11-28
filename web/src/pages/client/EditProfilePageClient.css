@@ -9,7 +9,8 @@
     display:flex;
     flex-direction:row;
     align-self:center;
-    justify-content: space-between;
+    justify-content: center;
+    width: 100%;
 }
 .edit-profile-page__header__info{
     display:flex;
@@ -18,7 +19,7 @@
 }
 .edit-profile-page__header__info .avatar{
     position:relative;
-    width:100%;
+    width:50%;
 }
 .edit-profile-page__header__info .avatar::before{
     position: absolute;
@@ -46,10 +47,10 @@
 }
 .edit-profile-page__header__info__text{
     display: grid;
-    grid-template-columns: minmax(0px,auto) minmax(0px,auto);
+    grid-template-columns: repeat(2,minmax(0px,max-content));
     column-gap:10px;
     row-gap:8px;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: repeat(3,minmax(0px,max-content));
     margin-left:20px;
     align-self: center;
     flex-direction:column;
@@ -58,6 +59,9 @@
 .edit-profile-page__header__info__text h6{
     width:100%;
     word-wrap: break-word;
+}
+.edit-profile-page__header__info__text h6:last-of-type{
+    grid-column: span 2;
 }
 .edit-profile-page__header__info__text .stars-bar{
     grid-column:span 2;
@@ -100,5 +104,12 @@
     .edit-profile-page__header__info .avatar{
         align-self:center;
         margin-bottom:20px;
+        max-width:200px;
+    }
+    .edit-profile-page__header__info__text{
+        width:fit-content;
+    }
+    .edit-profile-page__header__info__text .stars-bar{
+        gap:5px;
     }
 }
