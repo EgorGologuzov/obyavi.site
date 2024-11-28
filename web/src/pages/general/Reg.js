@@ -55,7 +55,7 @@ export default function Reg() {
         userService.reg(formState.values)
             // В случае успеха логиню пользователя и перенаправляю пользователя по заранее запрашиваему адресу
             .then(({ phone }) => {
-                userService.signIn(phone)
+                userService.signIn({ login: phone })
                     .then((user) => {
                         appContext.setUser(user);
                         navigate(fromPage, { replace: true })

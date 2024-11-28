@@ -14,10 +14,17 @@ const fakeService = {
         login = cleanPhone(login);
 
         return new Promise((resolve, reject) => {
-            const user = fakeAccounts.find((element) => element.phone === login);
+            const user = fakeAccounts.find((account) => account.phone === login);
+            console.log(fakeAccounts, login);
             setTimeout(() => {
-                user ? resolve(user) : reject(new Error("Неверный логин или пароль"));
+                if (!user) {
+                    reject(new Error("Неверный логин или пароль"));
+                    return;
+                }
+
+                resolve(user);
                 console.log("Авторизация", user);
+
             }, 500);
         })
     },
@@ -32,7 +39,13 @@ const fakeService = {
             id: Math.round(Math.random() * 100_000_000_000),
             role: "client",
             theme: "light",
-            phone: cleanPhone(data.phone)
+            phone: cleanPhone(data.phone),
+            location: undefined,
+            regDate: Date().toString(),
+            birthDate: undefined,
+            description:undefined,
+            rating: 0,
+            favoriteAds: []
         }
 
         return new Promise((resolve, reject) => {
