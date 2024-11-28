@@ -1,7 +1,81 @@
-import React from 'react'
+import React, { useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import './ClientPageClient.css'
+import './ListOfClientReviewsClient.css'
+import Avatar from '../../components/Avatar'
+import Header from '../../components/Header'
+import Subcaption from '../../components/Subcaption'
+import StarsBar from '../../components/StarsBar'
+import Button from '../../components/Button'
+import { useUserService } from '../../data/UserService'
+import { useAppContext } from "../../contexts/AppContext";
+import { useNavigate, useParams } from "react-router-dom";
+import { useNewListContext } from '../../contexts/ListContext'
+import Card from '../../components/Card'
+import { ListContextProvider } from '../../contexts/ListContext'
+import { ScrollingList_withLoad } from '../../hoc/withLoad'
+import { useAdService } from '../../data/AdService'
+import { useReviewService } from '../../data/ReviewService'
+import DropdownList from '../../components/DropdownList'
+import { Card_withRef } from '../../hoc/Card_withRef'
 
 export default function ListOfClientReviewsClient() {
+    const appContext=useAppContext();
+    const listContext = useNewListContext();
+    const userService=useUserService();
+    const [user,setUser]=useState({});;
+    const {id}=useParams()
+    const navigate=useNavigate();
+    const reviewService=useReviewService();
+    const [reviewList,setReviewList]=useState([])
+    const dropdownSamples={'option_1':'Сначала новые','option_2':'Сначала старые'};
+    const [sortMethod,setSortMethod]=useState('Сначала новые');
+    const [cardHeight,setCardHeight]=useState();
+    const scrollingListHeight=2;
+    const measuredRef=useCallback(node => {
+        if (node !== null) {
+          setCardHeight(node.clientHeight);
+        }
+      }, []);
+
+    useEffect(()=>{
+        setUser(userService.getUserById(id));
+        for (let i=0;i<5;i++){
+            setReviewList(oldValues=>[...oldValues,...reviewService.getReviewsByAuthor(id)])
+        }
+    },[])
+
+    const handleSortMethodChanged=(oldValue,newValue)=>{
+        setSortMethod(newValue);
+    }
+
     return (
-        <div>ListOfClientReviewsClient</div>
+        <div className='client-reviews'>
+            <Header level={2} color={'text'}>Отзывы о клиенте</Header>
+            <Subcaption level={2}>{user.lastname} {user.firstname} {user.patronym}</Subcaption>
+            <DropdownList options={dropdownSamples} label='' comment='' value={sortMethod} onChange={handleSortMethodChanged}/>
+            <ListContextProvider value={listContext}>
+                <ScrollingList_withLoad listContext={listContext} maxHeight={cardHeight*scrollingListHeight+10*scrollingListHeight} onBottomReached={()=>console.log('fdjlfj')}>
+                        {reviewList&&reviewList.map((review, index) =>
+                            <Card_withRef id={index} key={index} ref={measuredRef}>
+                                <div className="client-page__review-zone__review">
+                                    <div className="client-page__review-zone__review__user-info">
+                                        <Avatar/>
+                                        <Header level={3}>{userService.getUserById(review.targetUserId).lastname} {userService.getUserById(review.targetUserId).firstname} {userService.getUserById(review.targetUserId).patronym}</Header>
+                                        <Subcaption level={2}>{review.date}</Subcaption>
+                                        <StarsBar value={review.rating} input_mode={false}/>
+                                    </div>
+                                    <Subcaption level={1} color={'text'}>{review.description}</Subcaption>
+                                    <div className='client-page__review-zone__review__images'>
+                                        {review.images&&review.images.map((image,index)=>
+                                            <img src={image.src} key={index} style={{width:'60px',height:'60px',objectFit:'cover',borderRadius:'10px'}}/>
+                                        )}
+                                    </div>
+                                </div>
+                            </Card_withRef>
+                        )}
+                </ScrollingList_withLoad>
+            </ListContextProvider>
+        </div>
     )
 }

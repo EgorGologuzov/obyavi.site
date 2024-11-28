@@ -9,7 +9,7 @@ export default function ScrollingList({
     tools,
     toolsForSelectedMode,
     onBottomReached,
-    maxHeight=1000}){
+    maxHeight=null}){
     const listContext = useListContext();
     const [counter,setCounter]=useState(1);
     const handleScroll=(e)=>{
@@ -29,7 +29,7 @@ export default function ScrollingList({
     },[counter])
 
     return ( 
-        <div className="scrolling-list">
+        <div className="scrolling-list" style={{maxHeight:maxHeight?maxHeight:'auto'}}>
             <ToolPanel>
                 {listContext.selectMode && (
                     <>

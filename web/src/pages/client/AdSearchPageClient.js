@@ -44,7 +44,6 @@ export default function AdSearchPageClient() {
     const handleSearch=(newValue)=>{
         setAds([]);
         adService.getByTitle({newValue}).then((data)=>{
-            console.log(data);
             setAds(data);
         })
         const mainWindow=document.getElementsByClassName('layout-client__page')[0]
