@@ -4,5 +4,5 @@
     color: var(--text);
     font-weight: var(--medium);
     text-align: center;
-    margin-top: 10px;
+    margin: 10px;
 }
