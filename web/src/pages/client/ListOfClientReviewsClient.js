@@ -1,5 +1,4 @@
-import React, { useCallback } from 'react'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import './ClientPageClient.css'
 import './ListOfClientReviewsClient.css'
 import Avatar from '../../components/Avatar'
@@ -25,18 +24,18 @@ export default function ListOfClientReviewsClient() {
     const userService=useUserService();
     const [user,setUser]=useState({});;
     const {id}=useParams()
-    const navigate=useNavigate();
     const reviewService=useReviewService();
     const [reviewList,setReviewList]=useState([])
     const dropdownSamples={'option_1':'Сначала новые','option_2':'Сначала старые'};
     const [sortMethod,setSortMethod]=useState('Сначала новые');
-    const [cardHeight,setCardHeight]=useState();
+    const [cardHeight,setCardHeight]=useState(0);
     const scrollingListHeight=2;
     const measuredRef=useCallback(node => {
         if (node !== null) {
-          setCardHeight(node.clientHeight);
+            if(node.clientHeight>cardHeight)
+                setCardHeight(node.clientHeight);
         }
-      }, []);
+    }, []);
 
     useEffect(()=>{
         setUser(userService.getUserById(id));
