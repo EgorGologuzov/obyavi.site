@@ -15,3 +15,11 @@
 .client-reviews .tool-panel{
     display:none;
 }
+
+.client-reviews .client-page__review-zone__review .profile-info{
+    height:100%;
+}
+.client-reviews .client-page__review-zone__review .profile-info h6{
+    grid-area:3/2/3/2;
+    height:min-content;
+}

@@ -107,8 +107,11 @@
         margin-top:11px;
         word-wrap: break-word;
     }
+    .profile-page__body{
+        flex-direction: column;
+    }
     .profile-page__actions{
-        display: none;
+        margin-top:20px;
     }
     .profile-page__header__info .avatar{
         width:100%;

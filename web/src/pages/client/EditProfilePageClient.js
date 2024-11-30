@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useState, useRef} from 'react'
 import './EditProfilePageClient.css'
 import Avatar from '../../components/Avatar'
 import Header from '../../components/Header'
@@ -17,7 +17,8 @@ export default function EditProfilePageClient() {
     const appContext=useAppContext();
     const formState = useNewFormState();
     const [isDefaulted,setIsDefaulted]=useState(false);
-    const navigate=useNavigate();
+    const fileInputRef=useRef(null);
+    const [avatar,setAvatar]=useState(appContext.loginedUser.avatar);
 
     const restoreToDefault=()=>{
         setTimeout(()=>setIsDefaulted(false),50);
@@ -32,15 +33,17 @@ export default function EditProfilePageClient() {
         console.log(formState.values);
     }
 
-    const handleOnAvatarClick=(event)=>{
-        navigate('/c/settings');
+    const handleProfileImageChanged=(event)=>{
+        const selectedFile = event.target.files[0];
+        setAvatar(URL.createObjectURL(selectedFile))
     }
 
     return (
         <div className="edit-profile-page">
             <div className="edit-profile-page__header">
                 <div className="edit-profile-page__header__info">
-                    <Avatar src={appContext.loginedUser.avatar} onClick={()=>navigate('/c/settings')}/>
+                    <Avatar src={avatar} onClick={()=>fileInputRef.current.click()}/>
+                    <input type='file' multiple={false} onChange={handleProfileImageChanged} ref={fileInputRef} accept='image/png, image/jpeg'/>
                     <div className="edit-profile-page__header__info__text">
                         <Subcaption level={2} color={'text'}>{`Дата регистрации: `}</Subcaption>
                         <Subcaption level={2}>{`${appContext.loginedUser.regDate}`}</Subcaption>

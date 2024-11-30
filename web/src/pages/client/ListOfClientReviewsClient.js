@@ -1,5 +1,4 @@
-import React, { useCallback } from 'react'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import './ClientPageClient.css'
 import './ListOfClientReviewsClient.css'
 import Avatar from '../../components/Avatar'
@@ -18,6 +17,8 @@ import { useAdService } from '../../data/AdService'
 import { useReviewService } from '../../data/ReviewService'
 import DropdownList from '../../components/DropdownList'
 import { Card_withRef } from '../../hoc/Card_withRef'
+import ProfileInfo from '../../components/ProfileInfo'
+import ProfileInfoExtandable from '../../components/ProfileInfoExtandable'
 
 export default function ListOfClientReviewsClient() {
     const appContext=useAppContext();
@@ -25,18 +26,18 @@ export default function ListOfClientReviewsClient() {
     const userService=useUserService();
     const [user,setUser]=useState({});;
     const {id}=useParams()
-    const navigate=useNavigate();
     const reviewService=useReviewService();
     const [reviewList,setReviewList]=useState([])
     const dropdownSamples={'option_1':'Сначала новые','option_2':'Сначала старые'};
     const [sortMethod,setSortMethod]=useState('Сначала новые');
-    const [cardHeight,setCardHeight]=useState();
+    const [cardHeight,setCardHeight]=useState(0);
     const scrollingListHeight=2;
     const measuredRef=useCallback(node => {
         if (node !== null) {
-          setCardHeight(node.clientHeight);
+            if(node.clientHeight>cardHeight)
+                setCardHeight(node.clientHeight);
         }
-      }, []);
+    }, []);
 
     useEffect(()=>{
         setUser(userService.getUserById(id));
@@ -59,12 +60,10 @@ export default function ListOfClientReviewsClient() {
                         {reviewList&&reviewList.map((review, index) =>
                             <Card_withRef id={index} key={index} ref={measuredRef}>
                                 <div className="client-page__review-zone__review">
-                                    <div className="client-page__review-zone__review__user-info">
-                                        <Avatar/>
-                                        <Header level={3}>{userService.getUserById(review.targetUserId).lastname} {userService.getUserById(review.targetUserId).firstname} {userService.getUserById(review.targetUserId).patronym}</Header>
+                                    <ProfileInfoExtandable clientId={review.authorUserId}>
+                                        <br/>
                                         <Subcaption level={2}>{review.date}</Subcaption>
-                                        <StarsBar value={review.rating} input_mode={false}/>
-                                    </div>
+                                    </ProfileInfoExtandable>
                                     <Subcaption level={1} color={'text'}>{review.description}</Subcaption>
                                     <div className='client-page__review-zone__review__images'>
                                         {review.images&&review.images.map((image,index)=>

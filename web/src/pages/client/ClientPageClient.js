@@ -15,6 +15,8 @@ import { ListContextProvider } from '../../contexts/ListContext'
 import { ScrollingList_withLoad } from '../../hoc/withLoad'
 import { useAdService } from '../../data/AdService'
 import { useReviewService } from '../../data/ReviewService'
+import ProfileInfo from '../../components/ProfileInfo'
+import ProfileInfoExtandable from '../../components/ProfileInfoExtandable'
 
 
 
@@ -39,12 +41,10 @@ export default function ClientPageClient() {
     return (
         <div className="client-page">
             <div className="client-page__client-zone">
-                <div className="client-page__client-zone__header">
-                    <Avatar src={user.avatar}/>
-                    <Header level={2}>{user.lastname} {user.firstname} {user.patronym}</Header>
-                    <Subcaption level={2} color='accent'>Онлайн</Subcaption>
-                    <StarsBar value={4} input_mode={false}/>
-                </div>
+                <ProfileInfoExtandable clientId={appContext.loginedUser.id}>
+                    <br></br>
+                    <Subcaption level={2} color={'accent'}>Онлайн</Subcaption>
+                </ProfileInfoExtandable>
                 <div className="client-page__client-zone__info">
                     <Subcaption level={2}>Местоположение</Subcaption>
                     <Subcaption level={2} color={'text'}>{user.location}</Subcaption>
@@ -80,8 +80,8 @@ export default function ClientPageClient() {
                             <Card id={index} key={index}>
                                 <div className="client-page__review-zone__review">
                                     <div className="client-page__review-zone__review__user-info">
-                                        <Avatar/>
-                                        <Header level={3}>{userService.getUserById(review.targetUserId).lastname} {userService.getUserById(review.targetUserId).firstname} {userService.getUserById(review.targetUserId).patronym}</Header>
+                                        <Avatar src={userService.getUserById(review.authorUserId).avatar}/>
+                                        <Header level={3}>{userService.getUserById(review.authorUserId).lastname} {userService.getUserById(review.authorUserId).firstname} {userService.getUserById(review.authorUserId).patronym}</Header>
                                         <Subcaption level={2}>{review.date}</Subcaption>
                                         <StarsBar value={review.rating} input_mode={false}/>
                                     </div>
